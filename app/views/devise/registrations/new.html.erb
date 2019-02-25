@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
   <html>
     <head>
@@ -6,7 +6,7 @@
       <style type="text/css" href="./style.css"></style>
       <link rel="stylesheet" href="">
     </head>
-
+ -->
 <div class="single-container">
   <header class="single-header"></header><!-- /header -->
 
@@ -16,110 +16,35 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)class="l-single-inner") do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         <% end %>
-        <div class="l-single-content">
-          <div class="form-group">
-            <%= f.label :ニックネーム %>
-            <<span class="form-require" style>必須</span><br />
-            <%= f.text_field :nickname, autofocus: true, :placeholder => "例）メルカリ太郎", class="input-default" %>
-          </div>
+      <div class="l-single-content">
+        <div class="form-group">
+          <%= f.label :ニックネーム %>
+          <<span class="form-require" style>必須</span><br />
+          <%= f.text_field :nickname, autofocus: true, :placeholder => "例）メルカリ太郎", class="input-default" %>
+        </div>
 
-          <div class="form-group">
-            <%= f.label :メールアドレス %>
-            <span class="form-require" style>必須</span>br />
-            <%= f.email_field :email, autofocus: true, :placeholder => "PC・携帯どちらでも可", class="input-default" %>
-          </div>
+        <div class="form-group">
+          <%= f.label :メールアドレス %>
+          <span class="form-require" style>必須</span>br />
+          <%= f.email_field :email, autofocus: true, :placeholder => "PC・携帯どちらでも可", class="input-default" %>
+        </div>
 
-          <div class="form-group">
-            <%= f.label :パスワード %>
-            <span class="form-require" style>必須</span><br />
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, :placeholder => "６文字以上", class="input-default" %>
-          </div>
+        <div class="form-group">
+          <%= f.label :パスワード %>
+          <span class="form-require" style>必須</span><br />
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, :placeholder => "６文字以上", class="input-default" %>
+        </div>
 
-          <div class="form-group">
-            <%= f.label :パスワード（確認） %>
-            <span class="form-require" style>必須</span><br />
-            <%= f.password_field :password_confirmation, :placeholder => "６文字以上", minlength: "6"
- class="input-default" %>
-          </div>
-
-          <div class="form-group">
-            <h3 class="text-left l-chapter-sub-head">本人確認</h3>
-            <p class="l-single-text">
-            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-
-            </p>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :姓（全角） %>
-            <span class="form-require" style>必須</span><br />
-            <%= f.text_field :family_name_kanji, :placeholder => "例）山田", class="input-default" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :名（全角） %>
-            <span class="form-require" style>必須</span><br />
-            <%= f.text_field :first_name_kanji, :placeholder => "例）太郎", class="input-default" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :姓カナ（全角） %>
-            <span class="form-require" style>必須</span><br />
-            <%= f.text_field :family_name_kana, :placeholder => "例）ヤマダ", class="input-default" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :名カナ（全角） %>
-            <span class="form-require" style>必須</span><br />
-            <%= f.text_field :first_name_kana, :placeholder => "例）アヤ", class="input-default" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :生年月日 %>
-            <span class="form-require" style>必須</span><br />
-            <div class="birthday-select-wrap">
-              <div class="select-wrap">
-                <%= f.date_select(
-                  :year,
-                  :discard_month,
-                  :discard_day,
-                  start_year: 1930,
-                  end_year: (Time.now.year)
-                  )
-                  :placeholder => "--", class="select-default"%>
-                <i class="icon-arrow-bottom"></i>
-                <span>年</span>
-              </div>
-
-              <div class="select-wrap">
-                <%= f.date_select(
-                  :month,
-                  :discard_year,
-                  :discard_day,
-                  use_month_numbers: true,
-                  )
-                  :placeholder => "--", class="select-default"%>
-                <i class="icon-arrow-bottom"></i>
-                <span>月</span>
-              </div>
-
-              <div class="select-wrap">
-                <%= f.date_select(
-                  :day,
-                  :discard_year,
-                  :discard_month,
-                  )
-                  :placeholder => "--", class="select-default"%>
-                <i class="icon-arrow-bottom"></i>
-                <span>日</span>
-              </div>
-            </div>
-          <div class="actions">
-            <%= f.submit "会員登録する" %>
-          </div>
+        <div class="form-group">
+          <%= f.label :パスワード（確認） %>
+          <span class="form-require" style>必須</span><br />
+          <%= f.password_field :password_confirmation, :placeholder => "６文字以上", minlength: "6", class="input-default" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "会員登録する" %>
         </div>
       </div>
     </section>

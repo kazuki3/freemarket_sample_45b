@@ -1,12 +1,12 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 
   <html>
     <head>
       <title></title>
       <style type="text/css" href="./style.css"></style>
-      <link rel="stylesheet" href="">
+      <link rel="stylesheet" href="m-scss">
     </head>
- -->
+
 <div class="single-container">
   <header class="single-header"></header><!-- /header -->
 
@@ -16,7 +16,9 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)class="l-single-inner") do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         <% end %>
+
       <div class="l-single-content">
+
         <div class="form-group">
           <%= f.label :ニックネーム %>
           <<span class="form-require" style>必須</span><br />

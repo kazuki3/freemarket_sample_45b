@@ -14,7 +14,7 @@ has_one :profile
 has_one :delivery_address
 has_one :credit_card
 has_one :point
-has_one :sales
+has_one :sale
 has_many :trades
 has_many :comments
 has_many :items
@@ -30,7 +30,7 @@ has_many :likes
 |last_kana|integer|null:false|
 |birthdate|date|null:false|
 |zip_code|integer|null:false|
-|preference|string|null:false|
+|prefecture|string|null:false|
 |city|string|null:false|
 |address1|string|null:false|
 |address2|string|null:true|
@@ -124,7 +124,7 @@ belongs_to :item
 ## brandsテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
-|brand_name|string|null:false|
+|name|string|null:false|
 
 ### Association
 has_many :items
@@ -132,7 +132,7 @@ has_many :items
 ## categoriesテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
-|category_name|string|null:false|
+|name|string|null:false|
 |ancestry|string|index:true|
 
 ### Association
@@ -142,7 +142,7 @@ has_ancestry
 ## sizesテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
-|category_name|string|null:false|
+|name|string|null:false|
 |item|references|foreign_key:true|
 
 ### Association

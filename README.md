@@ -97,7 +97,7 @@
 |shipping_method|integer|null:false|
 |postage|integer|null:false|
 |region|integer|null:false|
-|shipping_date|integer|null:false|
+|date|integer|null:false|
 |seller|references|null:false, foreign_key:true|
 |status|integer|default:0|
 

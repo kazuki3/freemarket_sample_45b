@@ -13,7 +13,7 @@ timeout 60
 preload_app true
 GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
 
-check_client_connecton false
+check_client_connection false
 
 run_once = true
 

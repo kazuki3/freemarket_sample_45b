@@ -1,1 +1,6 @@
-@import 'config/reset.scss';
+@import "config/reset";
+@import "./users";
+
+* {
+  box-sizing: border-box;
+}

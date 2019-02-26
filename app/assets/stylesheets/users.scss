@@ -1,0 +1,24 @@
+.single-container{
+
+  &__header{
+  }
+
+  .single-main{
+    &__container{
+      &--header{
+      }
+      .single-inner{
+        .single-content{
+          .form-group {
+            @include form-group;}
+          .form-require{
+            @include form-require;}
+          .input-default{
+            @include input-default;}
+          }
+        }
+      }
+    .action{
+    }
+  }
+}

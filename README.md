@@ -24,17 +24,16 @@ has_many :likes
 ## profilesテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
-|first_kanji|string|null:false|
-|last_kanji|string|null:false|
-|first_kana|integer|null:false|
-|last_kana|integer|null:false|
+|first_name|string|null:false|
+|last_name|string|null:false|
+|first_name_kana|integer|null:false|
 |birthdate|date|null:false|
 |zip_code|integer|null:false|
 |prefecture|string|null:false|
 |city|string|null:false|
 |address1|string|null:false|
 |address2|string|null:true|
-|phone_number|integer|null:true|
+|phone_number|string|null:true|
 |user|references|null:true, foreign_key:true|
 
 ### Association
@@ -48,7 +47,7 @@ belongs_to :user
 |city|string|null:false|
 |address1|string|null:false|
 |address2|string|null:true|
-|phone_number|integer|null:true|
+|phone_number|string|null:true|
 |user|references|null:true, foreign_key:true|
 
 ### Association

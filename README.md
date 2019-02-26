@@ -186,7 +186,7 @@
 |:-----------|------------:|:------------:|
 |user|references|foreign_keys:true|
 |item|references|foreign_key:true|
-|deal|boolean|default:false|
+|approve_at|date|null:true|
 
 ### Association
 * belongs_to :user

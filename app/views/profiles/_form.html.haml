@@ -1,0 +1,61 @@
+= form_for @profile do |f|
+  - if @profile.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
+      %ul
+        - @profile.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :nickname
+    = f.text_field :nickname
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :password
+    = f.text_field :password
+  .field
+    = f.label :password_confirmation
+    = f.text_field :password_confirmation
+  .field
+    = f.label :self_introduction
+    = f.text_field :self_introduction
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :first_name_kana
+    = f.number_field :first_name_kana
+  .field
+    = f.label :last_name_kana
+    = f.number_field :last_name_kana
+  .field
+    = f.label :birthdate
+    = f.date_select :birthdate
+  .field
+    = f.label :zip_code
+    = f.number_field :zip_code
+  .field
+    = f.label :prefecture
+    = f.text_field :prefecture
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :ddress1
+    = f.text_field :ddress1
+  .field
+    = f.label :ddress2
+    = f.text_field :ddress2
+  .field
+    = f.label :phone_number
+    = f.text_field :phone_number
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions
+    = f.submit 'Save'

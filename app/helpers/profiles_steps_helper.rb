@@ -1,2 +1,0 @@
-module ProfilesStepsHelper
-end

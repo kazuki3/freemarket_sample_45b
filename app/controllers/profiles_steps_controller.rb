@@ -1,2 +1,0 @@
-class ProfilesStepsController < ApplicationController
-end

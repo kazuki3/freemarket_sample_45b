@@ -1,0 +1,53 @@
+%h1 Listing profiles
+
+%table
+  %thead
+    %tr
+      %th Nickname
+      %th Email
+      %th Password
+      %th Password confirmation
+      %th Self introduction
+      %th First name
+      %th Last name
+      %th First name kana
+      %th Last name kana
+      %th Birthdate
+      %th Zip code
+      %th Prefecture
+      %th City
+      %th Ddress1
+      %th Ddress2
+      %th Phone number
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @profiles.each do |profile|
+      %tr
+        %td= profile.nickname
+        %td= profile.email
+        %td= profile.password
+        %td= profile.password_confirmation
+        %td= profile.self_introduction
+        %td= profile.first_name
+        %td= profile.last_name
+        %td= profile.first_name_kana
+        %td= profile.last_name_kana
+        %td= profile.birthdate
+        %td= profile.zip_code
+        %td= profile.prefecture
+        %td= profile.city
+        %td= profile.ddress1
+        %td= profile.ddress2
+        %td= profile.phone_number
+        %td= profile.user
+        %td= link_to 'Show', profile
+        %td= link_to 'Edit', edit_profile_path(profile)
+        %td= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Profile', new_profile_path

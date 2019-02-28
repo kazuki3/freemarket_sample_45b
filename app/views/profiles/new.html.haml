@@ -59,7 +59,7 @@
             .form-group
               %span.registration_font 郵便番号
               %span.require-icon 必須
-              = form.text_field :zip_code, placeholder: "123-45678", class:"input-default"
+              = form.text_field :zip_code,  :maxlength => "9", placeholder: "123-45678", class:"input-default"
 
             .form-group
               %span.registration_font 都道府県
@@ -84,7 +84,7 @@
             .form-group
               %span.registration_font 電話番号
               %span.require-icon 必須
-              = form.telephone_field :phone_number, placeholder: "090-1234-5678", class:"input-default"
+              = form.telephone_field :phone_number, :maxlength => "13", placeholder: "090-1234-5678", class:"input-default"
 
             .actions
               = form.submit :次へ進む, class:"register-member"

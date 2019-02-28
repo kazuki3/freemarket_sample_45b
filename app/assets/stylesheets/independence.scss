@@ -11,6 +11,8 @@ body {
 	font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
+
+// --------------------商品カード--------------------
 @mixin item-box{
 	.body-items-box__box-head {
 		padding: 24px 0 8px;
@@ -76,3 +78,29 @@ body {
 		}
 	}
 }
+// ---------------------------------------------------
+
+// ----------------------出品ボタン------------------------
+.footer-sell-btn {
+	position: fixed;
+	bottom: 32px;
+	right: 32px;
+	width: 160px;
+	height: 160px;
+	font-size: 22px;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #ea352d;
+	z-index: 1000;
+	text-align: center;
+	text-decoration: none;
+
+	div {
+		margin: 32px 0 0;
+	}
+	.fa-camera {
+		margin: 8px 0 0;
+		font-size: 60px;
+	}
+}
+// -------------------------------------------------------

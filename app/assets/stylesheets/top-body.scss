@@ -9,69 +9,7 @@
 			margin: 0 auto;
 			font-size: 0;
 
-			&__box-head {
-				padding: 24px 0 8px;
-				font-size: 22px;
-				font-weight: bold;
-			}
-			&__item-box:nth-child(5n+1) {
-				margin-right: 0;
-			}
-			&__item-box {
-				margin: 0 20px 20px 0px;
-				width: 188px;
-				display: inline-block;
-				background-color: #fff;
-
-				&--link {
-					display: block;
-					text-decoration: none;
-					color: black;
-				}
-
-				.item-box-photo {
-					width: 188px;
-					height: 188px;
-
-					&__img {
-						width: 100%;
-						height: 100%;
-					}
-				}
-				.item-box-body {
-					padding: 16px;
-					height: 110px;
-
-					&__name {
-						overflow: hidden;
-						height: 3em;
-						line-height: 1.5;
-						position: relative;
-						font-size: 16px;
-					}
-					&__name:after {
-						content: '';
-						position: absolute;
-						bottom: 0;
-						right: 0;
-						width: 50%;
-						height: 1.5em;
-						background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
-					}
-					&__num {
-						margin: 8px 0 0;
-
-						&--price {
-							font-size: 18px;
-							font-weight: 550;
-
-						}
-						&--tax {
-							font-size: 10px;
-						}
-					}
-				}
-			}
+		@include item-box;
 		}
 	}
 }

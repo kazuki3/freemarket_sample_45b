@@ -207,3 +207,21 @@
   }
 
 // ーーーーーーーーーーーーーーーーーーーー
+
+
+// 次へ進むボタン  ーーーーーーーーーーー
+
+@mixin credir_card{
+  margin-top:5vh;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 0.9vw;
+  cursor: pointer;
+  text-align: center;
+  }
+
+// ーーーーーーーーーーーーーーーーーーーー

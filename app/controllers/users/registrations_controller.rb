@@ -1,32 +1,60 @@
-# frozen_string_literal: true
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  # before_action :configure_permitted_parameters, if: :users_registrations_controller?
+  before_action :create_params, only: [:create]
+  # before_action :profile_params, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:edit, :update]
   # before_action :configure_account_update_params, only: [:update]
 
-  # GET /resource/sign_up
-  # def new
-  # end
 
-  # POST /resource
+  def new
+    @user = User.new
+  end
+
+
   def create
-    redirect_to "/users/:id/edit(.:format)"
+    @user = User.create(create_params)
+      if @user.save
+          sign_in(@user, bypass: true)
+          redirect_to edit_user_registration_path
+      else
+        redirect_to new_user_registration_path
+    end
   end
 
-  # def move_to_index
-  #     redirect_to :edit => "new" unless user_signed_in?
-  # end
 
-  # GET /resource/edit
   def edit
-
-
-
+    sign_in(current_user, bypass: true)
+    @profile = Profile.new
   end
 
-  # PUT /resource
-  # def update
+  def update
+    @profile = Profile.update(profile_params)
+  end
+
+  # def after_sign_up_path_for(resource)
   #   super
+  #   redirect_to :action => 'edit'
   # end
+
+
+  private
+  def create_params
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation)
+  end
+
+
+  private
+  def profile_params
+    params.require(:profile).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :birthdate, :zip_code, :prefecture, :city, :address1, :address2, :phone_number, ).merge(user_id: current_user.id)
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+  end
+
+end
+
+
 
   # DELETE /resource
   # def destroy
@@ -48,9 +76,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   # end
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
-  end
 
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -59,12 +84,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
+  #   仮登録完了後のページ
   # end
-end

@@ -11,8 +11,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.create(create_params)
       if @user.save
-          sign_in(@user, bypass: true)
-          redirect_to new_profile_path
+        sign_in(@user, bypass: true)
+        redirect_to new_profile_path
       else
         redirect_to new_user_registration_path
     end

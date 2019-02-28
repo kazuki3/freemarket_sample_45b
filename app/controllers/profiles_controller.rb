@@ -1,12 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :profile_params, only: [:create, :edit, :update]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
-  end
-
-
-  def show
   end
 
 
@@ -18,8 +13,8 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.create(profile_params)
       if @profile.save
-          sign_in(@profile, bypass: true)
-          redirect_to root_path
+        # sign_in(@profile, bypass: true)
+        redirect_to new_payment_path
       else
         redirect_to new_profile_path
     end
@@ -38,13 +33,10 @@ class ProfilesController < ApplicationController
   end
 
 
-  def destroy
-  end
-
-
   private
   def profile_params
     params.require(:profile).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :birthdate, :zip_code, :prefecture, :city, :address1, :address2, :phone_number, ).merge(user_id: current_user.id)
   end
+
 
 end

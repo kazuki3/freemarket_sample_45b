@@ -26,35 +26,26 @@
 
   %main.register-main
     %section.register-main__container
-      %h2.register-main__container--header 会員情報入力
+      %h2.register-main__container--header クレジットカード情報登録
 
       .register-inner
-        = form_with(model: @user) do |form|
+        = form_with(model: @payment) do |form|
           .register-inner__content
             .form-group
-              %span.registration_font ニックネーム
+              %span.registration_font カード番号
               %span.require-icon 必須
-              = form.text_field :nickname, placeholder: "例）メルカリ太郎", class:"input-default"
+              = form.text_field :card_number, :maxlength => "20", placeholder: "0000-0000-0000-0000", class:"input-default"
+            -# 時間あれば4桁毎にー入れるようにしたい
+            .form-group
+              %span.registration_font 有効期限
+              %span.require-icon 必須
+              = form.date_select :expiration_date, :discard_day => "true", placeholder: "（年）20/（月）01", class:"input-default"
+            -# 時間あれば年と月で入力分けれるようにする
 
             .form-group
-              %span.registration_font メールアドレス
+              %span.registration_font セキュリティー番号
               %span.require-icon 必須
-              = form.email_field :email, placeholder: "PC・携帯どちらでも可", class:"input-default"
-
-            .form-group
-              %span.registration_font パスワード
-              %span.require-icon 必須
-              = form.password_field :password, :minlength => "6", placeholder: "６文字以上", class:"input-default"
-
-            .form-group
-              %span.registration_font パスワード（確認）
-              %span.require-icon 必須
-              = form.password_field :password_confirmation, :minlength => "6", placeholder: "６文字以上", minlength: "6", class:"input-default"
-
-            .form-group
-              %span.registration_font 自己紹介
-              %span.optional-icon 任意
-              = form.text_area :self_introduction, placeholder: "", class:"input-default"
+              = form.text_field :security_code, :maxlength => "3", placeholder: "123", class:"input-default"
 
             .actions
               = form.submit :次へ進む, class:"register-member"

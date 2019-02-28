@@ -1,9 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_permitted_parameters, if: :users_registrations_controller?
   before_action :create_params, only: [:create]
-  # before_action :profile_params, only: [:edit, :update]
   before_action :authenticate_user!, only: [:edit, :update]
-  # before_action :configure_account_update_params, only: [:update]
 
 
   def new
@@ -15,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.create(create_params)
       if @user.save
           sign_in(@user, bypass: true)
-          redirect_to edit_user_registration_path
+          redirect_to new_profile_path
       else
         redirect_to new_user_registration_path
     end
@@ -24,11 +21,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def edit
     sign_in(current_user, bypass: true)
-    @profile = Profile.new
   end
 
   def update
-    @profile = Profile.update(profile_params)
+    @user = Profile.update(create_params)
+      if @user.save
+        sign_in(@user, bypass: true)
+        redirect_to root_path
+      else
+        redirect_to user_registration_path
+      end
   end
 
   # def after_sign_up_path_for(resource)
@@ -39,17 +41,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
   def create_params
-    params.require(:user).permit(:nickname, :email, :password, :password_confirmation)
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :self_introduction)
   end
 
 
-  private
-  def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :birthdate, :zip_code, :prefecture, :city, :address1, :address2, :phone_number, ).merge(user_id: current_user.id)
-  end
+  # private
+  # def profile_params
+  #   params.require(:profile).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :birthdate, :zip_code, :prefecture, :city, :address1, :address2, :phone_number, ).merge(user_id: current_user.id)
+  # end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :self_introduction])
   end
 
 end

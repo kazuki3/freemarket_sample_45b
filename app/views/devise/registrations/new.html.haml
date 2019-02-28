@@ -13,7 +13,7 @@
             .progress-status
         .activ-box
           %li.active
-            お届け先住所入力
+            連絡先情報
             .progress-status
         .activ-box
           %li.active
@@ -50,6 +50,11 @@
               %span.registration_font パスワード（確認）
               %span.require-icon 必須
               = form.password_field :password_confirmation, placeholder: "６文字以上", minlength: "6", class:"input-default"
+
+            .form-group
+              %span.registration_font 自己紹介
+              %span.optional-icon 任意
+              = form.text_area :self_introduction, placeholder: "", class:"input-default"
 
             .actions
               = form.submit :次へ進む, class:"register-member"

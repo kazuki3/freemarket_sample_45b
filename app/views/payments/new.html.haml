@@ -26,7 +26,7 @@
 
   %main.register-main
     %section.register-main__container
-      %h2.register-main__container--header クレジットカード情報登録
+      %h2.register-main__container--header 支払い方法
 
       .register-inner
         = form_with(model: @payment) do |form|
@@ -35,18 +35,22 @@
             .form-group
               %span.registration_font カード番号
               %span.require-icon 必須
-              = form.text_field :card_number, :maxlength => "19", placeholder: "0000-0000-0000-0000", class:"input-default"
-            -# 時間あれば4桁毎にー入れるようにしたい
+              = form.text_field :card_number, placeholder: "半角英数のみ", class:"input-default"
+              = image_tag "card.png", class:"card-png"
+
             .form-group
               %span.registration_font 有効期限
               %span.require-icon 必須
-              = form.date_select :expiration_date, :discard_day => "true", placeholder: "（年）20/（月）01"
-            -# 時間あれば年と月で入力分けれるようにする
+              .expiration_date_box
+                = form.date_select :expiration_date, :discard_day => "true", start_year: (Time.now.year),end_year: (Time.now.year+10), date_separator: '年 '
+                月
 
             .form-group
               %span.registration_font セキュリティー番号
               %span.require-icon 必須
-              = form.text_field :security_code, :maxlength => "3", placeholder: "123", class:"input-default"
+              = form.text_field :security_code, :maxlength => "4", placeholder: "カード背面もしくは４桁もしくは３桁の番号", class:"input-default"
+              .card-indo
+                カード裏面の番号とは
             .actions
               = form.submit :次へ進む, class:"register-member"
 

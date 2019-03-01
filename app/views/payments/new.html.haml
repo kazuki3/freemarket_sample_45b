@@ -1,0 +1,56 @@
+.register__container
+  .register__container__header
+    = image_tag "logo.svg", class:"campany-logo", alt:"メルカリロゴ"
+    %nav.progress-bar
+      %ol.clearfix
+        .activ-box
+          %li.active
+            会員情報
+            .progress-status
+        .activ-box
+          %li.active
+            電話番号認証
+            .progress-status
+        .activ-box
+          %li.active
+            連絡先情報
+            .progress-status
+        .activ-box
+          %li.active
+            支払い方法
+            .progress-status
+        .activ-box
+          %li.active
+            完了
+            .progress-status
+
+  %main.register-main
+    %section.register-main__container
+      %h2.register-main__container--header クレジットカード情報登録
+
+      .register-inner
+        = form_with(model: @payment) do |form|
+          .register-inner__content
+
+            .form-group
+              %span.registration_font カード番号
+              %span.require-icon 必須
+              = form.text_field :card_number, :maxlength => "19", placeholder: "0000-0000-0000-0000", class:"input-default"
+            -# 時間あれば4桁毎にー入れるようにしたい
+            .form-group
+              %span.registration_font 有効期限
+              %span.require-icon 必須
+              = form.date_select :expiration_date, :discard_day => "true", placeholder: "（年）20/（月）01"
+            -# 時間あれば年と月で入力分けれるようにする
+
+            .form-group
+              %span.registration_font セキュリティー番号
+              %span.require-icon 必須
+              = form.text_field :security_code, :maxlength => "3", placeholder: "123", class:"input-default"
+            .actions
+              = form.submit :次へ進む, class:"register-member"
+
+            %script.payjp-button{"data-key" => "pk_test_0383a1b8f91e8a6e3ea0e2a9", "data-on-created" => "onCreated", "data-partial" => "true", "data-submit-text" => "カード情報入力", "data-text" => "カード情報入力", :src => "https://checkout.pay.jp/", :type => "text/javascript", "data-name-placeholder" => "taro mercari"}
+
+  .register__container__footer
+    = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"

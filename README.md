@@ -17,7 +17,7 @@
 * has_one :sale
 * has_many :trades
 * has_many :comments
-* has_many :items
+* has_many :products
 * has_many :rates
 * has_many :likes
 
@@ -26,8 +26,8 @@
 |:-----------|------------:|:------------:|
 |first_name|string|null:false|
 |last_name|string|null:false|
-|first_name_kana|integer|null:false|
-|last_name_kana|integer|null:false|
+|first_name_kana|string|null:false|
+|last_name_kana|string|null:false|
 |birthdate|date|null:false|
 |zip_code|integer|null:false|
 |prefecture|string|null:false|
@@ -84,7 +84,7 @@
 ### Association
 * belongs_to :user
 
-## itemsテーブル
+## productsテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 |name|string|null:false|
@@ -116,10 +116,10 @@
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 |image|string| --- |
-|item|references|null:false, foreign_key:true|
+|product|references|null:false, foreign_key:true|
 
 ### Association
-* belongs_to :item
+* belongs_to :product
 
 ## brandsテーブル
 | Column | Type | Options |
@@ -127,7 +127,7 @@
 |name|string|null:false|
 
 ### Association
-* has_many :items
+* has_many :products
 
 ## categoriesテーブル
 | Column | Type | Options |
@@ -136,27 +136,27 @@
 |ancestry|string|index:true|
 
 ### Association
-* has_many :items
+* has_many :products
 * has_ancestry
 
 ## sizesテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 |name|string|null:false|
-|item|references|foreign_key:true|
+|product|references|foreign_key:true|
 
 ### Association
-* has_many :item
+* has_many :product
 
 ## likesテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 |user|references|foreign_key:true|
-|item|references|foreign_key:true|
+|product|references|foreign_key:true|
 
 ### Association
 * belongs_to :user
-* belongs_to :item
+* belongs_to :product
 
 ## commentsテーブル
 | Column | Type | Options |
@@ -167,27 +167,27 @@
 
 ### Association
 * belongs_to :user
-* belongs_to :item
+* belongs_to :product
 
 ## ratesテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 |message|text|null:true|
 |user|references|null:true, foreign_key:true|
-|item|references|null:false, foreign_key:true|
+|product|references|null:false, foreign_key:true|
 |rate|integer|null:false|
 
 ### Association
-* belongs_to :item
+* belongs_to :product
 * belongs_to :user
 
 ## tradesテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 |user|references|foreign_keys:true|
-|item|references|foreign_key:true|
+|product|references|foreign_key:true|
 |approve_at|date|null:true|
 
 ### Association
 * belongs_to :user
-* belongs_to :item
+* belongs_to :product

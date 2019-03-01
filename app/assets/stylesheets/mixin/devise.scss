@@ -17,7 +17,7 @@
   &__header{
     height: 15%;
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
   }
 }
@@ -209,10 +209,64 @@
 // ーーーーーーーーーーーーーーーーーーーー
 
 
-// 次へ進むボタン  ーーーーーーーーーーー
+// メールアドレスで登録ボタン  ーーーーーーーーーーー
+
+@mixin mail-address-btn{
+  margin-top:3vh;
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 0.9vw;
+  color: black;
+  cursor: pointer;
+  text-align: center;
+  }
+
+// ーーーーーーーーーーーーーーーーーーーーーーー
+
+// Facebookで登録ボタン  ーーーーーーーーーーー
+
+@mixin facebook-btn{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  background: #385185;
+  border: 1px solid #385185;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 0.9vw;
+  cursor: pointer;
+  text-align: center;
+  }
+
+// ーーーーーーーーーーーーーーーーーーーーーーー
+
+// googleで登録ボタン  ーーーーーーーーーーー
+
+@mixin google-btn{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  background: #FFFFFF;
+  border: 1px solid #696969;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 0.9vw;
+  color: black;
+  cursor: pointer;
+  text-align: center;
+  }
+
+// ーーーーーーーーーーーーーーーーーーーーー
+
+// クレジットカード決済ボタン  ーーーーーーーーーーー
 
 @mixin credir_card{
-  margin-top:5vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;

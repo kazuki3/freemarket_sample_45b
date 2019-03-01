@@ -40,9 +40,8 @@
             .form-group
               %span.registration_font 有効期限
               %span.require-icon 必須
-              .date_select
-                = form.text_field :expiration_date, :discard_day => "true", placeholder: "例）30/01", class:"input-default"
-
+              = form.date_select :expiration_date, :discard_day => "true", placeholder: "（年）20/（月）01"
+            -# 時間あれば年と月で入力分けれるようにする
 
             .form-group
               %span.registration_font セキュリティー番号

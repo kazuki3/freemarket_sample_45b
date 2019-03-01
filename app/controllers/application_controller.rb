@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-<<<<<<< HEAD
   before_action :basic_auth
   protect_from_forgery with: :exception
 
@@ -11,7 +10,6 @@ private
     end
   end
 
-=======
   before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
 
@@ -26,5 +24,5 @@ private
       username == ENV["BASIC_AUTH_USER"] && password = ENV["BASIC_AUTH_PASSWORD"]
     end
   end
->>>>>>> kazuki3/master
+
 end

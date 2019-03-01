@@ -13,7 +13,6 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.create(profile_params)
       if @profile.save
-        # sign_in(@profile, bypass: true)
         redirect_to new_payment_path
       else
         redirect_to new_profile_path

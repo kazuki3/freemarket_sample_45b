@@ -27,8 +27,8 @@
 |:-----------|------------:|:------------:|
 |first_name|string|null:false|
 |last_name|string|null:false|
-|first_name_kana|integer|null:false|
-|last_name_kana|integer|null:false|
+|first_name_kana|string|null:false|
+|last_name_kana|string|null:false|
 |birthdate|date|null:false|
 |zip_code|integer|null:false|
 |prefecture|string|null:false|
@@ -55,7 +55,7 @@
 ### Association
 * belongs_to :user
 
-## credit_cardsテーブル
+## paymentsテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 |card_number|integer|null:false|

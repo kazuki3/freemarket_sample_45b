@@ -1,12 +1,13 @@
 @import "config/reset";
 @import "mixin/devise";
-@import "registrations/users";
+@import "users/registrations/users";
 @import "payments/payments";
 @import "profiles/profiles";
-@import "registrations/index";
+@import "users/registrations/index";
+@import "users/sessions/new";
 
-* {
-  box-sizing: border-box;
+
+* { box-sizing: border-box;
 }
 
 a { text-decoration: none;

@@ -208,6 +208,24 @@
 
 // ーーーーーーーーーーーーーーーーーーーー
 
+// 新規登録ボタン  ーーーーーーーーーーー
+
+@mixin sign-up-btn{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  background: 0099e8;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 0.9vw;
+  cursor: pointer;
+  text-align: center;
+  }
+
+// ーーーーーーーーーーーーーーーーーーーー
+
 
 // メールアドレスで登録ボタン  ーーーーーーーーーーー
 

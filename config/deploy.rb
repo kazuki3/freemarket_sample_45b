@@ -10,7 +10,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['/.ssh/freemarket45b_key.pem']
+                  keys: ['~/.ssh/freemarket45b_key.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
@@ -39,6 +39,6 @@ namespace :deploy do
       upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
     end
   end
-  before :stating, 'deploy:upload'
+  before :starting, 'deploy:upload'
   after :finishing, 'deploy:cleanup'
 end

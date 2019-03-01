@@ -1,1 +1,14 @@
-@import 'config/reset.scss';
+@import "config/reset";
+@import "mixin/devise";
+@import "users/registrations/users";
+@import "payments/payments";
+@import "profiles/profiles";
+@import "users/registrations/index";
+@import "users/sessions/new";
+
+
+* { box-sizing: border-box;
+}
+
+a { text-decoration: none;
+}

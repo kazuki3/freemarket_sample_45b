@@ -1,0 +1,36 @@
+
+.register__container{
+  @include register__container
+}
+
+.campany-logo{
+  @include campany-logo
+}
+
+.progress-bar{
+  @include progress-bar
+}
+
+.progress-status{
+  @include progress-status
+}
+
+.register-main{
+  @include register-main
+}
+
+.form-group{
+  @include form-group
+}
+
+.action{
+  margin-top: 50px;
+}
+
+.register-member{
+  @include register-member
+  }
+
+.register__container__footer{
+  @include register__container__footer
+}

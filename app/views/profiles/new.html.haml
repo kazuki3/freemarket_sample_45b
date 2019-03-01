@@ -26,7 +26,17 @@
 
   %main.register-main
     %section.register-main__container
-      %h2.register-main__container--header 連絡先情報
+      %h2.register-main__container--header 連絡先情報登録
+
+      .register-info
+        お客さまの本人情報をご登録ください。
+        %br
+        登録されたお名前・生年月日を変更する場合、
+        %br
+        本人確認書類の提出が必要になります。
+
+      .register-pass-upload
+        本人確認書類のアップロードについて
 
       .register-inner
         = form_with(model: @profile) do |form|

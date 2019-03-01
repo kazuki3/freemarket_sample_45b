@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
   def create
     @payment = Payment.create(payment_params)
       if @payment.save
-          redirect_to profiles_path
+        redirect_to profiles_path
       else
         redirect_to new_payment_path
     end

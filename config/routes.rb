@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
+    get   'users/index', to: 'users/registrations#index'
     post '/users' => 'users/registrations#create'
   end
 

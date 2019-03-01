@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190301070405) do
 
   create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,4 +56,8 @@ ActiveRecord::Schema.define(version: 20190301070405) do
   end
 
   add_foreign_key "profiles", "users"
+=======
+ActiveRecord::Schema.define(version: 0) do
+
+>>>>>>> kazuki3/master
 end

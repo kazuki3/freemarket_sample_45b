@@ -9,12 +9,10 @@
 	&__item-box {
 		display: block;
 	}
-
 	&__footer-nav {
 		margin: 0 auto;
 		width: 1020px;
 	}
-
 	&__footer-head {
 		font-size: 16px;
 		line-height: 1.4;
@@ -42,6 +40,7 @@
 			display: block;
 
 			&--country {
+        display: block;
 				font-size: 13px;
 				opacity: .3;
 			}
@@ -51,12 +50,7 @@
 				text-decoration: underline;
 			}
 
-			.country-logo {
-				margin-right: 8px;
-				width: 22px;
-				height: 22px;
-				vertical-align: middle;
-			}
+
 		}
 	}
 	&__mercari-logo {
@@ -73,4 +67,20 @@
 		font-size: 13px;
 		font-family: inherit;
 	}
+}
+
+.country-logo {
+  margin-right: 8px;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.country-name {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

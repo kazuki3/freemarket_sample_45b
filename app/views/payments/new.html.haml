@@ -35,7 +35,7 @@
             .form-group
               %span.registration_font カード番号
               %span.require-icon 必須
-              = form.text_field :card_number, placeholder: "半角英数のみ", class:"input-default"
+              = form.text_field :card_number, :maxlength => "16", placeholder: "半角、ハイフン（ー）は除いて16桁入力", class:"input-default"
               = image_tag "card.png", class:"card-png"
 
             .form-group

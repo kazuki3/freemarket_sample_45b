@@ -12,7 +12,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
-      if @profile.create
+      if @profile.save
         redirect_to new_payment_path
       else
         redirect_to new_profile_path

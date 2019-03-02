@@ -64,3 +64,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry-rails'
 gem 'haml-rails'
+gem 'devise'
+gem 'rspec-rails'
+gem 'wicked'
+gem 'rb-readline'
+gem 'payjp'

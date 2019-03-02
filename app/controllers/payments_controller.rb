@@ -7,7 +7,7 @@ class PaymentsController < ApplicationController
 
 
   def create
-    @payment = Payment.create(payment_params)
+    @payment = Payment.new(payment_params)
       if @payment.save
         redirect_to profiles_path
       else

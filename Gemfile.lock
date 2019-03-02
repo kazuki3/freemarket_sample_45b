@@ -136,13 +136,9 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     mysql2 (0.5.2)
-<<<<<<< HEAD
-    netrc (0.11.0)
-=======
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (5.1.0)
->>>>>>> kazuki3/master
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -257,17 +253,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
-<<<<<<< HEAD
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.5)
-    warden (1.2.8)
-      rack (>= 2.0.6)
-=======
     unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
->>>>>>> kazuki3/master
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)

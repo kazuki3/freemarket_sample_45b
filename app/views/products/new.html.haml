@@ -1,9 +1,6 @@
 .outer
 
-  %header.sell-header
-    = link_to "#" do
-      = image_tag("logo.svg", alt: "mercari", class: "sell-header__logo")
-
+  = render "product-header"
 
   .sell-main
     %section.sell-main__container
@@ -45,10 +42,13 @@
                   %span.form-require 必須
                 .select-wrap
                   = f.select :category_id, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
                 .select-wrap
                   = f.select :category_id, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
                 .select-wrap
                   = f.select :category_id, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
 
               .form-group
                 %label.sell-content__label
@@ -56,6 +56,7 @@
                   %span.form-require 必須
                 .select-wrap
                   = f.select :size_id, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
 
               .form-group
                 %label.sell-content__label
@@ -63,6 +64,7 @@
                   %span.form-optional 任意
                 .select-wrap
                   = f.select :brand_id, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
 
               .form-group
                 %label.sell-content__label
@@ -70,9 +72,13 @@
                   %span.form-require 必須
                 .select-wrap
                   = f.select :condition, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
 
           .sell-content.clearfix
-            %h3.sell-sub-head 配送について
+            %h3.sell-sub-head
+              配送について
+              = link_to "#", class: "question-icon" do
+                ?
             .sell-content__detail
               .form-group
                 %label.sell-content__label
@@ -80,27 +86,34 @@
                   %span.form-require 必須
                 .select-wrap
                   = f.select :postage, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
               .form-group
                 %label.sell-content__label
                   配送の方法
                   %span.form-require 必須
                 .select-wrap
                   = f.select :shipping_method, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
               .form-group
                 %label.sell-content__label
                   発送元の地域
                   %span.form-require 必須
                 .select-wrap
                   = f.select :region, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
               .form-group
                 %label.sell-content__label
                   発送前の日数
                   %span.form-require 必須
                 .select-wrap
                   = f.select :date, {}, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
 
           .sell-content.clearfix
-            %h3.sell-sub-head 販売利益(300〜9,999,999)
+            %h3.sell-sub-head
+              販売利益(300〜9,999,999)
+              = link_to "#", class: "question-icon" do
+                ?
             .sell-content__detail
               %ul.sell-content__price
                 %li.form-group
@@ -145,21 +158,4 @@
             = link_to "#", class: "sell-content__btn--back" do
               もどる
 
-
-  %main.sell-main
-  %footer.sell-footer
-    %nav
-      %ul.cleafix
-        %li
-          = link_to "#" do
-            プライバシーポリシー
-        %li
-          = link_to "#" do
-            メルカリ利用規約
-        %li
-          = link_to "#" do
-            特定商取引に関する規約
-    = link_to "#", class: "sell-footer__logo" do
-      = image_tag("logo-gray.svg", alt: "mercari", width: "80", height: "65")
-    %p
-      %small © 2019 Mercari
+  = render "product-footer"

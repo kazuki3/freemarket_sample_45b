@@ -5,6 +5,10 @@
 @import "profiles/profiles";
 @import "users/registrations/index";
 @import "users/sessions/new";
+@import './independence';
+@import './main-header';
+@import './main-footer';
+@import './top-body';
 
 
 * { box-sizing: border-box;

@@ -13,7 +13,7 @@
 ### Association
 * has_one :profile
 * has_one :delivery_address
-* has_one :credit_card
+* has_one :payment
 * has_one :point
 * has_one :sale
 * has_many :trades

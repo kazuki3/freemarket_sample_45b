@@ -4,30 +4,27 @@
   margin: 0 auto;
   padding: 40px 0;
   text-align: center;
-  .product-footer__logo {
+  &__logo {
     display: block;
     width: 80px;
     height:65px;
     margin: 40px auto 0;
   }
-}
-
-.product-footer li {
-  font-size: 12px;
-  display: inline;
-  margin: 0 8px 0 8px;
-}
-
-.product-footer p {
-  margin: 10px 0 0;
-  font-size: 12px;
-}
-
-.product-footer a {
-  color: #333333;
-  text-decoration: none;
-}
-.product-footer a:hover {
-  text-decoration: underline;
-  opacity: 0.5;
+  & li {
+    font-size: 12px;
+    display: inline;
+    margin: 0 8px 0 8px;
+  }
+  & p {
+    margin: 10px 0 0;
+    font-size: 12px;
+  }
+  & a {
+    color: #333333;
+    text-decoration: none;
+  }
+  & a:hover {
+    text-decoration: underline;
+    opacity: 0.5;
+  }
 }

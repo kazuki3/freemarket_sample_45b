@@ -2,22 +2,17 @@ class PaymentsController < ApplicationController
   before_action :payment_params, only: [:create, :update]
 
   def new
-    @payment = Payment.new
+    @payment = Payment.new(payment_params)
   end
 
 
   def create
     @payment = Payment.create(payment_params)
-      if @payment.save
+      if @payment.create
         redirect_to profiles_path
       else
         redirect_to new_payment_path
     end
-  end
-
-
-  def update
-    @payment = Payment.update(payment_params)
   end
 
 

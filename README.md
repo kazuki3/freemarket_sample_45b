@@ -1,3 +1,4 @@
+
 # README
 
 ## usersテーブル
@@ -54,7 +55,7 @@
 ### Association
 * belongs_to :user
 
-## credit_cardsテーブル
+## paymentsテーブル
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 |card_number|integer|null:false|

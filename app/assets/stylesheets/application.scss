@@ -1,5 +1,26 @@
+<<<<<<< HEAD
 @import 'config/reset';
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
 @import 'product-header';
 @import 'product-footer';
 @import 'sell';
+=======
+@import "config/reset";
+@import "mixin/devise";
+@import "users/registrations/users";
+@import "payments/payments";
+@import "profiles/profiles";
+@import "users/registrations/index";
+@import "users/sessions/new";
+@import './independence';
+@import './main-header';
+@import './main-footer';
+@import './top-body';
+
+
+* { box-sizing: border-box;
+}
+
+a { text-decoration: none;
+}
+>>>>>>> master

@@ -26,10 +26,10 @@
           = form_with(model: @user) do |form|
             .register-inner__content
               .form-group
-                = form.text_field :nickname, placeholder: "例）メルカリ太郎", class:"input-default"
+                = form.email_field :email, placeholder: "メールアドレス", class:"input-default"
 
               .form-group
-                = form.email_field :email, placeholder: "PC・携帯どちらでも可", class:"input-default"
+                = form.password_field :password, :minlength => "6", placeholder: "パスワード", class:"input-default"
 
             .actions
               = form.submit :ログイン, class:"register-member"

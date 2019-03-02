@@ -11,8 +11,8 @@ class ProfilesController < ApplicationController
 
 
   def create
-    @profile = Profile.create(profile_params)
-      if @profile.save
+    @profile = Profile.new(profile_params)
+      if @profile.create
         redirect_to new_payment_path
       else
         redirect_to new_profile_path
@@ -21,14 +21,17 @@ class ProfilesController < ApplicationController
 
 
   def edit
-    sign_in(current_user, bypass: true)
-    @profile = Profile.update(profile_params)
   end
 
 
   def update
-    sign_in(current_user, bypass: true)
     @profile = Profile.update(profile_params)
+      if @profile.update
+        sign_in(current_user, bypass: true)
+        redirect_to root_path
+      else
+        redirect_to edit_profile_path
+    end
   end
 
 

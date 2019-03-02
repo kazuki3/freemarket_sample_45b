@@ -1,0 +1,60 @@
+
+.credir_card{
+  margin-top:5vh;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 0.9vw;
+  cursor: pointer;
+  text-align: center;
+  }
+
+.date_select{
+  width: 8vw;
+  height: 10vh;
+  #payment_expiration_date_1i {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card-png{
+  width: 20vw;
+}
+
+.card-indo{
+  font-size: 0.8vw;
+  width: 100%;
+  margin-top: 3%;
+  color: #0099e8;
+  cursor: pointer;
+}
+
+#payment_expiration_date_1i{
+  -webkit-appearance: none;
+  width: 30%;
+  height: 60px;
+  padding: 10px 16px 8px;
+  border-radius:4px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  font-size: 1vw;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+
+#payment_expiration_date_2i{
+  -webkit-appearance: none;
+  width: 30%;
+  height: 60px;
+  padding: 10px 16px 8px;
+  border-radius:4px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  font-size: 1vw;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}

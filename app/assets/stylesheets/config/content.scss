@@ -1,0 +1,93 @@
+.content{
+  float:right;
+  width:700px;
+  .mypage-user-icon{
+    height:200px;
+    position:relative;
+    padding:20px;
+    text-align:center;
+    background-size:cover;
+    .bold{
+      margin:8px 0 0;
+      font-size:14px;
+      font-weight:600;
+    }
+    .mypage-number{
+      margin:8px 0 0;
+      font-size: 0;
+      .bold{
+        margin:0 0 8px;
+        font-size: 16px;
+        font-weight:600;
+      }
+    }
+  }
+  .mypage-tab-container-notification-todo{
+    margin: 0;
+    background:#fff;
+    padding:0;
+    .mypage-tabs{
+      border:0;
+      background:#eee;
+      font-size:0;
+      .active{
+        background-color:#fff;
+        width:50%;
+        text-align: center;
+      }
+    }
+    .tab-content{
+      margin:0;
+      padding:0;
+      border-width:0;
+      .mypage-item-list{
+        .mypage-item-link{
+          padding:80px;
+          color:#333;
+          .mypage-item-body{
+            margin:0 40px 0 68px;
+            .mypage-item-text{
+              line-height:1.5;
+              .icon-time{
+                margin:0 8px 0 0;
+              }
+            }
+            .icon-arrow-right{
+              position: absolute;
+              top: 50%;
+              right:16px;
+            }
+          }
+        }
+        .mypage-go-list{
+          .padding:16px;
+        }
+      }
+    }
+    .mypage-tab-container{
+      margin:40px 0 0;
+      background-color:#fff;
+      .mypage-tab-head{
+        padding:0 16px;
+        background-color:#fafafa;
+        font-size:16px;
+        line-height:72px;
+      }
+      .mypage-tabs{
+        border:0;
+        background-color:#eee;
+        font-size:0;
+        .active{
+          background-color:#fff;
+        }
+      }
+    }
+    .tab-content{
+      .mypage-item-list{
+        .mypage-item-not-found{
+
+        }
+      }
+    }
+  }
+}

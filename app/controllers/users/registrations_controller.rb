@@ -29,7 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-    @user = Profile.update(create_params)
+    @user = Profile.new(create_params)
       if @user.update
         sign_in(@user, bypass: true)
         redirect_to root_path

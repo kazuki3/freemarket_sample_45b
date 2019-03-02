@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
 
 
   def update
-    @profile = Profile.update(profile_params)
+    @profile = Profile.new(profile_params)
       if @profile.update
         sign_in(current_user, bypass: true)
         redirect_to root_path

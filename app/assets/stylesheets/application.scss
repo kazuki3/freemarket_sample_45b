@@ -1,10 +1,18 @@
 @import "config/reset";
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
 @import "mixin/devise";
 @import "users/registrations/users";
 @import "payments/payments";
 @import "profiles/profiles";
 @import "users/registrations/index";
 @import "users/sessions/new";
+@import './independence';
+@import './main-header';
+@import './main-footer';
+@import './top-body';
+// @import 'product-header';
+// @import 'product-footer';
+// @import 'sell';
 
 
 * { box-sizing: border-box;

@@ -1,0 +1,89 @@
+%footer.global-footer
+  %nav.global-footer__footer-nav
+    %ul
+      %li.about-mercari.global-footer__footer-cell
+        %h2.global-footer__footer-head メルカリについて
+        %ul.global-footer__item-box
+          %li.global-footer-list
+            = link_to '会社概要（運用会社)', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'プライバシーポリシー', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'メルカリ利用規約', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '有償ポイントに関する特約', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'あんしんスマホサポート制度に関する利用規約', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'コンプライアンスポリシー', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '個人データの安全管理に係る基本方針', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '特定商取引に関する表記', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '資金決済法に基づく表示', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '法令遵守と犯罪抑止のために', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '採用情報', "", class: "global-footer-list__list-link"
+      %li.check-mercari.global-footer__footer-cell
+        %h2.global-footer__footer-head メルカリを見る
+        %ul
+          %li.global-footer-list
+            = link_to 'カテゴリー一覧', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'ブランド一覧', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '出品地域一覧', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '公式ブログ', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '公式Twitter', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '公式Facebook', "", class: "global-footer-list__list-link"
+      %li.help-mercari.global-footer__footer-cell
+        %h2.global-footer__footer-head ヘルプ＆ガイド
+        %ul
+          %li.global-footer-list
+            = link_to 'メルカリガイド', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'メルカリロゴ利用ガイドライン', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'お知らせ', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'らくらくメリカリ便とは', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'ゆうゆうメルカリ便とは', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '大型らくらくメリカリ便とは', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '車体取引ガイド', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '返品・返金ポリシー', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'メルカリあんしん・あんぜん宣言！', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to '偽ブランド品撲滅への取り組み', "", class: "global-footer-list__list-link"
+          %li.global-footer-list
+            = link_to 'メルカリボックス', "", class: "global-footer-list__list-link"
+      %li.country.global-footer__footer-cell
+        %h2.global-footer__footer-head 国
+        %ul
+          %li.global-footer-list
+            = link_to "http://www.google.co.jp/", class: "global-footer-list__list-link--country" do
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?128691313', class: "country-logo"
+              %text.country-name United States
+          %li.global-footer-list
+            = link_to "http://www.google.co.jp/", class: "global-footer-list__list-link--country" do
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?128691313', class: "country-logo"
+              %text.country-name United Kingdom
+          %li.global-footer-list
+            = link_to "http://www.google.co.jp/", class: "global-footer-list__list-link--country" do
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?128691313', class: "country-logo"
+              %text.country-name 日本
+  = link_to "http://www.google.co.jp/", class: "global-footer__mercari-logo" do
+    = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?128691313', alt: "mercari", width: "124", height: "33"
+  %p.global-footer__copyright © 2019 Mercari
+= link_to "http://www.google.co.jp/", class: "footer-sell-btn" do
+  %div 出品
+  %i.fas.fa-camera

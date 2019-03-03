@@ -52,8 +52,11 @@
               .card-indo
                 カード裏面の番号とは
             .actions
-              = form.submit :次へ進む, class:"register-member"
+              = form.submit :会員登録完了, class:"register-member"
 
 
   .register__container__footer
     = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"
+
+    %a.sign-out-btn{:href => './sign_out'}
+      ログアウト

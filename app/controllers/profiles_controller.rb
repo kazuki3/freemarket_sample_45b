@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   before_action :profile_params, only: [:create, :edit, :update]
 
   def index
+
   end
 
 

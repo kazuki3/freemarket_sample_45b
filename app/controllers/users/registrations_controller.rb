@@ -38,6 +38,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
   end
 
+  def signout
+  end
+
 
   private
   def create_params

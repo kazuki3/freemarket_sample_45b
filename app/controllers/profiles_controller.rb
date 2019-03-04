@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   before_action :profile_params, only: [:create, :edit, :update]
 
   def index
@@ -19,22 +20,6 @@ class ProfilesController < ApplicationController
         redirect_to new_profile_path
     end
   end
-
-
-  def edit
-  end
-
-
-  def update
-    @profile = Profile.new(profile_params)
-      if @profile.update
-        sign_in(current_user, bypass: true)
-        redirect_to root_path
-      else
-        redirect_to edit_profile_path
-    end
-  end
-
 
   private
   def profile_params

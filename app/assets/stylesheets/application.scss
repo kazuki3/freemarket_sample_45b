@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-@import 'config/reset.scss';
-@import 'config/content.scss';
-@import 'config/side.scss';
-@import 'config/mypage.scss';
-=======
 @import "config/reset";
 @import "mixin/devise";
 @import "users/registrations/users";
@@ -15,6 +9,9 @@
 @import './main-header';
 @import './main-footer';
 @import './top-body';
+@import 'config/content.scss';
+@import 'config/side.scss';
+@import 'config/mypage.scss';
 
 
 * { box-sizing: border-box;
@@ -22,4 +19,3 @@
 
 a { text-decoration: none;
 }
->>>>>>> kazuki3/master

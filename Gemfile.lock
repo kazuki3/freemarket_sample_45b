@@ -81,10 +81,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.4)
     crass (1.0.4)
-<<<<<<< HEAD
-    erb2haml (0.1.5)
-      html2haml
-=======
     devise (4.6.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -94,7 +90,6 @@ GEM
     diff-lcs (1.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
->>>>>>> kazuki3/master
     erubi (1.8.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -141,10 +136,10 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     mysql2 (0.5.2)
-    netrc (0.11.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (5.1.0)
+    netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -262,11 +257,11 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
-    warden (1.2.8)
-      rack (>= 2.0.6)
     unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
+    warden (1.2.8)
+      rack (>= 2.0.6)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -292,11 +287,7 @@ DEPENDENCIES
   capistrano3-unicorn
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
-  erb2haml
-=======
   devise
->>>>>>> kazuki3/master
   haml-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

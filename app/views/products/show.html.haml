@@ -1,42 +1,68 @@
-%main.mypage-user-icon.clearfix
+.container
   .content
-    %section.mypage-user-icon
-      %figure
+    %section.mypage-user
+      .my-detail
+
         %h2.bold
           名前
-        .mypage-number
-          .mypage-number-figure
-            評価
-            %span.bold
-              0
-          .mypage-number-product
-            出品数
-            %span.bold
-              0
+      .mypage-number
+        .mypage-number-figure
+          評価
+          %span.bold
+            0
+        .mypage-number-product
+          出品数
+          %span.bold
+            0
     %section.mypage-tab-container-notification-todo
-      %ul.mapage-tabs
+      %ul.mypage-tabs
         %li.mail
-          %h3
-            お知らせ
-            %span.mypage-nav-number.hidden-large
-              お知らせの数
+          お知らせ
         %li.do
-          %h3
-            やることリスト
+          やることリスト
       .tab-content
         %ul#mypage-tab-notification.mypage-item-list
-          %li
-            %figure
+          %li.mypage-item-link
+            .picture
             .mypage-item-body
               .mypage-item-text
                 通知
-                %time
-                  %i.icon-arrow-right
-          %li.mypage-go-list
-            一覧を見る
-      %ul.#mypage-tab-todo.maypage-item-list
+              %time
+                .icon-time
+                  0時
+            %i.icon-arrow-right
+          %li.mypage-item-link
+            .picture
+            .mypage-item-body
+              .mypage-item-text
+                通知
+              %time
+                .icon-time
+                  0時
+            %i.icon-arrow-right
+          %li.mypage-item-link
+            .picture
+            .mypage-item-body
+              .mypage-item-text
+                通知
+              %time
+                .icon-time
+                  0時
+            %i.icon-arrow-right
+          %li.mypage-item-link
+            .picture
+            .mypage-item-body
+              .mypage-item-text
+                通知
+              %time
+                .icon-time
+                  0時
+            %i.icon-arrow-right
+          .mypage-item-link-bottom
+            %li.mypage-go-list
+              一覧を見る
+      %ul#mypage-tab-todo.maypage-item-list
         %li.mypage-item-not-found.bold
-          現在やるリストはありません
     %section.mypage-tab-container
       %h2.mypage-tab-head
         購入した商品
@@ -51,9 +77,9 @@
           %ul#mypage-tab-transaction-now.mypage-item-list
             %li.mypage-item-not-found.bold
               現在取引中の商品がありません
-          %ul#mypage-tab-transaction-old.mypage-item-list
-            %li.mypage-item-not-found.bold
-              過去の取引した商品はありません
+          / %ul#mypage-tab-transaction-old.mypage-item-list
+          /   %li.mypage-item-not-found.bold
+          /     過去の取引した商品はありません
   .side
     %nav.mypage-nav
       %ul.mypage-nav-list
@@ -118,8 +144,11 @@
             お問い合わせ
             %i.icon-arrow-right
     %h3.mypage-nav-head
-      メルペイ
       %ul.mypage-nav-list
+        %li
+          %a.mypage-nav-list-item-head
+            メルペイ
+            %i.icon-arrow-right
         %li
           %a.mypage-nav-list-item
             売上・振込申請
@@ -129,12 +158,16 @@
             ポイント
             %i.icon-arrow-right
     %h3.mypage-nav-head
-      設定
       %ul.mypage-nav-list
+        %li
+          %a.mypage-nav-list-item-head
+            設定
+            %i.icon-arrow-right
         %li
           %a.mypage-nav-list-item
             プロフィール
             %i.icon-arrow-right
+
         %li
           %a.mypage-nav-list-item
             発送元・お届け先住所変更

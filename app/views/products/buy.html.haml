@@ -1,0 +1,55 @@
+.outer
+
+  = render 'product-header'
+
+  %main.buy-main
+    .buy-item-container
+      %h2.buy-item-head 購入を確定しますか？
+      %section.buy-content.buy-item
+        .buy-content-inner
+          %h3.buy-item-image
+            = image_tag "https://placehold.jp/150x150.png"
+          %p.buy-item-name.bold
+            テスト商品
+          %form.buy-form
+            %p.buy-price-ja.bold
+              ¥ 680
+              %span.item-shipping-fee.f14.bold
+                送料込み
+            %ul.buy-accordion.not-have
+              %li.accrodion-parent
+                .accrodion-toggle ポイントはありません
+            %ul.buy-price-table
+              %li.buy-price-row.buy-you-pay.bold
+              %li.buy-price-cell 支払い金額
+              %li.buy-price-cell ¥ 680
+            %button.btn-buy.bold{:type => "submit"} 購入する
+
+
+      %section.buy-content.buy-user-info
+        .buy-content-inner
+          %h3 配送先
+          %address.buy-user-info-text
+            〒633-0376
+            %br
+            東京都 相楽郡精華町桜ヶ丘 4-37-9
+            %br
+            メルコリ 太郎
+          = link_to "#", class: "buy-user-info-fix" do
+            %span 変更する
+            %i.fas.fa-angle-right.arrow-right
+
+      %section.buy-content.buy-user-info
+        .buy-content-inner
+          %h3 支払方法
+          %p.buy-user-info-text
+            ************1234
+            %br
+            08 / 29
+          %figure
+            = image_tag 'jcb.svg', alt: "jcb", width: 26, height: 20
+          = link_to "#", class: "buy-user-info-fix" do
+            %span 変更する
+            %i.fas.fa-angle-right.arrow-right
+
+  = render 'product-footer'

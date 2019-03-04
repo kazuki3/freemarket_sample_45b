@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :create_params, only: [:create]
+  before_action :create_params, only: [:create, :update]
   before_action :authenticate_user!, only: [:edit, :update]
 
 
@@ -23,19 +23,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-
+# プロフィール更新ページへ移行
   def edit
-    sign_in(current_user, bypass: true)
+
   end
 
+# プロフィール更新
   def update
-    @user = Profile.new(create_params)
-      if @user.update
-        sign_in(@user, bypass: true)
-        redirect_to root_path
-      else
-        redirect_to user_registration_path
-      end
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:session][:password])
+    redirect_to root_path
+    else
+    render 'new'
+    end
   end
 
   def signout
@@ -46,6 +46,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create_params
     params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :self_introduction)
   end
+
 
   protected
   def configure_permitted_parameters

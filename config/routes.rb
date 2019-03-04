@@ -8,14 +8,16 @@ Rails.application.routes.draw do
   end
   resources :profiles
 
-  devise_for :users, :controllers => {
-   :registrations => 'users/registrations',:sessions => 'users/sessions',:passwords => 'users/passwords'
-  }
+  devise_for :users
+
+  # devise_for :users, :controllers => {
+  #  :registrations => 'users/registrations',:sessions => 'users/sessions',:passwords => 'users/passwords'
+  # }
 
   devise_scope :user do
-    get   'users/index', to: 'users/registrations#index'
+  #   get   'users/index', to: 'users/registrations#index'
     get   'users/signout', to: 'users/registrations#signout'
-    post '/users' => 'users/registrations#create'
+  #   post '/users' => 'users/registrations#create'
   end
 
   resources :payments

@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   private
-
   def production?
     Rails.env.production?
   end
@@ -13,5 +12,10 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password = ENV["BASIC_AUTH_PASSWORD"]
     end
   end
+
+  def after_sign_out_path_for(resource)
+    new_user_session_path
+  end
+
 
 end

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   root 'products#index'
-  resources :products
+    resources :products do
+    collection do
+    get 'buy'
+    end
+  end
   resources :profiles
 
   devise_for :users

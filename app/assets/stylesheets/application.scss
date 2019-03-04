@@ -1,11 +1,12 @@
 @import "config/reset";
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
-@import "mixin/devise";
-@import "users/registrations/users";
+@import "mixin/devise_users";
+@import "devise_users/registrations/users";
+@import "devise_users/registrations/signout";
 @import "payments/payments";
 @import "profiles/profiles";
-@import "users/registrations/index";
-@import "users/sessions/new";
+@import "devise_users/registrations/index";
+@import "devise_users/sessions/new";
 @import './independence';
 @import './main-header';
 @import './main-footer';
@@ -13,10 +14,13 @@
 @import 'product-header';
 @import 'product-footer';
 @import 'sell';
+@import 'buy';
 
 
 * { box-sizing: border-box;
 }
 
-a { text-decoration: none;
+a {
+  text-decoration: none;
+  color: inherit;
 }

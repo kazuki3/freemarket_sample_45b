@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 private
-
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
@@ -20,19 +19,16 @@ private
     Rails.env.production?
   end
 
-  # protect_from_forgery with: :exception
+  def after_sign_up_path_for(resource)
+    new_profile_path
+  end
 
-  # private
+  def after_sign_in_path_for(resource)
+    root_path
+  end
 
-  # def basic_auth
-  #   authenticate_or_request_with_http_basic do |username, password|
-  #     username == ENV["BASIC_AUTH_USER"] && password = ENV["BASIC_AUTH_PASSWORD"]
-  #   end
-  # end
-
-  # def after_sign_out_path_for(resource)
-  #   new_user_session_path
-  # end
-
+  def after_sign_out_path_for(resource)
+    index_path
+  end
 
 end

@@ -29,7 +29,7 @@
       %h2.register-main__container--header 会員情報入力
 
       .register-inner
-        = form_for(resource, as: resource_name, :href => './sign_up', method: :post) do |f|
+        = form_for(resource, as: resource_name, :href => '/users/sign_up', method: :post) do |f|
           = devise_error_messages!
           .register-inner__content
             .form-group

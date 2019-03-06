@@ -1,23 +1,58 @@
 .side{
   float:left;
   width: 280px;
-  margin:0 40px 0 0;
+  position:absolute;
+  margin-left:150px;
   .mypage-nav{
     padding:0;
     margin:0;
     .mypage-nav-list{
-      .mypage-nav-list-item{
-        background-color:#eee;
-        font-weight:600;
+      padding-top:40px;
+        &__item{
+          position: relative;
+          display:block;
+          height:46px;
+          padding:16px;
+          color:#333;
+          background-color:white;
+          margin-top:1px;
+          font-size:14px;
+          .icon-arrow-right{
+            position: absolute;
+            float:right;
+            top:40%;
+            right:16px;
+            display: block;
+            width: 13px;
+            height:13px;
+            border-top:solid 3px #EEEEEE;
+            border-right:solid 3px #EEEEEE;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+      .mypage-nav-list__item-gray{
         position: relative;
         display:block;
-        min-height:48px;
+        height:48px;
         padding:16px;
         color:#333;
+        margin-top:1px;
+        background-color:#DDDDDD;
+        font-weight:600;
+        font-size:14px;
         .icon-arrow-right{
           position: absolute;
-          top:50%;
+          float:right;
+          top:40%;
           right:16px;
+          display: block;
+          width: 10px;
+          height:10px;
+          border-top:solid 3px #333333;
+          border-right:solid 3px #333333;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
         }
       }
     }
@@ -25,11 +60,28 @@
   .mypage-nav-head{
     margin:40px 0 0;
     font-size: 16px;
-
     .mypage-nav-list{
-      .mypage-nav-list-item{
+      margin:8px 0 0;
+      &__item{
+        position:relative;
+        display:block;
+        min-height:48px;
+        padding:16px;
+        background-color:#fff;
+        color:#333;
+        margin-top:1px;
+        font-size:14px;
         .icon-arrow-right{
-
+          position:absolute;
+          top:40%;
+          right:16px;
+          display: block;
+          width: 13px;
+          height:13px;
+          border-top:solid 3px #EEEEEE;
+          border-right:solid 3px #EEEEEE;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
         }
       }
     }

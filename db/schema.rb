@@ -10,16 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190301070405) do
+ActiveRecord::Schema.define(version: 20190302104211) do
 
   create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "card_number", null: false
+    t.bigint "card_number", null: false
     t.date "expiration_date", null: false
     t.integer "security_code", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,8 +60,4 @@ ActiveRecord::Schema.define(version: 20190301070405) do
   end
 
   add_foreign_key "profiles", "users"
-<<<<<<< HEAD
-=======
-
->>>>>>> kazuki3/master
 end

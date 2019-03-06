@@ -1,78 +1,83 @@
 .container
   .content
-    %section.mypage-user
-      .my-detail
-
-        %h2.bold
-          名前
-      .mypage-number
-        .mypage-number-figure
+    %section.profile
+      .profile__image
+        %h2.profile__image--name
+          = link_to '名前','',class: 'profile__name'
+      .profile__number
+        .profile__number--figure
           評価
-          %span.bold
+          %span.evaluation
             0
-        .mypage-number-product
+        .profile__number--product
           出品数
-          %span.bold
+          %span.exhibit
             0
-    %section.mypage-tab-container-notification-todo
-      %ul.mypage-tabs
-        %li.mail
-          お知らせ
-        %li.do
-          やることリスト
-      .tab-content
+    %section.record
+      %ul.record__top
+        %li
+          = link_to 'お知らせ','',class: 'notice'
+        %li
+          = link_to 'やることリスト','' ,class: 'do'
+      .bottom
         %ul#mypage-tab-notification.mypage-item-list
           %li.mypage-item-link
-            .picture
-            .mypage-item-body
-              .mypage-item-text
-                通知
-              %time
-                .icon-time
-                  0時
-            %i.icon-arrow-right
+            = link_to '',class: 'mypage-item-link' do
+              = image_tag 'https://i.gyazo.com/325cdcd71c3dcb21bdda03be998fb4f1.png',class: 'picture'
+              .mypage-item
+                .mypage-item__text
+                  通知
+                  .icon-time
+                    .icon
+                    .time
+                      2日前
+              %i.icon-arrow-right
           %li.mypage-item-link
-            .picture
-            .mypage-item-body
-              .mypage-item-text
-                通知
-              %time
-                .icon-time
-                  0時
-            %i.icon-arrow-right
+            = link_to '',class: 'mypage-item-link' do
+              = image_tag 'https://i.gyazo.com/325cdcd71c3dcb21bdda03be998fb4f1.png',class: 'picture'
+              .mypage-item
+                .mypage-item__text
+                  通知
+                  .icon-time
+                    .icon
+                    .time
+                      2日前
+              %i.icon-arrow-right
           %li.mypage-item-link
-            .picture
-            .mypage-item-body
-              .mypage-item-text
-                通知
-              %time
-                .icon-time
-                  0時
-            %i.icon-arrow-right
+            = link_to '',class: 'mypage-item-link' do
+              = image_tag 'https://i.gyazo.com/325cdcd71c3dcb21bdda03be998fb4f1.png',class: 'picture'
+              .mypage-item
+                .mypage-item__text
+                  通知
+                  .icon-time
+                    .icon
+                    .time
+                      2日前
+              %i.icon-arrow-right
           %li.mypage-item-link
-            .picture
-            .mypage-item-body
-              .mypage-item-text
-                通知
-              %time
-                .icon-time
-                  0時
-            %i.icon-arrow-right
-          .mypage-item-link-bottom
-            %li.mypage-go-list
-              一覧を見る
+            = link_to '',class: 'mypage-item-link' do
+              = image_tag 'https://i.gyazo.com/325cdcd71c3dcb21bdda03be998fb4f1.png',class: 'picture'
+              .mypage-item
+                .mypage-item__text
+                  通知
+                  .icon-time
+                    .icon
+                    .time
+                      2日前
+              %i.icon-arrow-right
+          .mypage-go
+            %li
+              = link_to '一覧を見る','', class: 'mypage-go__list'
       %ul#mypage-tab-todo.maypage-item-list
         %li.mypage-item-not-found.bold
     %section.mypage-tab-container
       %h2.mypage-tab-head
         購入した商品
-        %ul.mypage-tabs
-          %li.current-transaction
-            %h3
-              現在取引中
-          %li.past-transaction
-            %h3
-              過去の取引
+        %ul.transaction
+          %li
+            =link_to '現在取引中', '',class: 'current-transaction'
+          %li
+            =link_to '過去の取引', '',class: 'past-transaction'
         .tab-content
           %ul#mypage-tab-transaction-now.mypage-item-list
             %li.mypage-item-not-found.bold
@@ -84,64 +89,60 @@
     %nav.mypage-nav
       %ul.mypage-nav-list
         %li
-          %a.mypage-nav-list-item-gray
+          %a.mypage-nav-list__item-gray
             マイページ
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            お知らせ
+          %a
+            = link_to 'お知らせ','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            やることリスト
+          %a
+            = link_to 'やることリスト','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            いいね！一覧
+          %a
+            = link_to 'いいね！一覧','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            出品する
+          %a
+            = link_to '出品する','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            出品した商品 - 出品中
+          %a
+            = link_to '出品した商品 - 出品中','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            出品した商品 - 取引中
+          %a
+            = link_to '出品した商品 - 取引中','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            出品した商品 - 売却済み
+          %a
+            = link_to '出品した商品 - 売却済み','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            購入した商品 - 取引中
+          %a
+            = link_to '購入した商品 - 取引中','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            購入した商品 - 過去の取引
+          %a
+            = link_to '購入した商品 - 過去の取引','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            購入した商品 - 過去の取引
+          %a
+            = link_to 'ニュース一覧','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            ニュース一覧
+          %a
+            = link_to '評価一覧','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            評価一覧
+          %a
+            = link_to 'ガイド','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            ガイド
-            %i.icon-arrow-right
-        %li
-          %a.mypage-nav-list-item
-            お問い合わせ
+          %a
+            = link_to 'お問い合わせ','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
     %h3.mypage-nav-head
       %ul.mypage-nav-list
@@ -149,13 +150,13 @@
           %a.mypage-nav-list-item-head
             メルペイ
             %i.icon-arrow-right
-        %li
-          %a.mypage-nav-list-item
-            売上・振込申請
+        %li.mypage-nav-list
+          %a
+            = link_to '売上・振込申請','', class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            ポイント
+          %a
+            = link_to 'ポイント', '', class: 'mypage-nav-list__item'
             %i.icon-arrow-right
     %h3.mypage-nav-head
       %ul.mypage-nav-list
@@ -164,31 +165,31 @@
             設定
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            プロフィール
+          %a.mypae-nav-list
+            = link_to 'プロフィール', '',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
 
         %li
-          %a.mypage-nav-list-item
-            発送元・お届け先住所変更
+          %a
+            = link_to '発送元・お届け先住所変更','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            お支払い方法
+          %a
+            = link_to 'お支払い方法', '',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            メール/パスワード
+          %a
+            = link_to 'メール/パスワード','',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            本人情報
+          %a
+            = link_to '本人情報', '',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            電話番号の確認
+          %a
+            = link_to '電話番号の確認', '',class: 'mypage-nav-list__item'
             %i.icon-arrow-right
         %li
-          %a.mypage-nav-list-item
-            ログアウト
+          %a
+            = link_to 'ログアウト', '',class: 'mypage-nav-list__item'
             %i.icon-arrow-right

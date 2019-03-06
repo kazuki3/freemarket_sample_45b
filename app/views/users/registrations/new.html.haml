@@ -29,35 +29,36 @@
       %h2.register-main__container--header 会員情報入力
 
       .register-inner
-        = form_with(model: @user) do |form|
+        = form_for(resource, as: resource_name, :href => '/users/sign_up', method: :post) do |f|
+          = devise_error_messages!
           .register-inner__content
             .form-group
               %span.registration_font ニックネーム
               %span.require-icon 必須
-              = form.text_field :nickname, placeholder: "例）メルカリ太郎", class:"input-default"
+              = f.text_field :nickname, placeholder: "例）メルカリ太郎", class:"input-default"
 
             .form-group
               %span.registration_font メールアドレス
               %span.require-icon 必須
-              = form.email_field :email, placeholder: "PC・携帯どちらでも可", class:"input-default"
+              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class:"input-default"
 
             .form-group
               %span.registration_font パスワード
               %span.require-icon 必須
-              = form.password_field :password, :minlength => "6", placeholder: "６文字以上", class:"input-default"
+              = f.password_field :password, :minlength => "6", placeholder: "６文字以上", class:"input-default"
 
             .form-group
               %span.registration_font パスワード（確認）
               %span.require-icon 必須
-              = form.password_field :password_confirmation, :minlength => "6", placeholder: "６文字以上", minlength: "6", class:"input-default"
+              = f.password_field :password_confirmation, :minlength => "6", placeholder: "６文字以上", minlength: "6", class:"input-default"
 
             .form-group
               %span.registration_font 自己紹介
               %span.optional-icon 任意
-              = form.text_area :self_introduction, placeholder: "", class:"input-default"
+              = f.text_area :self_introduction, placeholder: "", class:"input-default"
 
             .actions
-              = form.submit :次へ進む, class:"register-member"
+              = f.submit :次へ進む, class:"register-member"
 
   .register__container__footer
     = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"

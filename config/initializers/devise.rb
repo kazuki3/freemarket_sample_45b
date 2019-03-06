@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'ca7bd972b76fbd9136c9231bf3177c26e593f624e044dee227d708f0ccff3acf113a74e91a1efe42b0e85129917b6dd3908fa3fa2fd26d3328f65b5e0e9763e8'
+  config.secret_key = '6b098ea72ee90dea8c1609c6b4aa5bd57a374a0f44196fa239a5f406a6b3ddb681c4494960c38e8696aa8f29b66288a9a73a9ae2d638b576700a33a76fb222bd'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -260,6 +260,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope: 'email', info_fields: 'email', callback_url: "#{ENV['HOST']}/users/auth/facebook/callback"
+  config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_SECRET'], scope: 'email', oauth_callback: "#{ENV['HOST']}/users/auth/twitter/callback"
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'email', redirect_uri: "#{ENV['HOST']}/users/auth/google_oauth2/callback"
+  OmniAuth.config.logger = Rails.logger if Rails.env.development? # debug用
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

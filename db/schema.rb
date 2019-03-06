@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190305155957) do
+ActiveRecord::Schema.define(version: 20190306035258) do
 
   create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "card_number", null: false
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20190305155957) do
     t.string "address1", null: false
     t.string "address2"
     t.string "phone_number"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(version: 20190305155957) do
     t.datetime "updated_at", null: false
     t.string "nickname"
     t.text "self_introduction"
+    t.datetime "remember_created_at"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

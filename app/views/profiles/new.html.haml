@@ -23,7 +23,6 @@
           %li.active
             完了
             .progress-status
-
   %main.register-main
     %section.register-main__container
       %h2.register-main__container--header 連絡先情報登録
@@ -39,65 +38,65 @@
         本人確認書類のアップロードについて
 
       .register-inner
-        = form_with(model: @profile) do |form|
+        = form_for(@profiles) do |f|
           .register-inner__content
             .form-group
               %span.registration_font 姓（全角）
               %span.require-icon 必須
-              = form.text_field :first_name, placeholder: "例）山田", class:"input-default"
+              = f.text_field :first_name, placeholder: "例）山田", class:"input-default"
 
             .form-group
               %span.registration_font 名（全角）
               %span.require-icon 必須
-              = form.text_field :last_name, placeholder: "例）太朗", class:"input-default"
+              = f.text_field :last_name, placeholder: "例）太朗", class:"input-default"
 
             .form-group
               %span.registration_font 姓（カナ）
               %span.require-icon 必須
-              = form.text_field :first_name_kana, placeholder: "例）ヤマダ", class:"input-default"
+              = f.text_field :first_name_kana, placeholder: "例）ヤマダ", class:"input-default"
 
             .form-group
               %span.registration_font 名（カナ）
               %span.require-icon 必須
-              = form.text_field :last_name_kana, placeholder: "例）タロウ", class:"input-default"
+              = f.text_field :last_name_kana, placeholder: "例）タロウ", class:"input-default"
 
             .form-group
               %span.registration_font 生年月日
               %span.require-icon 必須
-              = form.date_field :birthdate, placeholder: "2000年2月2日", class:"input-default"
+              = f.date_field :birthdate, placeholder: "2000年2月2日", class:"input-default"
 
             .form-group
               %span.registration_font 郵便番号
               %span.require-icon 必須
-              = form.text_field :zip_code,  :maxlength => "9", placeholder: "123-45678", class:"input-default"
+              = f.text_field :zip_code,  :maxlength => "9", placeholder: "123-4567", class:"input-default"
 
             .form-group
               %span.registration_font 都道府県
               %span.require-icon 必須
-              = form.text_field :prefecture,  placeholder: "東京都", class:"input-default"
+              = f.text_field :prefecture,  placeholder: "東京都", class:"input-default"
 
             .form-group
               %span.registration_font 区市町村
               %span.require-icon 必須
-              = form.text_field :city, placeholder: "品川区", class:"input-default"
+              = f.text_field :city, placeholder: "品川区", class:"input-default"
 
             .form-group
               %span.registration_font 町名番地
               %span.require-icon 必須
-              = form.text_field :address1, placeholder: "１丁目１−１", class:"input-default"
+              = f.text_field :address1, placeholder: "１丁目１−１", class:"input-default"
 
             .form-group
               %span.registration_font マンション名・部屋番号
               %span.optional-icon 任意
-              = form.text_field :address2, placeholder: "タワー１０１号室", class:"input-default"
+              = f.text_field :address2, placeholder: "タワー１０１号室", class:"input-default"
 
             .form-group
               %span.registration_font 電話番号
               %span.require-icon 必須
-              = form.telephone_field :phone_number, :maxlength => "13", placeholder: "090-1234-5678", class:"input-default"
+              = f.telephone_field :phone_number, :maxlength => "13", placeholder: "090-1234-5678", class:"input-default"
 
             .actions
-              = form.submit :お支払情報登録へ, class:"register-member"
+              = f.submit :お支払情報登録へ, class:"register-member"
 
   .register__container__footer
     = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"

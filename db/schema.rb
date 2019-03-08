@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190302104211) do
+=======
+ActiveRecord::Schema.define(version: 20190308061627) do
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "image", null: false
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_images_on_product_id"
+  end
+>>>>>>> kazuki3/master
 
   create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "card_number", null: false
@@ -22,9 +42,34 @@ ActiveRecord::Schema.define(version: 20190302104211) do
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+  create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.text "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price", null: false
+    t.integer "condition", null: false
+    t.integer "postage", null: false
+    t.integer "shipping_method", null: false
+    t.integer "date", null: false
+    t.integer "status", default: 0, null: false
+    t.bigint "category_id"
+    t.bigint "seller_id"
+    t.bigint "prefecture_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
+    t.index ["seller_id"], name: "index_products_on_seller_id"
+>>>>>>> kazuki3/master
   end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -48,16 +93,17 @@ ActiveRecord::Schema.define(version: 20190302104211) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nickname"
     t.text "self_introduction"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "products"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "prefectures"
+  add_foreign_key "products", "users", column: "seller_id"
   add_foreign_key "profiles", "users"
 end

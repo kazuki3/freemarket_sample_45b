@@ -23,12 +23,12 @@
           .sell-content
             .sell-content__info
               .form-group
-                %label.sell-content__label
+                = f.label :name, {class: "sell-content__label"} do
                   商品名
                   %span.form-require 必須
                 = f.text_field :name, class: 'sell-content__info--name-form', placeholder: "商品名（必須40文字まで）"
               .form-group
-                %label.sell-content__label
+                = f.label :detail, {class: "sell-content__label"} do
                   商品の説明
                   %span.form-require 必須
                 = f.text_area :detail, class: 'sell-content__info--detail-form', placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
@@ -36,22 +36,16 @@
           .sell-content.clearfix
             %h3.sell-sub-head 商品の詳細
             .sell-content__detail
-              .form-group
-                %label.sell-content__label
+              .form-group#category
+                = f.label :categoery_id, {class: "sell-content__label"} do
                   カテゴリー
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :category_id, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
-                .select-wrap
-                  = f.select :category_id, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
-                .select-wrap
-                  = f.select :category_id, {}, {prompt: "---"}, {class: 'select-default'}
+                  = f.collection_select :category_id, {}, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'parent-category'}
                   %i.fas.fa-angle-down.select-icon
 
               .form-group
-                %label.sell-content__label
+                = f.label :size_id, {class: "sell-content__label"} do
                   サイズ
                   %span.form-require 必須
                 .select-wrap
@@ -59,7 +53,7 @@
                   %i.fas.fa-angle-down.select-icon
 
               .form-group
-                %label.sell-content__label
+                = f.label :brand_id, {class: "sell-content__label"} do
                   ブランド
                   %span.form-optional 任意
                 .select-wrap
@@ -67,7 +61,7 @@
                   %i.fas.fa-angle-down.select-icon
 
               .form-group
-                %label.sell-content__label
+                = f.label :condition, {class: "sell-content__label"} do
                   商品の状態
                   %span.form-require 必須
                 .select-wrap
@@ -80,29 +74,23 @@
               = link_to "#", class: "question-icon" do
                 ?
             .sell-content__detail
-              .form-group
-                %label.sell-content__label
+              .form-group#postage_form
+                = f.label :postage, {class: "sell-content__label"} do
                   送料の負担
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :postage, {}, {prompt: "---"}, {class: 'select-default'}
+                  = f.select :postage, {}, {prompt: "---"}, {class: 'select-default', id: 'postage'}
                   %i.fas.fa-angle-down.select-icon
+
               .form-group
-                %label.sell-content__label
-                  配送の方法
-                  %span.form-require 必須
-                .select-wrap
-                  = f.select :shipping_method, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
-              .form-group
-                %label.sell-content__label
+                = f.label :region, {class: "sell-content__label"} do
                   発送元の地域
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :region, {}, {prompt: "---"}, {class: 'select-default'}
+                  = f.collection_select :prefecture, Prefecture.all, :id, :name, {prompt: "---"}, {class: 'select-default'}
                   %i.fas.fa-angle-down.select-icon
               .form-group
-                %label.sell-content__label
+                = f.label :date, {class: "sell-content__label"} do
                   発送前の日数
                   %span.form-require 必須
                 .select-wrap
@@ -118,7 +106,7 @@
               %ul.sell-content__price
                 %li.form-group
                   %div.clearfix
-                    %label.sell-content__label.l-left.price
+                    = f.label :price, {class: "sell-content__label l-left price"} do
                       価格
                       %span.form-require 必須
                     %div.l-right.sell-content__price--input

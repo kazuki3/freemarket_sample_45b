@@ -1,1 +1,29 @@
+<<<<<<< HEAD
 @import 'config/reset.scss';
+=======
+@import "config/reset";
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
+@import 'mixin/users_devise';
+@import 'users_devise/new';
+@import 'users_devise/index';
+@import 'users_devise/users';
+@import "profiles/profiles";
+@import "payments/payments";
+@import "profiles/signout";
+@import './independence';
+@import './main-header';
+@import './main-footer';
+@import './top-body';
+@import 'product-header';
+@import 'product-footer';
+@import 'sell';
+@import 'buy';
+
+* { box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+>>>>>>> kazuki3/master

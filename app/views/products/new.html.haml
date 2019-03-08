@@ -40,7 +40,7 @@
                   カテゴリー
                   %span.form-require 必須
                 .select-wrap
-                  = f.collection_select :category_id, @category_root, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'parent-category'}
+                  = f.collection_select :category_id, {}, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'parent-category'}
                   %i.fas.fa-angle-down.select-icon
 
               .form-group
@@ -64,7 +64,7 @@
                   商品の状態
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :condition, Product.conditions_i18n.invert, {prompt: "---"}, {class: 'select-default'}
+                  = f.select :condition, {}, {prompt: "---"}, {class: 'select-default'}
                   %i.fas.fa-angle-down.select-icon
 
           .sell-content.clearfix
@@ -78,7 +78,7 @@
                   送料の負担
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :postage, Product.postages_i18n.invert, {prompt: "---"}, {class: 'select-default', id: 'postage'}
+                  = f.select :postage, {}, {prompt: "---"}, {class: 'select-default', id: 'postage'}
                   %i.fas.fa-angle-down.select-icon
 
               .form-group
@@ -93,7 +93,7 @@
                   発送前の日数
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :date, Product.dates_i18n.invert, {prompt: "---"}, {class: 'select-default'}
+                  = f.select :date, {}, {prompt: "---"}, {class: 'select-default'}
                   %i.fas.fa-angle-down.select-icon
 
           .sell-content.clearfix

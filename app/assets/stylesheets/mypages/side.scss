@@ -17,18 +17,14 @@
           background-color:white;
           margin-top:1px;
           font-size:14px;
-          .icon-arrow-right{
+          .fas.fa-angle-right{
             position: absolute;
             float:right;
-            top:40%;
-            right:16px;
-            display: block;
-            width: 13px;
-            height:13px;
-            border-top:solid 3px #EEEEEE;
-            border-right:solid 3px #EEEEEE;
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+            top:30%;
+            right:15px;
+            size:5x;
+            color:#DDDDDD;
+            font-size:25px;
           }
         }
       .mypage-nav-list__item-gray{
@@ -41,7 +37,7 @@
         background-color:#DDDDDD;
         font-weight:600;
         font-size:14px;
-        .icon-arrow-right{
+        .fa-angle-right-1{
           position: absolute;
           float:right;
           top:40%;
@@ -71,17 +67,20 @@
         color:#333;
         margin-top:1px;
         font-size:14px;
-        .icon-arrow-right{
+        &--head{
+          font-weight:600;
+          font-size:16px;
+          -bottom:2px;
+        }
+        .fa-angle-right{
           position:absolute;
-          top:40%;
+          top:30%;
           right:16px;
           display: block;
           width: 13px;
           height:13px;
-          border-top:solid 3px #EEEEEE;
-          border-right:solid 3px #EEEEEE;
-          -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+          color:#DDDDDD;
+          font-size:25px;
         }
       }
     }

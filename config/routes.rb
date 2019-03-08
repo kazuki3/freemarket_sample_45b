@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :products do
     collection do
     get 'buy'
+    get   '/show', to: 'products#show'
     end
   end
   resources :profiles
@@ -20,7 +21,6 @@ Rails.application.routes.draw do
 
   resources :payments
   get   '/show', to: 'products#show'
-
   # resources :profiles do
   #   collection do
   #     get 'signout'

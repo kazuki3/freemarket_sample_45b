@@ -16,11 +16,46 @@
   width: 8vw;
   height: 10vh;
   #payment_expiration_date_1i {
-
     width: 100%;
     height: 100%;
   }
 }
 
-#payment_expiration_date_2i {
+.card-png{
+  width: 20vw;
+  margin-top: 0.3vh;
+}
+
+.card-indo{
+  font-size: 0.8vw;
+  width: 100%;
+  margin-top: 3%;
+  color: #0099e8;
+  cursor: pointer;
+}
+
+#payment_expiration_date_1i{
+  -webkit-appearance: none;
+  width: 30%;
+  height: 60px;
+  padding: 10px 16px 8px;
+  border-radius:4px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  font-size: 1vw;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+
+#payment_expiration_date_2i{
+  -webkit-appearance: none;
+  width: 30%;
+  height: 60px;
+  padding: 10px 16px 8px;
+  border-radius:4px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  font-size: 1vw;
+  cursor: pointer;
+  background-color: #FFFFFF;
 }

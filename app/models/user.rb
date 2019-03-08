@@ -11,6 +11,10 @@ class User < ApplicationRecord
          omniauth_providers: %i(google_oauth2)
 
 
+  has_one :profile
+  has_many :products
+
+
   def self.find_for_google(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
     unless user

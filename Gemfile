@@ -66,12 +66,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry-rails'
 gem 'haml-rails'
-<<<<<<< HEAD
-=======
 gem 'devise'
 gem 'wicked'
 gem 'rb-readline'
 gem 'payjp'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
->>>>>>> kazuki3/master

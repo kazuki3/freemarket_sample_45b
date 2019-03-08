@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'products#index'
 
   get   '/show', to: 'products#show'
-=======
 
 devise_for :users, :controllers => {
  :registrations => 'users/registrations',
@@ -30,6 +28,4 @@ devise_for :users, :controllers => {
   #   post '/users', to: 'users/registrations#create'
   # end
 
-
->>>>>>> kazuki3/master
 end

@@ -1,12 +1,10 @@
 class ProductsController < ApplicationController
-<<<<<<< HEAD
   def index
   end
 
   def show
   end
 
-=======
 
   def index
   end
@@ -20,6 +18,4 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-
->>>>>>> kazuki3/master
 end

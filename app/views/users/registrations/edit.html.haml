@@ -6,14 +6,14 @@
     %section.register-main__container
       %h2.register-main__profile-header
         プロフィール
-      / = form_with(model: @users @profile) do |form|
+      / = form_with(model: @users ) do |form|
       .register-main__profile-band
         .register-main__profile-band__inner-box
           = image_tag "", class:"my-icon", alt:"アイコン"
           -# = form.text_field {@user :nickname}, class:"input-default"
         .register-inner__content
           .register-inner__content-textarea
-            -# = form.text_area {@profile :self_introduction}, class:""
+            -# = form.text_area {@user :self_introduction}, class:""
           .sign-out-btn
             = link_to "変更する", user_registration_path, method: :patch
 

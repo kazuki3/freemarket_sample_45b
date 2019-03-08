@@ -1,9 +1,9 @@
 @import "config/reset";
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
-@import 'mixin/users_devise';
-@import 'users_devise/new';
-@import 'users_devise/index';
-@import 'users_devise/users';
+@import 'mixin/users';
+@import 'users/new';
+@import 'users/index';
+@import 'users/users';
 @import "profiles/profiles";
 @import "payments/payments";
 @import "profiles/signout";

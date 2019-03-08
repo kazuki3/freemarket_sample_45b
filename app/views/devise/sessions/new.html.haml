@@ -2,7 +2,7 @@
   .register__container__header
     = image_tag "logo.svg", class:"campany-logo", alt:"メルカリロゴ"
 
-  %main.register-main_login
+  %main.register-main
     %section.register-main__container
       %h2.register-main__header__login
         アカウントをお持ちでない方はこちら
@@ -31,8 +31,8 @@
               .form-group
                 = form.password_field :password, :minlength => "6", placeholder: "パスワード", class:"input-default"
 
-            .actions
-              = form.submit :ログイン, class:"register-member"
+              .actions
+                = form.submit :ログイン, class:"register-member"
 
             .forget-pass
               パスワードをお忘れの方

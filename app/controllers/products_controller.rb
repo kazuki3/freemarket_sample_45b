@@ -7,13 +7,6 @@ class ProductsController < ApplicationController
   def show
   end
 
-<<<<<<< HEAD
-  def new
-    @product = Product.new
-  end
-
-=======
-
   def new
     @category_root = Category.find(1).siblings
     @product = Product.new
@@ -28,7 +21,4 @@ class ProductsController < ApplicationController
     end
   end
 
-
-
->>>>>>> kazuki3/master
 end

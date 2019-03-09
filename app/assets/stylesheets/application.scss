@@ -1,14 +1,5 @@
 @import "config/reset";
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
-<<<<<<< HEAD
-@import "mixin/devise_users";
-@import "devise_users/registrations/users";
-@import "devise_users/registrations/signout";
-@import "payments/payments";
-@import "profiles/profiles";
-@import "devise_users/registrations/index";
-@import "devise_users/sessions/new";
-=======
 @import 'mixin/users_devise';
 @import 'users_devise/new';
 @import 'users_devise/index';
@@ -16,25 +7,17 @@
 @import "profiles/profiles";
 @import "payments/payments";
 @import "profiles/signout";
->>>>>>> kazuki3/master
 @import './independence';
 @import './main-header';
 @import './main-footer';
 @import './top-body';
-<<<<<<< HEAD
 @import 'mypages/mypage';
 @import 'mypages/side';
 @import 'mypages/content';
-=======
->>>>>>> kazuki3/master
 @import 'product-header';
 @import 'product-footer';
 @import 'sell';
 @import 'buy';
-<<<<<<< HEAD
-
-=======
->>>>>>> kazuki3/master
 
 * { box-sizing: border-box;
 }

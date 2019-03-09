@@ -169,19 +169,15 @@
             }
           }
         }
-        .icon-arrow-right{
+        .fas.fa-angle-right{
           position:absolute;
           top:50%;
           right:16px;
           float:right;
           top:40%;
-          display: block;
-          width: 10px;
-          height:10px;
-          border-top:solid 3px #333333;
-          border-right:solid 3px #333333;
-          -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+          width: 15px;
+          height:15px;
+          font-size:25px;
         }
       }
       .mypage-go{

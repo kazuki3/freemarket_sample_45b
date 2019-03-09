@@ -18,12 +18,7 @@ private
 
 
   protect_from_forgery with: :exception
-
-<<<<<<< HEAD
   private
-=======
-
->>>>>>> kazuki3/master
   def production?
     Rails.env.production?
   end

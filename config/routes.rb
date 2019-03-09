@@ -7,6 +7,7 @@ devise_for :users, :controllers => {
 
   root 'products#index'
     resources :products do
+    get 'show'
     collection do
     get 'buy'
     end

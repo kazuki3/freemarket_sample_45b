@@ -120,6 +120,7 @@
 |image|string| --- |
 |product|references|null:false, foreign_key:true|
 
+
 ### Association
 * belongs_to :product
 
@@ -194,6 +195,8 @@
 ### Association
 * belongs_to :user
 * belongs_to :item
+* belongs_to :product
+
 
 ## productsテーブル
 | Column | Type | Options |
@@ -304,4 +307,3 @@
 * belongs_to :user
 * belongs_to :item
 * belongs_to :product
-

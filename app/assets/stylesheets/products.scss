@@ -252,7 +252,7 @@
   margin: 0 auto;
   &-box {
     font-size: 0;
-    &__box-head {
+      &__box-head {
       padding    : 24px 0 8px;
       font-size  : 22px;
       font-weight: bold;
@@ -264,9 +264,10 @@
         }
       }
     }
-    &__item-box:nth-child(3n+1) {
+    .body-items-box__item-box:nth-child(3n+1) {
       margin-right: 0;
     }
     @include item-box($width: 220px, $height: 220px);
+
   }
 }

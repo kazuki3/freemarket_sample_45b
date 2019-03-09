@@ -9,10 +9,10 @@
 			margin: 0 auto;
 			font-size: 0;
 
-		    .body-items-box__box-head {
-				padding: 24px 0 8px;
-				font-size: 22px;
-				font-weight: bold;
+	    &__box-head {
+			padding: 24px 0 8px;
+			font-size: 22px;
+			font-weight: bold;
 			}
 			.body-items-box__item-box:nth-child(5n+1) {
 				margin-right: 0;

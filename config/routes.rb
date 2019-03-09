@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'products#index'
 
   get   '/show', to: 'products#show'
+  resources
 
 devise_for :users, :controllers => {
  :registrations => 'users/registrations',

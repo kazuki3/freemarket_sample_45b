@@ -72,10 +72,7 @@ gem 'rb-readline'
 gem 'payjp'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-<<<<<<< HEAD
 gem 'ancestry'
 gem 'enum_help'
 gem 'active_hash'
 gem "jquery-rails"
-=======
->>>>>>> master

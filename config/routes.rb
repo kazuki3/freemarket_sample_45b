@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-=======
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'products#index'
-
-  get   '/show', to: 'products#show'
->>>>>>> master
 
 devise_for :users, :controllers => {
  :registrations => 'users/registrations',
@@ -14,10 +7,7 @@ devise_for :users, :controllers => {
 
   root 'products#index'
     resources :products do
-<<<<<<< HEAD
     get 'show'
-=======
->>>>>>> master
     collection do
     get 'buy'
     end

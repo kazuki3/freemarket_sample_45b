@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190308061627) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -28,9 +27,6 @@ ActiveRecord::Schema.define(version: 20190308061627) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_images_on_product_id"
   end
-=======
-ActiveRecord::Schema.define(version: 20190302104211) do
->>>>>>> master
 
   create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "card_number", null: false
@@ -42,7 +38,6 @@ ActiveRecord::Schema.define(version: 20190302104211) do
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
-<<<<<<< HEAD
   create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -65,11 +60,6 @@ ActiveRecord::Schema.define(version: 20190302104211) do
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
     t.index ["seller_id"], name: "index_products_on_seller_id"
-=======
-  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
->>>>>>> master
   end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

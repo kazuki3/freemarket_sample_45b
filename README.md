@@ -119,7 +119,6 @@
 |:-----------|------------:|:------------:|
 |image|string| --- |
 |product|references|null:false, foreign_key:true|
-<<<<<<< HEAD
 
 ### Association
 * belongs_to :product
@@ -190,19 +189,11 @@
 |user|references|foreign_keys:true|
 |product|references|foreign_key:true|
 |approve_at|date|null:true|
-
-<<<<<<< HEAD
 * ...
 
-=======
 ### Association
 * belongs_to :user
 * belongs_to :item
->>>>>>> kazuki3/master
-=======
-
-### Association
-* belongs_to :user
 
 ## productsテーブル
 | Column | Type | Options |
@@ -238,11 +229,8 @@
 |image|string| --- |
 |product|references|null:false, foreign_key:true|
 
-### Association
-=======
 
 ### Association
->>>>>>> master
 * belongs_to :product
 
 ## brandsテーブル
@@ -314,17 +302,6 @@
 
 ### Association
 * belongs_to :user
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 * belongs_to :item
->>>>>>> kazuki3/master
-=======
 * belongs_to :product
->>>>>>> kazuki3/master
-=======
-* belongs_to :product
->>>>>>> kazuki3/master
-=======
-* belongs_to :product
->>>>>>> master
+

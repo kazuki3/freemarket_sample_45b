@@ -119,6 +119,7 @@
 |:-----------|------------:|:------------:|
 |image|string| --- |
 |product|references|null:false, foreign_key:true|
+<<<<<<< HEAD
 
 ### Association
 * belongs_to :product
@@ -238,6 +239,10 @@
 |product|references|null:false, foreign_key:true|
 
 ### Association
+=======
+
+### Association
+>>>>>>> master
 * belongs_to :product
 
 ## brandsテーブル
@@ -311,6 +316,7 @@
 * belongs_to :user
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 * belongs_to :item
 >>>>>>> kazuki3/master
 =======
@@ -319,3 +325,6 @@
 =======
 * belongs_to :product
 >>>>>>> kazuki3/master
+=======
+* belongs_to :product
+>>>>>>> master

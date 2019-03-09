@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def new
+<<<<<<< HEAD
     @category_root = Category.find(1).siblings
     @product = Product.new
   end
@@ -21,4 +22,9 @@ class ProductsController < ApplicationController
     end
   end
 
+=======
+    @product = Product.new
+  end
+
+>>>>>>> master
 end

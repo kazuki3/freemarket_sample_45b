@@ -1,4 +1,11 @@
 class ProfilesController < ApplicationController
+  before_action :profile_params, only: [:create, :edit, :update]
+
+  def index
+
+  end
+  # before_action :authenticate_user!, only: [:new, :create]
+  # before_action :authenticate_user!, only: [:new, :create]
   # before_action :authenticate_user!, only: [:new, :create]
 
   def new

@@ -4,17 +4,17 @@
     %nav.progress-bar
       %ol.clearfix
         .activ-box
-          %li.active
+          %li.active-red
             会員情報
-            .progress-status
+            .progress-status-first
         .activ-box
-          %li.active
+          %li.active-red
             電話番号認証
-            .progress-status
+            .progress-status-red
         .activ-box
-          %li.active
+          %li.active-red
             連絡先情報
-            .progress-status
+            .progress-status-red
         .activ-box
           %li.active
             支払い方法
@@ -22,6 +22,7 @@
         .activ-box
           %li.active
             完了
+            .progress-status-last
             .progress-status
   %main.register-main
     %section.register-main__container
@@ -97,6 +98,9 @@
 
             .actions
               = f.submit :お支払情報登録へ, class:"register-member"
+<<<<<<< HEAD
 
+=======
+>>>>>>> asahi
   .register__container__footer
     = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"

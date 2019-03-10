@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'products#index'
-
-  get   '/show', to: 'products#show'
-  resources
 
 devise_for :users, :controllers => {
  :registrations => 'users/registrations',
@@ -12,8 +7,9 @@ devise_for :users, :controllers => {
 
   root 'products#index'
     resources :products do
-    collection do
-    get 'buy'
+      get 'show'
+      collection do
+        get 'buy'
     end
   end
 

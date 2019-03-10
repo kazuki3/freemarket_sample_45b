@@ -1,4 +1,3 @@
-
 .register__container{
   @include register__container
 }
@@ -11,7 +10,23 @@
   @include progress-bar
 }
 
+.active-red{
+  @include active-red
+}
+
+.progress-status-red{
+  @include progress-status-red
+}
+
+.progress-status-first{
+  @include progress-status-first
+}
+
 .progress-status{
+  @include progress-status
+}
+
+.progress-status-last{
   @include progress-status
 }
 

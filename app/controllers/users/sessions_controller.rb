@@ -28,29 +28,6 @@ class Users::SessionsController < Devise::SessionsController
     end
   end
 
-  # before_action :configure_sign_in_params, only: [:create]
-  # GET /resource/sign_in
-  # def new
-  #   super
-  # end
-
-  # POST /resource/sign_in
-  # def create
-  #   super
-  # end
-  # before_action :configure_sign_in_params, only: [:create]
-
-  # GET /resource/sign_in
-  # def new
-  #   super
-  # end
-
-  # POST /resource/sign_in
-  # def create
-  #   super
-  # end
-
-  # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
   # def new

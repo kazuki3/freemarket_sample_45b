@@ -6,7 +6,9 @@ devise_for :users, :controllers => {
  :sessions => 'users/sessions'
 }
 
-# devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
 
   root 'products#index'
     resources :products do

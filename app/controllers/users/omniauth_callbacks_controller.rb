@@ -4,6 +4,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # devise :omniauthable, omniauth_providers: [:facebook]
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: %i[facebook twitter google_oauth2]
+  # devise :omniauthable, omniauth_providers: [:twitter]
+    devise :omniauthable, omniauth_providers: %i[facebook twitter google_oauth2]
+
+  
   # You should also create an action method in this controller like this:
 
  # # callback for facebook
@@ -82,6 +86,13 @@ end
   #   super
   # end
 
+  # omniauthのコールバック時に呼ばれるメソッド
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+    end
+  end
 
   # protected
 
@@ -89,3 +100,5 @@ end
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
+
+end

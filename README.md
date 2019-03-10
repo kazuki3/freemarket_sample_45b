@@ -81,7 +81,6 @@
 |:-----------|------------:|:------------:|
 |deposit|integer|default:0|
 |user|references|null:false, foreign_key:true|
-<<<<<<< HEAD
 
 ### Association
 * belongs_to :user
@@ -119,6 +118,9 @@
 |:-----------|------------:|:------------:|
 |image|string| --- |
 |product|references|null:false, foreign_key:true|
+
+### Association
+* belongs_to :product
 
 ### Association
 * belongs_to :product

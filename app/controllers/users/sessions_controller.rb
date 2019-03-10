@@ -28,6 +28,12 @@ class Users::SessionsController < Devise::SessionsController
     end
   end
 
+<<<<<<< HEAD
+=======
+  # before_action :configure_sign_in_params, only: [:create]
+
+ 
+>>>>>>> origin/asahi
 
   # GET /resource/sign_in
   # def new

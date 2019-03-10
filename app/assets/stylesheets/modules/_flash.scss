@@ -1,0 +1,13 @@
+.flash {
+  position-bottom: 0px;
+  padding:1vh 1vh;
+  text-align: center;
+  font-size: 1vw;
+  color: #FFFFFF;
+  &__alert{
+    background-color: #FF3333;
+  }
+  &__notice {
+    background-color: #ea352d;
+  }
+}

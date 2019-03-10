@@ -79,8 +79,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # protected
 
-  # If you have extra params to permit, append them to the sanitizer.
-=======
+
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -93,8 +92,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # protected
 
-  # If you have extra params to permit, append them to the sanitizer.
->>>>>>> origin/master
+  # If you have extra params to permit, append them to the sanitiz
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   # end

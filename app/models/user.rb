@@ -43,4 +43,7 @@ class User < ApplicationRecord
     end
     return user
   end
+
+  def self.find_oauth(auth)
+  end
 end

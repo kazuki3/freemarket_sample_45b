@@ -1,4 +1,3 @@
-
 // メルカリロゴ（赤）ーーーーーーーーーーーーーーー
 
 @mixin campany-logo{
@@ -64,10 +63,14 @@
 
 @mixin active-red{
   font-size: 0.9vw;
-        margin:auto auto 20px auto;
-        font-weight: 600;
-        color: #ea352d;
-        cursor: pointer;
+  margin:auto auto 20px auto;
+  font-weight: 600;
+  color: #ea352d;
+  cursor: pointer;
+  margin:auto auto 20px auto;
+  font-weight: 600;
+  color: #ea352d;
+  cursor: pointer;
 }
 
 // ----------------------------------------
@@ -81,22 +84,22 @@
   background: #ea352d;
   border-radius: 50%;
   position:relative;
-}
-.progress-status-red:before{
-  position:absolute;
-  border-bottom:solid 2px #ea352d;
-  content:'';
-  width:65px;
-  height:6px;
-  margin-left:12px;
-}
-.progress-status-red:after{
-  position:absolute;
-  border-bottom:solid 2px #ea352d;
-  content:'';
-  width:65px;
-  height:6px;
-  right:100%;
+  &:before{
+    position:absolute;
+    border-bottom:solid 2px #ea352d;
+    content:'';
+    width:65px;
+    height:6px;
+    margin-left:12px;
+  }
+  &:after{
+    position:absolute;
+    border-bottom:solid 2px #ea352d;
+    content:'';
+    width:65px;
+    height:6px;
+    right:100%;
+  }
 }
 
 
@@ -110,16 +113,15 @@
   background: #ea352d;
   border-radius: 50%;
   position:relative;
+  &:after{
+    position:absolute;
+    border-bottom:solid 2px #ea352d;
+    content:'';
+    width:65px;
+    height:6px;
+    margin-left:12px;
+  }
 }
-.progress-status-first:after{
-  position:absolute;
-  border-bottom:solid 2px #ea352d;
-  content:'';
-  width:65px;
-  height:6px;
-  margin-left:12px;
-}
-
 // ------------------------------------------
 
 // 進捗状況の丸印の部分(2.3.4番目)  ーーーーーーーーーーーーー
@@ -131,25 +133,23 @@
   background: #ccc;
   border-radius: 50%;
   position:relative;
-
+  &:before{
+    position:absolute;
+    border-bottom:solid 2px #ccc;
+    content:'';
+    width:65px;
+    height:6px;
+    margin-left:12px;
+  }
+  &:after{
+    position:absolute;
+    border-bottom:solid 2px #ccc;
+    content:'';
+    width:65px;
+    height:6px;
+    right:100%;
+  }
 }
-.progress-status:before{
-  position:absolute;
-  border-bottom:solid 2px #ccc;
-  content:'';
-  width:65px;
-  height:6px;
-  margin-left:12px;
-}
-.progress-status:after{
-  position:absolute;
-  border-bottom:solid 2px #ccc;
-  content:'';
-  width:65px;
-  height:6px;
-  right:100%;
-}
-
 // ーーーーーーーーーーーーーーーーーーーーーーーー
 
 // 進捗状況の丸印の部分(5番目)---------------
@@ -161,16 +161,15 @@
   background: #ccc;
   border-radius: 50%;
   position:relative;
+  &:before{
+    position:absolute;
+    border-bottom:solid 2px #ccc;
+    content:'';
+    width:65px;
+    height:6px;
+    right:100%;
+  }
 }
-.progress-status-last:before{
-  position:absolute;
-  border-bottom:solid 2px #ccc;
-  content:'';
-  width:65px;
-  height:6px;
-  right:100%;
-}
-
 // ------------------------------------------
 
 // 会員情報登録のセンター部分の枠 ーーーーーーーー

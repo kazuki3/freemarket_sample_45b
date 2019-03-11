@@ -34,22 +34,7 @@
           .sell-content.clearfix
             %h3.sell-sub-head 商品の詳細
             .sell-content__detail
-<<<<<<< HEAD
-              .form-group
-                %label.sell-content__label
-                  カテゴリー
-                  %span.form-require 必須
-                .select-wrap
-                  = f.select :category_id, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
-                .select-wrap
-                  = f.select :category_id, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
-                .select-wrap
-                  = f.select :category_id, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
-=======
->>>>>>> origin/asahi
+
               .form-group#category
                 = f.label :categoery_id, {class: "sell-content__label"} do
                   カテゴリー
@@ -88,32 +73,6 @@
               = link_to "#", class: "question-icon" do
                 ?
             .sell-content__detail
-<<<<<<< HEAD
-              .form-group
-                %label.sell-content__label
-                  送料の負担
-                  %span.form-require 必須
-                .select-wrap
-                  = f.select :postage, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
-              .form-group
-                %label.sell-content__label
-                  配送の方法
-                  %span.form-require 必須
-                .select-wrap
-                  = f.select :shipping_method, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
-              .form-group
-                %label.sell-content__label
-                  発送元の地域
-                  %span.form-require 必須
-                .select-wrap
-                  = f.select :region, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
-              .form-group
-                %label.sell-content__label
-=======
->>>>>>> origin/asahi
               .form-group#postage_form
                 = f.label :postage, {class: "sell-content__label"} do
                   送料の負担
@@ -146,10 +105,6 @@
               %ul.sell-content__price
                 %li.form-group
                   %div.clearfix
-<<<<<<< HEAD
-                    %label.sell-content__label.l-left.price
-=======
->>>>>>> origin/asahi
                     = f.label :price, {class: "sell-content__label l-left price"} do
                       価格
                       %span.form-require 必須

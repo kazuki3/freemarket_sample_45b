@@ -1,3 +1,5 @@
+$light_red: #ea352d;
+$light_gray: #ccc;
 // メルカリロゴ（赤）ーーーーーーーーーーーーーーー
 
 @mixin campany-logo{
@@ -50,7 +52,7 @@
         font-size: 0.9vw;
         margin:auto auto 20px auto;
         font-weight: 600;
-        color: #ccc;
+        color: $light_gray;
         cursor: pointer;
       }
     }
@@ -69,7 +71,7 @@
   cursor: pointer;
   margin:auto auto 20px auto;
   font-weight: 600;
-  color: #ea352d;
+  color: $light_red;
   cursor: pointer;
 }
 
@@ -81,12 +83,12 @@
   width: 12px;
   height: 12px;
   margin: 8px auto 0;
-  background: #ea352d;
+  background: $light_red;
   border-radius: 50%;
   position:relative;
   &:before{
     position:absolute;
-    border-bottom:solid 2px #ea352d;
+    border-bottom:solid 2px $light_red;
     content:'';
     width:65px;
     height:6px;
@@ -94,7 +96,7 @@
   }
   &:after{
     position:absolute;
-    border-bottom:solid 2px #ea352d;
+    border-bottom:solid 2px $light_red;
     content:'';
     width:65px;
     height:6px;
@@ -110,12 +112,12 @@
   width: 12px;
   height: 12px;
   margin: 8px auto 0;
-  background: #ea352d;
+  background: $light_red;
   border-radius: 50%;
   position:relative;
   &:after{
     position:absolute;
-    border-bottom:solid 2px #ea352d;
+    border-bottom:solid 2px $light_red;
     content:'';
     width:65px;
     height:6px;
@@ -130,12 +132,12 @@
   width: 12px;
   height: 12px;
   margin: 8px auto 0;
-  background: #ccc;
+  background: $light_gray;
   border-radius: 50%;
   position:relative;
   &:before{
     position:absolute;
-    border-bottom:solid 2px #ccc;
+    border-bottom:solid 2px $light_gray;
     content:'';
     width:65px;
     height:6px;
@@ -143,7 +145,7 @@
   }
   &:after{
     position:absolute;
-    border-bottom:solid 2px #ccc;
+    border-bottom:solid 2px $light_gray;
     content:'';
     width:65px;
     height:6px;
@@ -158,12 +160,12 @@
   width: 12px;
   height: 12px;
   margin: 8px auto 0;
-  background: #ccc;
+  background: $light_gray;
   border-radius: 50%;
   position:relative;
   &:before{
     position:absolute;
-    border-bottom:solid 2px #ccc;
+    border-bottom:solid 2px $light_gray;
     content:'';
     width:65px;
     height:6px;

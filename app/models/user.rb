@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_one :users
   has_many :sns_credentials
 
-  def self.find_oauth(auth)
+  def self.create_oauth(auth)
     uid = auth.uid
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first

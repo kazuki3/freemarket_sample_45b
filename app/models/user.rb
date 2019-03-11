@@ -42,5 +42,6 @@ class User < ApplicationRecord
         user_id: user.id
         )
     end
+    return user
   end
 end

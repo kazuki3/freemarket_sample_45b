@@ -27,21 +27,4 @@ class User < ApplicationRecord
     )
   return user
   end
-
-  def self.find_oauth(auth)
-    uid = auth.uid
-    provider = auth.provider
-    snscredential = SnsCredential.where(uid: uid, provider: provider).first
-    if snscredential.present?
-      user = User.where(id: snscredential.user_id).first
-    else
-      user = User.where(email: auth.info.email).first
-      SnsCredential.create(
-        uid: uid,
-        provider: provider,
-        user_id: user.id
-        )
-    end
-    return user
-  end
 end

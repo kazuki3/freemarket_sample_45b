@@ -7,7 +7,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_for(:google)
   end
 
-
   def callback_for(provider)
     oauth_email = request.env["omniauth.auth"][:info][:email]
 
@@ -21,9 +20,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
         redirect_to index2_path
       end
-
     else
-      @user = User.find_oauth(request.env["omniauth.auth"])
+      snscredential = SnsCredential.find_sns(request.env["omniauth.auth"])
+      if snscredential.present?
+        @user = User.where(id: snscredential.user_id).first
+      else
+        @user = SnsCredential.create_sns(request.env["omniauth.auth"])
+      end
+      sign_in(@user)
+      redirect_to root_path
     end
   end
 

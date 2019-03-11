@@ -20,7 +20,7 @@
           .actions
             .inline-icon-box
               = image_tag "google.png", class:"minilogo"
-            %a.google-btn{:href => ''}
+            %a.google-btn{:href => 'users/auth/google_oauth2/'}
               Googleでログイン
 
           = form_with(model: resource, as: resource_name, url: user_session_path, locla: true) do |form|

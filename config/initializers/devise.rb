@@ -256,25 +256,8 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
-  # ==> OmniAuth
-  # Add a new OmniAuth provider. Check the wiki for more information on setting
-  # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
-  # config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope: 'email', info_fields: 'email', callback_url: "#{ENV['HOST']}/users/auth/facebook/callback"
-
-  # config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_SECRET'], scope: 'email', oauth_callback: "#{ENV['HOST']}/users/auth/twitter/callback"
-
-  # config.omniauth :google_oauth2,
-  #                 Rails.application.secrets.GOOGLE_CLIENT_ID,
-  #                 Rails.application.secrets.GOOGLE_CLIENT_SECRET,
-  #                 {:provider_ignores_state => true}
 
 config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'email', redirect_uri: "http://localhost:3000/users/auth/google_oauth2/callback"
-
-  # config.omniauth :google_oauth2, ENV['google_client_id'], ENV['google_client_secret'], provider_ignores_state: true, redirect_uri: "#{ENV['HOST']}/users/auth/google_oauth2/callback", response_type: "code"
-# provider :google_oauth2, Rails.application.secrets[:google_oauth2][:google_client_id], Rails.application.secrets[:google_oauth2][:google_client_secret]
-  # OmniAuth.config.logger = Rails.logger if Rails.env.development? # debug用
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

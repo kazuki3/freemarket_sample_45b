@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  # before_action :authenticate_user!, only: [:create, :update]
+  before_action :authenticate_user!
   before_action :payment_params, only: [:create, :update]
 
   def new
@@ -21,15 +21,5 @@ class PaymentsController < ApplicationController
   def payment_params
     params.require(:payment).permit(:card_number, :expiration_date, :security_code, ).merge(user_id: current_user.id)
   end
-
-# 下記は今後の使用予定のため、コメントアウトにて置きます。
-  # def pay
-  #     Payjp.api_key = '秘密キー'
-  #     charge = Payjp::Charge.create(
-  #     :amount => 3500,
-  #     :card => params['payjp-token'],
-  #     :currency => 'jpy',
-  # )
-  # end
 
 end

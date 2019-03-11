@@ -9,14 +9,21 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 
   def callback_for(provider)
-    @user = User.find_oauth(request.env["omniauth.auth"])
-    if @user.persisted?
-      bypass_sign_in(@user)
-      redirect_to new_profile_path
-      set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
+    oauth_email = request.env["omniauth.auth"][:info][:email]
+
+    if User.where(email: oauth_email).blank?
+      @user = User.create_oauth(request.env["omniauth.auth"])
+      if @user.persisted?
+        bypass_sign_in(@user)
+        redirect_to new_profile_path
+        set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
+      else
+        session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
+        redirect_to index2_path
+      end
+
     else
-      session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
-      redirect_to index2_path
+      @user = User.find_oauth(request.env["omniauth.auth"])
     end
   end
 

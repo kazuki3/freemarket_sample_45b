@@ -122,7 +122,6 @@
 ### Association
 * belongs_to :product
 
-
 ### Association
 * belongs_to :product
 

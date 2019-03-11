@@ -4,9 +4,6 @@ class ProfilesController < ApplicationController
   def index
 
   end
-  # before_action :authenticate_user!, only: [:new, :create]
-  # before_action :authenticate_user!, only: [:new, :create]
-  # before_action :authenticate_user!, only: [:new, :create]
 
   def new
     @profiles = Profile.new

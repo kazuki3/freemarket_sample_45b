@@ -35,7 +35,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def destroy
   #   super
   # end
-<<<<<<< HEAD
   def signout
   end
   # GET /resource/cancel
@@ -55,7 +54,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
-=======
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -74,7 +72,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
->>>>>>> master
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
   # end

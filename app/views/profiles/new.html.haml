@@ -26,15 +26,8 @@
   %main.register-main
     %section.register-main__container
       %h2.register-main__container--header 連絡先情報登録
-      .register-info
-        お客さまの本人情報をご登録ください。
-        %br
-        登録されたお名前・生年月日を変更する場合、
-        %br
-        本人確認書類の提出が必要になります。
-
-      .register-pass-upload
-        本人確認書類のアップロードについて
+      %p.register-info
+        安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
       .register-inner
         = form_for(@profiles) do |f|
@@ -95,8 +88,25 @@
               %span.require-icon 必須
               = f.telephone_field :phone_number, :maxlength => "13", placeholder: "090-1234-5678", class:"input-default"
 
+            %p.info-size-small
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+
+            .recaptcha
+              = recaptcha_tags
+
+            .register-info
+              「次へ進む」のボタンを押すことにより、
+              %br
+                利用規約に同意したものとみなします。
+
+
             .actions
               = f.submit :お支払情報登録へ, class:"register-member"
+
+            .register-pass-upload
+              本人情報の登録について>
+
 
   .register__container__footer
     = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"

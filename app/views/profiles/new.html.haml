@@ -26,7 +26,6 @@
   %main.register-main
     %section.register-main__container
       %h2.register-main__container--header 連絡先情報登録
-
       .register-info
         お客さまの本人情報をご登録ください。
         %br
@@ -63,7 +62,8 @@
             .form-group
               %span.registration_font 生年月日
               %span.require-icon 必須
-              = f.date_field :birthdate, placeholder: "2000年2月2日", class:"input-default"
+              .birthdate_date_box
+                = f.date_select :birthdate, start_year: 1930, end_year: (Time.now.year), :use_month_numbers => true, include_blank:true, date_separator: '/',   class:"input-default"
 
             .form-group
               %span.registration_font 郵便番号

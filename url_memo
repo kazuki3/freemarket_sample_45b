@@ -1,0 +1,34 @@
+ログイン                                変更後
+index_path                           | new_user_session_path
+http://localhost:3000/index          | http://localhost:3000/users/sign_in
+users#index                          | users/sessions#new
+
+
+会員登録方法選択                          変更後
+index2_path                          | registration_select_path
+http://localhost:3000/index2         | http://localhost:3000/select
+users#registration_select            | users#registration_select
+
+
+会員情報入力画面
+new_user_registration_path           |
+http://localhost:3000/users/sign_up  |
+users/registrations#new
+
+
+連絡先登録画面
+new_profile_path                     |
+http://localhost:3000/profiles/new   |
+profiles#new
+
+
+クレジットカード登録画面
+new_payment_path                     |
+http://localhost:3000/payments/new   |
+payments#new
+
+
+ログアウト画面
+user_signout_path                    |
+http://localhost:3000/user/signout   |
+users#signout

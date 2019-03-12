@@ -15,7 +15,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_profile_path
     else
       session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
-      redirect_to index2_path
+      redirect_to new_user_session_path
     end
   end
 

@@ -18,7 +18,6 @@ devise_for :users, :controllers => {
   resources :profiles
   resources :payments
   get   'user/signout', to: 'users#signout'
-  get   'index', to: 'users#index'
-  get   'index2', to: 'users#registration_select'
+  get   'select', to: 'users#registration_select', as: 'registration_select'
 
 end

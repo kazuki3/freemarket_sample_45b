@@ -10,9 +10,10 @@ class PaymentsController < ApplicationController
   def create
     @payment = Payment.new(payment_params)
       if @payment.save
-        redirect_to root_path
+        redirect_to root_path, notice: '登録は全て完了しました'
       else
-        redirect_to new_payment_path
+        flash.now[:alert] = '未入力項目があります'
+        render :new
     end
   end
 

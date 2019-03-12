@@ -1,10 +1,11 @@
+# frozen_string_literal: true
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
-    devise :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
   def google_oauth2
     callback_for
   end
+
 
   def callback_for
     @user = User.find_for_google(request.env['omniauth.auth'])
@@ -14,7 +15,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_profile_path
     else
       session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
-      redirect_to new_user_session_path
+      redirect_to registration_select_path
     end
   end
 

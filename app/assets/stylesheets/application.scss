@@ -1,8 +1,8 @@
 @import "config/reset";
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
-@import 'mixin/users';
-@import 'users/new';
-@import 'users/index';
+@import 'mixin/user_registration_common_parts';
+@import 'users/session_new';
+@import 'users/registration_select';
 @import 'users/users';
 @import "profiles/profiles";
 @import "payments/payments";
@@ -15,8 +15,10 @@
 @import 'product-footer';
 @import 'sell';
 @import 'buy';
+
 @import 'modules/_flash.scss';
 @import './products';
+
 
 * { box-sizing: border-box;
 }

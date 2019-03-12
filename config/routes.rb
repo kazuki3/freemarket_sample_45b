@@ -6,10 +6,6 @@ devise_for :users, :controllers => {
  :sessions => 'users/sessions'
 }
 
-
-devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-
-
   root 'products#index'
     resources :products do
     collection do
@@ -21,7 +17,6 @@ devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'
   resources :profiles
   resources :payments
   get   'user/signout', to: 'users#signout'
-  get   'index', to: 'users#index'
-  get   'index2', to: 'users#registration_select'
+  get   'select', to: 'users#registration_select', as: 'registration_select'
 
 end

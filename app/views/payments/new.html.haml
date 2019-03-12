@@ -43,7 +43,6 @@
               %span.require-icon 必須
               .expiration_date_box
                 = f.date_select :expiration_date, :discard_day => "true", start_year: (Time.now.year),end_year: (Time.now.year+10), date_separator: '年 '
-                月
 
             .form-group
               %span.registration_font セキュリティー番号

@@ -76,3 +76,4 @@ gem 'ancestry'
 gem 'enum_help'
 gem 'active_hash'
 gem "jquery-rails"
+gem 'recaptcha', require: "recaptcha/rails"

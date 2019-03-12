@@ -1,7 +1,9 @@
 
 .register-info{
+  width: 24vw;
+  margin: auto;
   font-size: 1vw;
-  line-height: 2vmax;
+  line-height: 1.8vmax;
   letter-spacing: 0.1vh;
   display: flex;
   justify-content: center;
@@ -10,10 +12,11 @@
 }
 
 .register-pass-upload{
-  font-size: 0.8vw;
-  margin-top: 3%;
-  padding-left: 40%;
+  font-size: 1vw;
+  padding-left: 45%;
+  margin-top:5vh;
   color: #0099e8;
+  cursor: pointer;
 }
 
 
@@ -32,4 +35,12 @@
     background-color: #FFFFFF;
     padding-left: 11%;
   }
+}
+
+.info-size-small{
+  margin:1vh 1vh;
+  font-size: 0.95vw;
+  color: gray;
+  line-height: 2;
+
 }

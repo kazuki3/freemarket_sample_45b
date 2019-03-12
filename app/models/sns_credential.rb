@@ -17,4 +17,13 @@ class SnsCredential < ApplicationRecord
       )
     return user
   end
+
+  def self.check_sns(snscredential, oauth)
+    if snscredential.present?
+      @user = User.where(id: snscredential.user_id).first
+    else
+      @user = SnsCredential.create_sns(oauth)
+    end
+    return @user
+  end
 end

@@ -6,7 +6,6 @@ devise_for :users, :controllers => {
  :sessions => 'users/sessions'
 }
 
-
   root 'products#index'
     resources :products do
     collection do

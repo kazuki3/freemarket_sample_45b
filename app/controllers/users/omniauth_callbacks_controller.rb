@@ -1,11 +1,10 @@
-# frozen_string_literal: true
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
+    devise :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
   def google_oauth2
     callback_for
   end
-
 
   def callback_for
     @user = User.find_for_google(request.env['omniauth.auth'])

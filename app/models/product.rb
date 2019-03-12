@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-<<<<<<< HEAD
   enum condition: {}
   enum shipping_method: {}
   enum postage: {}
@@ -8,11 +7,4 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :images
-=======
-
-  belongs_to :user
-  belongs_to :category
-  has_many :images
-
->>>>>>> kazuki3/master
 end

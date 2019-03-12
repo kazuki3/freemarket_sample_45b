@@ -20,9 +20,5 @@ class ProductsController < ApplicationController
       redirect_to new_product_paht
     end
   end
-<<<<<<< HEAD
-=======
-
->>>>>>> kazuki3/master
 end
 

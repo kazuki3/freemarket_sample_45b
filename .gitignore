@@ -18,5 +18,3 @@
 
 .byebug_history
 config/secrets.yml
-
-app/assets/stylesheets/application.scss

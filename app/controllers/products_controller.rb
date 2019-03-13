@@ -18,7 +18,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    binding.pry
     if @product.save
       redirect_to root_path
     else
@@ -39,7 +38,7 @@ class ProductsController < ApplicationController
   end
 
   def postage
-    if params[:postage] == "1"
+    if params[:postage] == "送料込み(出品者負担)"
       @seller = ShippingMethod.seller
     else
       @buyer = ShippingMethod.buyer

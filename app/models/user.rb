@@ -12,12 +12,19 @@ class User < ApplicationRecord
   has_one :profile
   has_many :products
   has_one :users
+  has_many :sns_credentials
 
-  def self.find_for_google(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-      user.nickname = auth.info.name
-    end
+  def self.create_oauth(auth)
+  user = User.create(
+    nickname: auth.info.name,
+    email:    auth.info.email,
+    password: Devise.friendly_token[0, 20]
+    )
+  SnsCredential.create(
+    uid: auth.uid,
+    provider: auth.provider,
+    user_id: user.id
+    )
+  return user
   end
 end

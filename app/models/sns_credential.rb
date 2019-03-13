@@ -1,9 +1,9 @@
 class SnsCredential < ApplicationRecord
   belongs_to :user
 
-  validates :uid, presence: true, unique: true
-  validates :provider, presence: true, unique: true
-  validates :user_id, presence: true, unique: true
+  validates :uid, presence: true
+  validates :provider, presence: true
+  validates :user_id, presence: true
 
   def self.find_sns(auth)
     uid = auth.uid

@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  
   belongs_to :user, foreign_key: :seller_id
   belongs_to :category
   belongs_to :prefecture
@@ -17,7 +18,6 @@ class Product < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :date, presence: true
   validates :price, presence: true
-  # validates :price, numericality: true, :only_integer
 
   enum condition: {
     unused: 1,

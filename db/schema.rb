@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190308061627) do
+ActiveRecord::Schema.define(version: 20190312062817) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -38,9 +38,16 @@ ActiveRecord::Schema.define(version: 20190308061627) do
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
+  create_table "postages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -50,16 +57,18 @@ ActiveRecord::Schema.define(version: 20190308061627) do
     t.datetime "updated_at", null: false
     t.integer "price", null: false
     t.integer "condition", null: false
-    t.integer "postage", null: false
-    t.integer "shipping_method", null: false
     t.integer "date", null: false
     t.integer "status", default: 0, null: false
     t.bigint "category_id"
     t.bigint "seller_id"
     t.bigint "prefecture_id"
+    t.bigint "postage_id"
+    t.bigint "shipping_method_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["postage_id"], name: "index_products_on_postage_id"
     t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
     t.index ["seller_id"], name: "index_products_on_seller_id"
+    t.index ["shipping_method_id"], name: "index_products_on_shipping_method_id"
   end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -80,6 +89,22 @@ ActiveRecord::Schema.define(version: 20190308061627) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+
+  create_table "shipping_methods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.bigint "postage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["postage_id"], name: "index_shipping_methods_on_postage_id"
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -93,7 +118,11 @@ ActiveRecord::Schema.define(version: 20190308061627) do
 
   add_foreign_key "images", "products"
   add_foreign_key "products", "categories"
+  add_foreign_key "products", "postages"
   add_foreign_key "products", "prefectures"
+  add_foreign_key "products", "shipping_methods"
   add_foreign_key "products", "users", column: "seller_id"
   add_foreign_key "profiles", "users"
+  add_foreign_key "sns_credentials", "users"
+  add_foreign_key "shipping_methods", "postages"
 end

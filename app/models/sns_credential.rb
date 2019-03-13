@@ -5,7 +5,6 @@ class SnsCredential < ApplicationRecord
   validates :provider, presence: true, unique: true
   validates :user_id, presence: true, unique: true
 
-
   def self.find_sns(auth)
     uid = auth.uid
     provider = auth.provider

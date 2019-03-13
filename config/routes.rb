@@ -3,13 +3,16 @@ Rails.application.routes.draw do
 devise_for :users, :controllers => {
  :omniauth_callbacks => 'users/omniauth_callbacks',
  :registrations => 'users/registrations',
- :sessions => 'users/sessions'
+ :sessions => 'users/sessions',
+ :omniauth_callbacks => "users/omniauth_callbacks"
 }
 
   root 'products#index'
     resources :products do
     collection do
-    get 'buy'
+      get 'buy'
+      get 'category'
+      get 'postage'
     end
   end
 

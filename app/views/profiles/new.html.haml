@@ -4,17 +4,17 @@
     %nav.progress-bar
       %ol.clearfix
         .activ-box
-          %li.active
+          %li.active-red
             会員情報
-            .progress-status
+            .progress-status-first
         .activ-box
-          %li.active
+          %li.active-red
             電話番号認証
-            .progress-status
+            .progress-status-red
         .activ-box
-          %li.active
+          %li.active-red
             連絡先情報
-            .progress-status
+            .progress-status-red
         .activ-box
           %li.active
             支払い方法
@@ -22,7 +22,7 @@
         .activ-box
           %li.active
             完了
-            .progress-status
+            .progress-status-last
   %main.register-main
     %section.register-main__container
       %h2.register-main__container--header 連絡先情報登録
@@ -93,7 +93,6 @@
             %p.info-size-small
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
-
             .recaptcha
               = recaptcha_tags
 
@@ -102,13 +101,11 @@
               %br
                 利用規約に同意したものとみなします。
 
-
             .actions
               = f.submit :お支払情報登録へ, class:"register-member"
 
             .register-pass-upload
               本人情報の登録について>
-
 
   .register__container__footer
     = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"

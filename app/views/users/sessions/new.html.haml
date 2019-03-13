@@ -14,14 +14,14 @@
           .actions
             .inline-icon-box
               = image_tag "facebook.png", class:"minilogo"
-            %a.facebook-btn{:href => ''}
-              Facebookでログイン
+            .facebook-btn
+              = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
 
           .actions
             .inline-icon-box
               = image_tag "google.png", class:"minilogo"
-            %a.google-btn{:href => 'users/auth/google_oauth2/'}
-              Googleでログイン
+            .google-btn
+              = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
 
           = form_with(model: resource, as: resource_name, url: user_session_path, locla: true) do |form|
             .register-inner__content

@@ -6,20 +6,29 @@
     %section.sell-main__container
       .sell-container
         %h1.sell-container__head 商品の情報を入力
-        = form_with model: @product, html: {class: 'sell-form'} do |f|
-          .sell-upload
+        = form_for @product, html: {class: 'sell-form'} do |f|
+          .sell-upload.clearfix
             %h3.sell-upload__head
               出品画像
               %span.form-require 必須
             %p.sell-upload__option 最大10枚までアップロードできます
-            .sell-upload__dropbox.have-item-0
-              = f.fields_for :images do |i|
-                = i.file_field :image, multiple: true, class: "file"
-                %pre
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをアップロード
-
-
+            .sell-dropbox__container.clearfix
+              .sell-upload__items
+                %ul#item-list
+                  / %li.sell-upload__item
+                  /   %figure.sell-upload__figure
+                  /     = image_tag "https://placehold.jp/150x150.png", alt: "アイコン", id: "item-img"
+                  /   .sell-upload-btn
+                  /     = link_to "#", class: "sell-upload__edit" do
+                  /       編集
+                  /     = link_to "#", class: "sell-upload__delete" do
+                  /       削除
+              = f.fields_for :images , html: {class: 'dropzone', id: 'item-dropzone'}do |i|
+                %label.sell-upload__dropbox.have-item-0
+                  %pre
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+                  = i.file_field :image, multiple: true, class: 'file', id: 'file-upload'
           .sell-content
             .sell-content__info
               .form-group
@@ -41,31 +50,31 @@
                   カテゴリー
                   %span.form-require 必須
                 .select-wrap
-                  = f.collection_select :category_id, {}, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'parent-category'}
+                  = f.collection_select :category_id, @category_root, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'parent-category'}
                   %i.fas.fa-angle-down.select-icon
 
-              .form-group
-                = f.label :size_id, {class: "sell-content__label"} do
-                  サイズ
-                  %span.form-require 必須
-                .select-wrap
-                  = f.select :size_id, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
+              / .form-group
+              /   = f.label :size_id, {class: "sell-content__label"} do
+              /     サイズ
+              /     %span.form-require 必須
+              /   .select-wrap
+              /     = f.select :size_id, {}, {prompt: "---"}, {class: 'select-default'}
+              /     %i.fas.fa-angle-down.select-icon
 
-              .form-group
-                = f.label :brand_id, {class: "sell-content__label"} do
-                  ブランド
-                  %span.form-optional 任意
-                .select-wrap
-                  = f.select :brand_id, {}, {prompt: "---"}, {class: 'select-default'}
-                  %i.fas.fa-angle-down.select-icon
+              / .form-group
+              /   = f.label :brand_id, {class: "sell-content__label"} do
+              /     ブランド
+              /     %span.form-optional 任意
+              /   .select-wrap
+              /     = f.select :brand_id, {}, {prompt: "---"}, {class: 'select-default'}
+              /     %i.fas.fa-angle-down.select-icon
 
               .form-group
                 = f.label :condition, {class: "sell-content__label"} do
                   商品の状態
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :condition, {}, {prompt: "---"}, {class: 'select-default'}
+                  = f.select :condition, Product.conditions_i18n.invert, {prompt: "---"}, {class: 'select-default'}
                   %i.fas.fa-angle-down.select-icon
 
           .sell-content.clearfix
@@ -75,26 +84,26 @@
                 ?
             .sell-content__detail
               .form-group#postage_form
-                = f.label :postage, {class: "sell-content__label"} do
+                = f.label :postage_id, {class: "sell-content__label"} do
                   送料の負担
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :postage, {}, {prompt: "---"}, {class: 'select-default', id: 'postage'}
+                  = f.collection_select :postage_id, @postage, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'postage'}
                   %i.fas.fa-angle-down.select-icon
 
               .form-group
-                = f.label :region, {class: "sell-content__label"} do
+                = f.label :prefecture_id, {class: "sell-content__label"} do
                   発送元の地域
                   %span.form-require 必須
                 .select-wrap
-                  = f.collection_select :prefecture, Prefecture.all, :id, :name, {prompt: "---"}, {class: 'select-default'}
+                  = f.collection_select :prefecture_id, @prefecture, :id, :name, {prompt: "---"}, {class: 'select-default'}
                   %i.fas.fa-angle-down.select-icon
               .form-group
                 = f.label :date, {class: "sell-content__label"} do
                   発送前の日数
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :date, {}, {prompt: "---"}, {class: 'select-default'}
+                  = f.select :date, Product.dates_i18n.invert, {prompt: "---"}, {class: 'select-default'}
                   %i.fas.fa-angle-down.select-icon
 
           .sell-content.clearfix
@@ -112,12 +121,12 @@
                     %div.l-right.sell-content__price--input
                       ¥
                       %div
-                        = f.text_field :name, class: 'sell-content__price--input-form', placeholder: "例) 300"
+                        = f.text_field :price, class: 'sell-content__price--input-form', id: 'calc-price', placeholder: "例) 300"
                 %li.clearfix
                   %div.l-left.normal 販売手数料(10%)
-                  %di.l-right.normal -
+                  %di.l-right.normal#fee -
                 %li.clearfix.bold
-                  %div.l-left 販売利益
+                  %div.l-left#revenue 販売利益
                   %div.l-right -
 
 
@@ -147,3 +156,4 @@
               もどる
 
   = render "product-footer"
+

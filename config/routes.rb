@@ -8,7 +8,9 @@ devise_for :users, :controllers => {
   root 'products#index'
     resources :products do
     collection do
-    get 'buy'
+      get 'buy'
+      get 'category'
+      get 'postage'
     end
   end
 

@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :payment_params, only: [:create, :update]
+  before_action :payment_params, only: [:create]
 
   def new
     @payment = Payment.new

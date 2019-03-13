@@ -1,5 +1,13 @@
 class Users::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+
+
+  def new
+  super
+  flash[:notice] = "既にログイン済みです。" unless user_signed_in?
+  redirect_to root_path
+  end
+
+
 
   def create
     if verify_recaptcha

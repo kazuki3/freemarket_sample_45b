@@ -181,6 +181,7 @@ $(document).on('turbolinks:load', function(){
     })
   });
 
+// FIXME: 入力値の計算処理後、正しくビューに表示されないため、修正する
   // $('#calc-price').keyup(function(e){
   //   e.preventDefault();
   //   var price = $(this).val();

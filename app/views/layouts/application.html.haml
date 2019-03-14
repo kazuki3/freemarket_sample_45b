@@ -11,6 +11,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     / slider-pro cdn
     %script{src: "https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.5.0/js/jquery.sliderPro.min.js"}
+    / payjp
+    :javascript
+      Payjp.setPublicKey('pk_test_46e0715c69e5c4ec9239df4c');
+
   %body
 
     = yield

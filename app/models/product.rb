@@ -34,4 +34,17 @@ class Product < ApplicationRecord
     fourday_sevenday: 3
   }
 
+# FIXME: リファクタリング時に操作確認。現在、呼び出してもエラーになる
+  # def category_decision
+  #   if self.depth == 2
+  #     @parent_category = self.root.name
+  #     @child_category = self.parent.name
+  #     @grandchild_category = self.name
+  #   elsif self.depth == 1
+  #     @parent_category = self.root.name
+  #     @child_category = self.name
+  #     @grandchild_category = "none"
+  #   end
+  # end
+
 end

@@ -1,4 +1,10 @@
 Devise.setup do |config|
+<<<<<<< HEAD
+=======
+
+  config.secret_key = '6b098ea72ee90dea8c1609c6b4aa5bd57a374a0f44196fa239a5f406a6b3ddb681c4494960c38e8696aa8f29b66288a9a73a9ae2d638b576700a33a76fb222bd'
+
+>>>>>>> a22919d19b4402abcc0dccd0d82841026e6e38d4
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   require 'devise/orm/active_record'
@@ -24,6 +30,12 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'email', redirect_uri: "http://localhost:3000/users/auth/google_oauth2/callback"
+<<<<<<< HEAD
 
   config.omniauth :facebook, ENV['FACEBOOK_CLIENT_ID'], ENV['FACEBOOK_CLIENT_SECRET'], scope: 'email', info_fields: 'email', callback_url: "http://localhost:3000/users/auth/facebook/callback"
+=======
+
+  config.omniauth :facebook, ENV['FACEBOOK_CLIENT_ID'], ENV['FACEBOOK_CLIENT_SECRET'], scope: 'email', info_fields: 'email', callback_url: "http://localhost:3000/users/auth/facebook/callback"
+
+>>>>>>> a22919d19b4402abcc0dccd0d82841026e6e38d4
 end

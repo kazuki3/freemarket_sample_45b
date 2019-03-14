@@ -1,0 +1,27 @@
+.mail-address-btn{
+  @include mail-address-btn
+}
+
+.facebook-btn{
+  @include facebook_btn
+}
+
+.google-btn{
+  @include google-btn
+}
+
+.inline-icon-box{
+  margin: 0vh 1vw 1vh 1vw;
+  height: 5vh;
+  position: absolute;
+  .minilogo{
+    align-items: center;
+    width: 1.5vw;
+  }
+}
+
+.recaptcha{
+  margin-top: 3vh;
+  align-items: center;
+}
+

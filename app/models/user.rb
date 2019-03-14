@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 
+
+  validates :nickname, presence: true
+
   devise  :omniauthable,
           :database_authenticatable,
           :registerable,

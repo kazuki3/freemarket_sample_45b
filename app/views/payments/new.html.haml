@@ -23,7 +23,8 @@
           %li.active
             完了
             .progress-status-last
-  %main.registerew-main
+
+  %main.register-main
     %section.register-main__container
       %h2.register-main__container--header 支払い方法
 
@@ -42,6 +43,8 @@
               %span.require-icon 必須
               .expiration_date_box
                 = f.date_select :expiration_date, :discard_day => "true", start_year: (Time.now.year),end_year: (Time.now.year+10), date_separator: '年 '
+
+                = f.date_select :expiration_date,  :use_month_numbers => true, include_blank:true, :discard_day => "true", start_year: (Time.now.year),end_year: (Time.now.year+10), date_separator: '年 '
                 月
 
             .form-group

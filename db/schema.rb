@@ -89,10 +89,21 @@ ActiveRecord::Schema.define(version: 20190312062817) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+
+  create_table "shipping_methods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.bigint "postage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["postage_id"], name: "index_shipping_methods_on_postage_id"
+  end
+
+
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "provider"
     t.string "uid"
     t.bigint "user_id"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
@@ -103,6 +114,7 @@ ActiveRecord::Schema.define(version: 20190312062817) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["postage_id"], name: "index_shipping_methods_on_postage_id"
+
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -113,6 +125,11 @@ ActiveRecord::Schema.define(version: 20190312062817) do
     t.datetime "updated_at", null: false
     t.string "nickname"
     t.text "self_introduction"
+
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
+
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
@@ -125,4 +142,6 @@ ActiveRecord::Schema.define(version: 20190312062817) do
   add_foreign_key "profiles", "users"
   add_foreign_key "sns_credentials", "users"
   add_foreign_key "shipping_methods", "postages"
+
+
 end

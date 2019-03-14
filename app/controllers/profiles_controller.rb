@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
-  # before_action :authenticate_user!, only: [:new, :create]
+
+  before_action :authenticate_user!
+
 
   def new
     @profiles = Profile.new
@@ -8,9 +10,11 @@ class ProfilesController < ApplicationController
   def create
     @profiles = Profile.new(profile_params)
       if @profiles.save
-        redirect_to new_payment_path
+        redirect_to new_payment_path, notice: '連絡先情報を登録しました'
       else
-        redirect_to new_profile_path
+        flash.now[:alert] = '未入力項目があります'
+        render :new
+
     end
   end
 

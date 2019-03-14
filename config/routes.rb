@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
 devise_for :users, :controllers => {
  :registrations => 'users/registrations',
  :sessions => 'users/sessions',
@@ -27,5 +28,11 @@ devise_for :users, :controllers => {
   #   post '/users', to: 'users/registrations#create'
   # end
 
+
+  resources :users
+  resources :profiles
+  resources :payments
+  get   'user/signout', to: 'users#signout'
+  get   'select', to: 'users#registration_select', as: 'registration_select'
 
 end

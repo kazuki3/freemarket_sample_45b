@@ -1,6 +1,9 @@
 class PaymentsController < ApplicationController
-  # before_action :authenticate_user!, only: [:create, :update]
+
   before_action :payment_params, only: [:create, :update]
+  before_action :authenticate_user!
+
+
 
   def new
     @payment = Payment.new
@@ -10,9 +13,12 @@ class PaymentsController < ApplicationController
   def create
     @payment = Payment.new(payment_params)
       if @payment.save
-        redirect_to root_path
+
+        redirect_to root_path, notice: '登録は全て完了しました'
       else
-        redirect_to new_payment_path
+        flash.now[:alert] = '未入力項目があります'
+        render :new
+
     end
   end
 
@@ -22,6 +28,7 @@ class PaymentsController < ApplicationController
     params.require(:payment).permit(:card_number, :expiration_date, :security_code, ).merge(user_id: current_user.id)
   end
 
+<<<<<<< HEAD
 # 下記は今後の使用予定のため、コメントアウトにて置きます。
   # def pay
   #     Payjp.api_key = '秘密キー'
@@ -32,4 +39,6 @@ class PaymentsController < ApplicationController
   # )
   # end
 
+=======
+>>>>>>> a22919d19b4402abcc0dccd0d82841026e6e38d4
 end

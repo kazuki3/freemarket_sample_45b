@@ -4,12 +4,13 @@ class UsersController < ApplicationController
   def index
   end
 
-
   def signout
   end
 
   def registration_select
+    if user_signed_in?
+    redirect_to root_path, notice: '既にログイン済みです。'
+    end
   end
-
 
 end

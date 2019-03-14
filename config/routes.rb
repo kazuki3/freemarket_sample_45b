@@ -1,27 +1,31 @@
 Rails.application.routes.draw do
 
+devise_for :users, :controllers => {
+ :registrations => 'users/registrations',
+ :sessions => 'users/sessions',
+ :omniauth_callbacks => "users/omniauth_callbacks"
+}
+
   root 'products#index'
-
-  resources :products
-
-  devise_for :users, :controllers => {
-   :registrations => 'users/registrations',:sessions => 'users/sessions',:passwords => 'users/passwords'
-  }
-
-  devise_scope :user do
-    get   'users/index', to: 'users/registrations#index'
-    post '/users' => 'users/registrations#create'
+    resources :products do
+    collection do
+      get 'buy'
+      get 'category'
+      get 'postage'
+    end
   end
 
+  resources :users
   resources :profiles
   resources :payments
-  get   '/show', to: 'products#show'
+  get   'user/signout', to: 'users#signout'
+  get   'index', to: 'users#index'
+  get   'index2', to: 'users#registration_select'
 
-  # pay.jp用の記述（作成の時のために置いておく）メモ：平良
-  # resources :payments do only: [:index, :new, :update, :create] do
-  #   collection do
-  #     post 'pay'
-  #   end
+
+  # devise_scope :user do
+  #   post '/users', to: 'users/registrations#create'
   # end
+
 
 end

@@ -1,1 +1,246 @@
-いいいいい
+= render 'layouts/global-header'
+%section.item-box
+  %h1.item-box__box-name 商品名を表示します
+  %p.item-box__box-word 『ブレスレッド シャネル 春夏』は、51回の取引実績を持つ小林タロウさんから出品されました。シャネル（ブレスレット/レディース）の商品で、東京都から2~3日で発送されます。。
+  .item-box__box-main.clearfix
+    .item-photo
+      %div
+        .photo-main
+          .photo-main__item
+            %img.photo-main__item--img{src: "https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v", alt: "a"}
+          .photo-main__item
+            %img.photo-main__item--img{src: "https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v", alt: "a"}
+          .photo-main__item
+            %img.photo-main__item--img{src: "https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v", alt: "a"}
+          .photo-main__item
+            %img.photo-main__item--img{src: "https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v", alt: "a"}
+        .photo-sub
+          .photo-sub__item
+            = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v', class: "photo-sub__item--img active"
+          .photo-sub__item
+            = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v', class: "photo-sub__item--img"
+          .photo-sub__item
+            = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v', class: "photo-sub__item--img"
+          .photo-sub__item
+            = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v', class: "photo-sub__item--img"
+
+
+    %table.item-detail
+      %tbody
+        %tr
+          %th.item-detail__th 出品者
+          %td.item-detail__td
+            = link_to "小林タロウ", "#", class: ""
+            %div
+              .item-detail__td--rate
+                %i.fas.fa-grin
+                %span 52
+              .item-detail__td--rate
+                %i.fas.fa-meh
+                %span 2
+              .item-detail__td--rate
+                %i.fas.fa-frown
+                %span 3
+        %tr
+          %th.item-detail__th カテゴリー
+          %td.item-detail__td
+            = link_to "#", class: "" do
+              %div
+                %text レディース
+            = link_to "#", class: "" do
+              %div
+                %i.fas.fa-angle-right.arrow-icon-right
+                %text アクセサリー
+            = link_to "#", class: "" do
+              %div
+                %i.fas.fa-angle-right.arrow-icon-right
+                %text ブレスレット
+        %tr
+          %th.item-detail__th ブランド
+          %td.item-detail__td
+            = link_to "#", class: "" do
+              %text シャネル
+        %tr
+          %th.item-detail__th 商品の状態
+          %td.item-detail__td 未使用に近い
+        %tr
+          %th.item-detail__th 配送料の負担
+          %td.item-detail__td 送料込み(出品者負担)
+        %tr
+          %th.item-detail__th 配送の方法
+          %td.item-detail__td ゆうゆうメルカリ便
+        %tr
+          %th.item-detail__th 配送元地域
+          %td.item-detail__td
+            = link_to "#", class: "" do
+              %text 東京都
+        %tr
+          %th.item-detail__th 発送日の目安
+          %td.item-detail__td 2~3日で発送
+  .item-box__box-price
+    %span.item-box__box-price--price ¥ 6,000
+    %span.item-box__box-price--tax (税込)
+    %span.item-box__box-price--shipping-fee 送料込み
+  = link_to '購入画面に進む', "#", class: "item-buy-btn"
+  .item-box__box-descriotion
+    %p.item-box__box-descriotion--inner
+      これから春 夏 用に(o^^o)
+
+      長さ17.5センチ
+      繋ぎ部分の金具に含むと19センチ
+
+      幅は2センチ
+
+      これ１つだけで かなり 存在感あり素敵で可愛いです。
+
+      保証書やケースは無いですが大切に包んで発送します。
+    %p.item-box__box-descriotion--p
+  .item-box__btn-container.clearfix
+    .item-box__btn-container-left
+      =link_to "#", class: "item-box__btn-container-left--like item-button" do
+        %i.far.fa-heart
+        %span いいね!
+        %span 2
+      =link_to "#", class: "item-box__btn-container-left--report item-button" do
+        %i.far.fa-flag
+        %span 不適切な商品の報告
+    .item-box__btn-container-right
+      =link_to "#", class: "item-box__btn-container-right--effort" do
+        %i.fas.fa-lock
+        %span あんしん・あんぜんへの取り組み
+%ul.nav-item-container.clearfix
+  %li.nav-item-container__prev
+    %i.fas.fa-angle-left.arrow-icon-left
+    = link_to "#", class: "" do
+      %text 【サイズ90】ロンパース 【コンビミニ】
+  %li.nav-item-container__next
+    %i.fas.fa-angle-right.arrow-icon-right
+    = link_to "#", class: "" do
+      %text 【美品】黒澤明の映画を支えたスタッフたちのインタビュー集２冊の保存版
+.social-media
+  %ul.social-media-box
+    %li.social-media-box__icon
+      = link_to "#", class: "social-media-box__icon--link" do
+        %i.fab.fa-facebook.fa-3x
+    %li.social-media-box__icon
+      = link_to "#", class: "social-media-box__icon--link" do
+        %i.fab.fa-twitter-square.fa-3x
+    %li.social-media-box__icon
+      = link_to "#", class: "social-media-box__icon--link" do
+        %i.fab.fa-google-plus-square.fa-3x
+.body-items
+  %section.body-items-box
+    %h2.body-items-box__box-head
+      = link_to '小林タロウさんのその他の出品', "#", class: "body-items-box__box-head--link"
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+  %section.body-items-box
+    %h2.body-items-box__box-head
+      = link_to 'シャネルのブレスレッド その他の商品', "#", class: "body-items-box__box-head--link"
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+    %section.body-items-box__item-box
+      = link_to "http://www.google.co.jp/", class: "body-items-box__item-box--link" do
+        %figure.item-box-photo
+          = image_tag 'https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m37415570207_1.jpg?1550117821', class: "item-box-photo__img"
+        .item-box-body
+          %h3.item-box-body__name セットアップ  スーツ  入学式  卒業式  レディース 9号
+          .item-box-body__num
+            .item-box-body__num--price ¥ 1,190
+            %p.item-box-body__num--tax (税込)
+= render 'layouts/global-footer'

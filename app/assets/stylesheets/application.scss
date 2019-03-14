@@ -1,22 +1,30 @@
 @import "config/reset";
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
-@import "mixin/devise";
-@import "users/registrations/users";
-@import "payments/payments";
+@import 'mixin/users_devise';
+@import 'users_devise/new';
+@import 'users_devise/index';
+@import 'users_devise/users';
 @import "profiles/profiles";
-@import "users/registrations/index";
-@import "users/sessions/new";
+@import "payments/payments";
+@import "profiles/signout";
 @import './independence';
 @import './main-header';
 @import './main-footer';
 @import './top-body';
-// @import 'product-header';
-// @import 'product-footer';
-// @import 'sell';
-
+@import 'product-header';
+@import 'product-footer';
+@import 'sell';
+@import 'buy';
+@import './products';
+@import './slider-pro';
+@import 'mypage/mypage';
+@import 'mypage/content';
+@import 'mypage/side';
 
 * { box-sizing: border-box;
 }
 
-a { text-decoration: none;
+a {
+  text-decoration: none;
+  color: inherit;
 }

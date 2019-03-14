@@ -1,0 +1,21 @@
+.register__container
+  .register__container__header
+    = image_tag "logo.svg", class:"campany-logo", alt:"メルカリロゴ"
+
+  %main.register-main_login
+    %section.register-main__container
+      %h2.register-main__profile-header
+        プロフィール
+      / = form_with(model: @users @profile) do |form|
+      .register-main__profile-band
+        .register-main__profile-band__inner-box
+          = image_tag "", class:"my-icon", alt:"アイコン"
+          -# = form.text_field {@user :nickname}, class:"input-default"
+        .register-inner__content
+          .register-inner__content-textarea
+            -# = form.text_area {@profile :self_introduction}, class:""
+          .sign-out-btn
+            = link_to "変更する", user_registration_path, method: :patch
+
+  .register__container__footer
+    = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"

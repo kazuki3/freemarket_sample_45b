@@ -1,6 +1,9 @@
 Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+  # devise
+  config.secret_key = '6b098ea72ee90dea8c1609c6b4aa5bd57a374a0f44196fa239a5f406a6b3ddb681c4494960c38e8696aa8f29b66288a9a73a9ae2d638b576700a33a76fb222bd'
+
   require 'devise/orm/active_record'
 
   config.case_insensitive_keys = [:email]

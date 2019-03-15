@@ -56,6 +56,7 @@ $white: #FFFFFF;
         font-weight: 600;
         color: $light_gray;
         cursor: pointer;
+        width:100%;
       }
     }
   }
@@ -72,7 +73,6 @@ $white: #FFFFFF;
   color: #ea352d;
   cursor: pointer;
   margin:auto auto 20px auto;
-  font-weight: 600;
   color: $light_red;
   cursor: pointer;
 }
@@ -92,7 +92,7 @@ $white: #FFFFFF;
     position:absolute;
     border-bottom:solid 2px $light_red;
     content:'';
-    width:65px;
+    width:60px;
     height:6px;
     margin-left:12px;
   }
@@ -100,7 +100,7 @@ $white: #FFFFFF;
     position:absolute;
     border-bottom:solid 2px $light_red;
     content:'';
-    width:65px;
+    width:60px;
     height:6px;
     right:100%;
   }

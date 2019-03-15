@@ -7,15 +7,9 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @username = User.find(@product.seller_id).nickname
-    @product_name = @product.name
-    @detail = @product.detail
-    @price = @product.price
-    @condition = @product.condition_i18n
-    @date = @product.date_i18n
     @prefecture = Prefecture.find(@product.prefecture.id).name
     @postage = Postage.find(@product.postage.id).name
     @shipping_method = ShippingMethod.find(@product.shipping_method.id).name
-    @status = @product.status
     @image = @product.images
     if @product.postage.id == 1
       @shipping_fee = "送料込み"

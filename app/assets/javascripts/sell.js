@@ -41,10 +41,6 @@ $(document).on('turbolinks:load', function(){
 
   });
 
-
-
-
-
 // カテゴリーの表示切り替え
     // 子カテゴリーのselectを追加するHTML
     var category_search = $("#category");
@@ -163,7 +159,7 @@ $(document).on('turbolinks:load', function(){
 // 配送料をクリック
   $('#postage').change(function(e){
     e.preventDefault();
-    var postage = $(this).val();
+    var postage = $('#postage option:selected').text();
     $("#shipping_form").remove()
     console.log(postage);
     $.ajax({ //ajax通信で以下のことを行います

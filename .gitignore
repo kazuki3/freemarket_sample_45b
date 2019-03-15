@@ -19,5 +19,5 @@
 .byebug_history
 config/secrets.yml
 
-public/uploads/images
+public/uploads/*
 db/schema.rb

@@ -6,18 +6,10 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @username = User.find(@product.seller_id).nickname
-    @prefecture = Prefecture.find(@product.prefecture.id).name
-    @postage = Postage.find(@product.postage.id).name
-    @shipping_method = ShippingMethod.find(@product.shipping_method.id).name
+    @user = User.find(@product.seller_id)
     @image = @product.images
-    if @product.postage.id == 1
-      @shipping_fee = "送料込み"
-    else
-      @shipping_fee = "着払い"
-    end
 
-    @category = Category.find(@product.category_id)
+    @category = @product.category
     if @category.depth == 2
       @parent_category = @category.root.name
       @child_category = @category.parent.name

@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
 
   def signout
-    redirect_to new_user_session_path, notice: 'ログインアウトしました'
   end
 
 

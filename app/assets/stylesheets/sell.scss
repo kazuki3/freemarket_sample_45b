@@ -1,0 +1,372 @@
+body {
+font-family: "Source Sans Pro", "Helvetica", Arial, "游ゴシック体", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.outer {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+// 本体
+.sell-main {
+  display: block;
+  color: #333333;
+  .sell-main__container {
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+  }
+}
+
+.form-group {
+  margin: 40px 0 0;
+  text-align: left;
+}
+.form-group:first-child {
+  margin: 0;
+}
+
+.sell-container {
+  text-align: center;
+  &__head {
+    color: #333333;
+    padding: 32px 16px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+  }
+}
+
+.sell-content {
+  padding: 40px;
+  border-top: 1px solid #eeeeee;
+  &__label {
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: left;
+  }
+  &__label.l-left {
+    line-height: 48px;
+  }
+  &__detail {
+    width: 400px;
+    margin: 0;
+    float: right;
+  }
+}
+
+.form-require {
+  background-color: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  font-weight: 600;
+}
+
+.form-optional {
+  background-color: #cccccc;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  font-weight: 600;
+}
+
+.select-wrap {
+  margin: 8px 0 0;
+  position: relative;
+}
+
+.select-default {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family : inherit;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.select-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  z-index: 2;
+  color: #888;
+  font-size: 24px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.question-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0099e8;
+  color: #fff;
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+.question-icon:hover {
+  opacity: 0.5;
+}
+
+// 画像アップロード
+.sell-upload {
+  padding: 40px;
+  text-align: left;
+  border-top: 1px solid #eeeeee;
+  &__head {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &__option {
+    font-size: 14px;
+    line-height: 21px;
+    margin: 8px 0 0;
+    line-height: 1.5;
+  }
+  &__dropbox {
+    margin: 0 auto 0;
+    padding: 40px;
+    position: relative;
+    min-height: 162px;
+    background: #f5f5f5;
+    border: 1px dashed #ccc;
+    font-size: 0;
+    text-align: center;
+    display: inline-block;
+    float: right;
+  }
+}
+
+pre {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-weight: 600;
+  font-family: monospace,monospace;
+}
+
+
+// TODO: 画像アップロードに関するクラス名をBEMに合わせた記述にする
+.file {
+  display: none;
+}
+
+.have-item-0 {
+  width: 100%;
+}
+
+.have-item-1 {
+  width: 80%;
+  margin-left: 2%;
+}
+
+.sell-dropbox__container {
+  position: relative;
+  width: 100%;
+  margin: 16px auto 0;
+}
+
+.sell-upload__item {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  border: 1px solid #eee;
+  vertical-align: top;
+  float: left;
+}
+
+.sell-upload__figure {
+  width: auto;
+  padding: 0;
+  height: 116px;
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.sell-upload__figure img {
+  width: 100%;
+}
+
+.sell-upload-btn {
+  font-size: 14px;
+}
+
+.sell-upload-btn a{
+  display: inline-block;
+  width: 50%;
+  background: #f5f5f5;
+  line-height: 44px;
+  text-align: center;
+  color: #0099e8;
+  text-decoration: none;
+  float:left;
+}
+
+
+
+// 商品名登録
+.sell-content__info {
+  &--name-form {
+    width: 100%;
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  &--detail-form {
+    font-family: inherit;
+    margin: 8px 0 0;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 104px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    height: 166px;
+  }
+}
+
+.sell-sub-head {
+  color: #888;
+  font-size: 14px;
+  font-weight: 700;
+  float: left;
+}
+
+// 金額関係
+.l-right {
+  float: right;
+}
+.l-left {
+  float: left;
+}
+.bold {
+  font-weight: 600;
+}
+
+.sell-content__price {
+  &--input {
+    text-align: right;
+    font-size: 14px;
+  }
+  &--input div{
+    display: inline-block;
+    width: 80%;
+    margin: 0 0 0 5%;
+  }
+  &--input-form {
+    width: 100%;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: right;
+  }
+  & li {
+    padding: 24px 0;
+    border-top: 1px solid #ccc;
+  }
+  & li:first-child {
+    padding: 0 0 24px;
+    border: 0;
+  }
+  & .normal {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  & .bold .l-right {
+    font-size: 34px;
+    line-height: 34px;
+  }
+}
+
+// 送信ボタン
+.sell-content__btn {
+  line-height: 1.5;
+  &--detail {
+    text-align: left;
+    line-height: 21px;
+    font-size: 14px;
+    color: #333333;
+    &-link {
+      color: #0099e8;
+      font-size: 14px;
+    }
+    &-link:hover {
+      text-decoration: underline;
+    }
+  }
+  &--submit {
+    margin: 40px 0 0;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  &--back {
+    display: block;
+    width: 45%;
+    margin: 24px auto 0;
+    background: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+    line-height: 48px;
+    font-size: 14px;
+    transition: 0.5s ;
+  }
+  &--back:hover {
+    opacity: 0.7;
+  }
+}

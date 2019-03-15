@@ -85,8 +85,9 @@
     = link_to '購入画面に進む', "#", class: "item-buy-btn"
   - else
     = link_to '売り切れました', "#", class: "item-buy-btn disabled"
-  - if @product.status == 0
-    = link_to '編集', "#", class: "item-buy-btn disabled"
+  - if @user.id == current_user.id
+    = link_to '商品の編集', "#", class: "item-buy-btn disabled"
+    = link_to 'この商品を削除する', "#", class: "item-buy-btn disabled"
   .item-box__box-descriotion
     %p.item-box__box-descriotion--inner
       = @product.detail

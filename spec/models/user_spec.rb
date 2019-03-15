@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 describe User, class: User do
 
   describe '#create' do
@@ -65,4 +66,5 @@ describe User, class: User do
     end
 
   end
+  
 end

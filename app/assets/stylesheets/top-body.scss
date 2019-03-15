@@ -1,0 +1,27 @@
+.body-container {
+	background-color: #f5f5f5;
+  .global-banner {
+    width: 1440px;
+    height: 260px;
+  }
+	.main-body {
+		width: 1020px;
+		margin: 0 auto ;
+
+		.body-items-box{
+			width: 100%;
+			margin: 0 auto;
+			font-size: 0;
+
+	    &__box-head {
+			padding: 24px 0 8px;
+			font-size: 22px;
+			font-weight: bold;
+			}
+			.body-items-box__item-box:nth-child(5n+1) {
+				margin-right: 0;
+			}
+			@include item-box;
+		}
+	}
+}

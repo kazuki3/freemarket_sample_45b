@@ -1,0 +1,23 @@
+.default-container
+  %header.global-header
+    .global-header__inner
+      .clearfix.global-header-up
+        %a.global-header-up__link{:href => "#"}
+          %img.mercari-logo{:src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?856433691", :alt => "mercari"}
+        %form.basic-form
+          %input.basic-form__search{type: "text", placeholder: "キーワードから探す"}
+          %i.fas.fa-search.search-icon
+      .clearfix.global-header-down
+        .product-search
+          %nav
+            %ul.product-search-list
+              %li.product-search-list__list-item
+                %a.product-search-list__list-item--item-link{:href => "#"} カテゴリーから探す
+              %li.product-search-list__list-item
+                %a.product-search-list__list-item--item-link{:href => "#"} ブランドから探す
+        .user-sign
+          %ul.user-sign-list
+            %li.user-sign-list__list-item-red
+              %a.user-sign-list__list-item-red--item-link{:href => "/users/sign_in"} ログイン
+            %li.user-sign-list__list-item-blue
+              %a.user-sign-list__list-item-blue--item-link{:href => "/select"} 新規会員登録

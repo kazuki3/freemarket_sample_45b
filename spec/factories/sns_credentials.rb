@@ -5,5 +5,4 @@ FactoryBot.define do
     provider { "google_oauth2" }
     user
   end
-
 end

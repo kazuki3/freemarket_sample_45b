@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   belongs_to :prefecture
   belongs_to :postage
   belongs_to :shipping_method
-  has_many :images, inverse_of: :product, dependent: :destroy
+  has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
 
   validates :name, presence: true
@@ -33,5 +33,18 @@ class Product < ApplicationRecord
     twoday_threeday: 2,
     fourday_sevenday: 3
   }
+
+# FIXME: リファクタリング時に操作確認。現在、呼び出してもエラーになる
+  # def category_decision
+  #   if self.depth == 2
+  #     @parent_category = self.root.name
+  #     @child_category = self.parent.name
+  #     @grandchild_category = self.name
+  #   elsif self.depth == 1
+  #     @parent_category = self.root.name
+  #     @child_category = self.name
+  #     @grandchild_category = "none"
+  #   end
+  # end
 
 end

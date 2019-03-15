@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
 
   def index
+    @products = Product.all
+    @images = Image.all
   end
 
 
@@ -9,7 +11,6 @@ class ProductsController < ApplicationController
 
 
   def new
-    @category_root = Category.find(1).siblings
     @product = Product.new
   end
 

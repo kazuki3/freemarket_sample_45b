@@ -8,7 +8,9 @@ class User < ApplicationRecord
           :validatable,
           omniauth_providers: %i[facebook google_oauth2]
 
-  validates :nickname, presence: true
+
+  validates :nickname, presence: true, uniqueness: true
+
   has_one :profile
   has_many :products
   has_one :users

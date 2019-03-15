@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!, only: [:signout]
+  before_action :authenticate_user!, only: [:signout]
 
   def index
   end

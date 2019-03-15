@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 group :development do
@@ -74,5 +75,5 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'ancestry'
 gem 'enum_help'
-gem 'active_hash'
 gem "jquery-rails"
+gem 'carrierwave'

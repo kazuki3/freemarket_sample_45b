@@ -4,6 +4,7 @@ http://localhost:3000/index          | http://localhost:3000/users/sign_in
 users#index                          | users/sessions#new
 
 
+
 会員登録方法選択                          変更後
 index2_path                          | registration_select_path
 http://localhost:3000/index2         | http://localhost:3000/select

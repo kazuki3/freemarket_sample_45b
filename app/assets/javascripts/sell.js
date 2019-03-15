@@ -41,6 +41,32 @@ $(document).on('turbolinks:load', function(){
 
   });
 
+  $('#file-upload').on('change', function(e){
+    //ファイルオブジェクトを取得する
+    var file = e.target.files[1];
+    console.log(file);
+    var reader = new FileReader();
+
+    //画像でない場合は処理終了
+    if(file.type.indexOf("image") < 0){
+      alert("画像ファイルを指定してください。");
+      return false;
+    }
+
+    //アップロードした画像を設定する
+    reader.onload = (function(file){
+      console.log(file);
+      return function(e){
+        $('.sell-upload__dropbox').removeClass('have-item-0');
+        $('.sell-upload__dropbox').addClass('have-item-1');
+        appendItemSelect()
+        $("#item-img").attr("src", e.target.result);
+        $("#item-img").attr("title", file.name);
+      };
+    })(file);
+    reader.readAsDataURL(file);
+
+  });
 
 
 

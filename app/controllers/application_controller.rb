@@ -30,7 +30,7 @@ private
   end
 
   def after_sign_out_path_for(resource)
-    index_path
+    new_user_session_path
   end
 
 end

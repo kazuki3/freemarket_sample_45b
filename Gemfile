@@ -77,3 +77,4 @@ gem 'ancestry'
 gem 'enum_help'
 gem "jquery-rails"
 gem 'carrierwave'
+gem 'recaptcha', require: "recaptcha/rails"

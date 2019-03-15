@@ -1,9 +1,9 @@
 @import "config/reset";
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
-@import 'mixin/users_devise';
-@import 'users_devise/new';
-@import 'users_devise/index';
-@import 'users_devise/users';
+@import 'mixin/user_registration_common_parts';
+@import 'users/session_new';
+@import 'users/registration_select';
+@import 'users/users';
 @import "profiles/profiles";
 @import "payments/payments";
 @import "profiles/signout";
@@ -20,6 +20,7 @@
 @import 'mypage/mypage';
 @import 'mypage/content';
 @import 'mypage/side';
+@import 'modules/_flash.scss';
 
 * { box-sizing: border-box;
 }

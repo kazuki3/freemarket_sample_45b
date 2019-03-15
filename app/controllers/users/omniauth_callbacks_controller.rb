@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+
   def facebook
     callback_for(:facebook)
   end
@@ -18,13 +19,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
       else
         session["devise.#{provider}_data"] = oauth.except("extra")
-        redirect_to index2_path
+        redirect_to registration_select_path
       end
     else
       snscredential = SnsCredential.find_sns(oauth)
       @user = SnsCredential.check_sns(snscredential, oauth)
-      sign_in(@user)
-      redirect_to root_path
+      bypass_sign_in(@user)
+      redirect_to root_path, notice: 'ログインしました'
     end
   end
 

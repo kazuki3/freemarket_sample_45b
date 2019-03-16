@@ -14,13 +14,13 @@
           .actions
             .inline-icon-box
               = image_tag "facebook.png", class:"minilogo"
-            %a.facebook-btn{:href => 'users/auth/facebook/'}
+            %a.facebook-btn{:href => 'auth/facebook/'}
               Facebookでログイン
 
           .actions
             .inline-icon-box
               = image_tag "google.png", class:"minilogo"
-            %a.google-btn{:href => 'users/auth/google_oauth2/'}
+            %a.google-btn{:href => 'auth/google_oauth2/'}
               Googleでログイン
 
           = form_with(model: resource, as: resource_name, url: user_session_path, locla: true) do |form|

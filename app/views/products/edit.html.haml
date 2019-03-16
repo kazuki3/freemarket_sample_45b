@@ -59,23 +59,6 @@
                   = f.collection_select :category_id, @grandchild_categories, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'grandchild-category'}
                   %i.fas.fa-angle-down.select-icon
 
-        / MEMO: ブランド、サイズテーブル未作成のため、フォームのみ作成
-              / .form-group
-              /   = f.label :size_id, {class: "sell-content__label"} do
-              /     サイズ
-              /     %span.form-require 必須
-              /   .select-wrap
-              /     = f.select :size_id, {}, {prompt: "---"}, {class: 'select-default'}
-              /     %i.fas.fa-angle-down.select-icon
-
-              / .form-group
-              /   = f.label :brand_id, {class: "sell-content__label"} do
-              /     ブランド
-              /     %span.form-optional 任意
-              /   .select-wrap
-              /     = f.select :brand_id, {}, {prompt: "---"}, {class: 'select-default'}
-              /     %i.fas.fa-angle-down.select-icon
-
               .form-group
                 = f.label :condition, {class: "sell-content__label"} do
                   商品の状態

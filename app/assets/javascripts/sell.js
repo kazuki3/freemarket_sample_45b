@@ -47,10 +47,11 @@ $(document).on('turbolinks:load', function(){
 
     function appendchildselect() {
       var html =
-          `<div class="select-wrap">
+          `<div class="select-wrap" id="child-wrap">
             <select class="select-default" id="child-category" name="product[category_id]">
                 <option value>---</option>
             </select>
+            <i class="fas fa-angle-down select-icon"></i>
           </div>`
       category_search.append(html)
     }
@@ -58,10 +59,11 @@ $(document).on('turbolinks:load', function(){
     // 孫カテゴリーのselectを追加するHTML
     function appendgrandchildselect() {
       var html =
-          `<div class="select-wrap">
+          `<div class="select-wrap" id="grandchild-wrap">
             <select class="select-default" id="grandchild-category" name="product[category_id]">
                 <option value>---</option>
             </select>
+            <i class="fas fa-angle-down select-icon"></i>
           </div>`
       category_search.append(html)
     }
@@ -115,8 +117,8 @@ $(document).on('turbolinks:load', function(){
   $('#parent-category').change(function(e) {
     e.preventDefault();
     var parent = $(this).val();
-    $("#child-category").remove()
-    $("#grandchild-category").remove()
+    $("#child-wrap").remove()
+    $("#grandchild-wrap").remove()
     console.log(parent);
     $.ajax({ //ajax通信で以下のことを行います
       url: '/products/category', //urlを指定
@@ -134,10 +136,14 @@ $(document).on('turbolinks:load', function(){
     })
   });
 
+
+
+
+
 // 子カテゴリーをクリック
   $(document).on('change', '#child-category', function() {
     var child = $(this).val();
-    $("#grandchild-category").remove()
+    $("#grandchild-wrap").remove()
     console.log(child);
     $.ajax({ //ajax通信で以下のことを行います
       url: '/products/category', //urlを指定

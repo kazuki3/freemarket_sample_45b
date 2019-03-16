@@ -1,0 +1,177 @@
+.outer
+
+  = render "product-header"
+
+  .sell-main
+    %section.sell-main__container
+      .sell-container
+        %h1.sell-container__head 商品の情報を入力
+        = form_for @product, html: {class: 'sell-form'} do |f|
+          .sell-upload.clearfix
+            %h3.sell-upload__head
+              出品画像
+              %span.form-require 必須
+            %p.sell-upload__option 最大10枚までアップロードできます
+            .sell-dropbox__container.clearfix
+              .sell-upload__items
+                %ul#item-list
+                  %li.sell-upload__item
+                    %figure.sell-upload__figure
+                      = image_tag @product.images[0].image_path, alt: "アイコン", id: "item-img"
+                    .sell-upload-btn
+                      = link_to "#", class: "sell-upload__edit" do
+                        編集
+                      = link_to "#", class: "sell-upload__delete" do
+                        削除
+              = f.fields_for :images , html: {class: 'dropzone', id: 'item-dropzone'}do |i|
+                %label.sell-upload__dropbox.have-item-1
+                  %pre
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+                  = i.file_field :image_path, class: 'file', id: 'file-upload'
+          .sell-content
+            .sell-content__info
+              .form-group
+                = f.label :name, {class: "sell-content__label"} do
+                  商品名
+                  %span.form-require 必須
+                = f.text_field :name, class: 'sell-content__info--name-form', placeholder: "商品名（必須40文字まで）"
+              .form-group
+                = f.label :detail, {class: "sell-content__label"} do
+                  商品の説明
+                  %span.form-require 必須
+                = f.text_area :detail, class: 'sell-content__info--detail-form', placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+
+          .sell-content.clearfix
+            %h3.sell-sub-head 商品の詳細
+            .sell-content__detail
+              .form-group#category
+                = f.label :categoery_id, {class: "sell-content__label"} do
+                  カテゴリー
+                  %span.form-require 必須
+                .select-wrap
+                  = f.collection_select :category_id, @category_root, :id, :name, {prompt: "---", selected: @category.root_id}, {class: 'select-default', id: 'parent-category'}
+                  %i.fas.fa-angle-down.select-icon
+                .select-wrap#child-wrap
+                  = f.collection_select :category_id, @child_categories, :id, :name, {prompt: "---", selected: @category.parent_id}, {class: 'select-default', id: 'child-category'}
+                  %i.fas.fa-angle-down.select-icon
+                .select-wrap#grandchild-wrap
+                  = f.collection_select :category_id, @grandchild_categories, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'grandchild-category'}
+                  %i.fas.fa-angle-down.select-icon
+
+              / .form-group
+              /   = f.label :size_id, {class: "sell-content__label"} do
+              /     サイズ
+              /     %span.form-require 必須
+              /   .select-wrap
+              /     = f.select :size_id, {}, {prompt: "---"}, {class: 'select-default'}
+              /     %i.fas.fa-angle-down.select-icon
+
+              / .form-group
+              /   = f.label :brand_id, {class: "sell-content__label"} do
+              /     ブランド
+              /     %span.form-optional 任意
+              /   .select-wrap
+              /     = f.select :brand_id, {}, {prompt: "---"}, {class: 'select-default'}
+              /     %i.fas.fa-angle-down.select-icon
+
+              .form-group
+                = f.label :condition, {class: "sell-content__label"} do
+                  商品の状態
+                  %span.form-require 必須
+                .select-wrap
+                  = f.select :condition, Product.conditions_i18n.invert, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
+
+          .sell-content.clearfix
+            %h3.sell-sub-head
+              配送について
+              = link_to "#", class: "question-icon" do
+                ?
+            .sell-content__detail
+              .form-group#postage_form
+                = f.label :postage_id, {class: "sell-content__label"} do
+                  送料の負担
+                  %span.form-require 必須
+                .select-wrap
+                  = f.collection_select :postage_id, @postage, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'postage'}
+                  %i.fas.fa-angle-down.select-icon
+              .form-group#shipping_form
+                = f.label :shipping_method_id, {class: "sell-content__label"} do
+                  配送の方法
+                  %span.form-require 必須
+                - if @product.postage_id == 1
+                  .select-wrap
+                    = f.collection_select :shipping_method_id, @seller, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'shipping-select'}
+                    %i.fas.fa-angle-down.select-icon
+                - else
+                  .select-wrap
+                    = f.collection_select :shipping_method_id, @buyer, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'shipping-select'}
+                    %i.fas.fa-angle-down.select-icon
+
+              .form-group
+                = f.label :prefecture_id, {class: "sell-content__label"} do
+                  発送元の地域
+                  %span.form-require 必須
+                .select-wrap
+                  = f.collection_select :prefecture_id, @prefecture, :id, :name, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
+              .form-group
+                = f.label :date, {class: "sell-content__label"} do
+                  発送前の日数
+                  %span.form-require 必須
+                .select-wrap
+                  = f.select :date, Product.dates_i18n.invert, {prompt: "---"}, {class: 'select-default'}
+                  %i.fas.fa-angle-down.select-icon
+
+          .sell-content.clearfix
+            %h3.sell-sub-head
+              販売利益(300〜9,999,999)
+              = link_to "#", class: "question-icon" do
+                ?
+            .sell-content__detail
+              %ul.sell-content__price
+                %li.form-group
+                  %div.clearfix
+                    = f.label :price, {class: "sell-content__label l-left price"} do
+                      価格
+                      %span.form-require 必須
+                    %div.l-right.sell-content__price--input
+                      ¥
+                      %div
+                        = f.text_field :price, class: 'sell-content__price--input-form', id: 'calc-price', placeholder: "例) 300"
+                %li.clearfix
+                  %div.l-left.normal 販売手数料(10%)
+                  %di.l-right.normal#fee -
+                %li.clearfix.bold
+                  %div.l-left#revenue 販売利益
+                  %div.l-right -
+
+
+          .sell-content.sell-content__btn
+            %div.sell-content__btn--detail
+              %p
+                = link_to "#", class: "sell-content__btn--detail-link" do
+                  禁止されている出品
+                、
+                = link_to "#", class: "sell-content__btn--detail-link" do
+                  行為
+                を必ずご確認ください。
+
+              %p
+                またブランド品でシリアルナンバー等がある場合はご記載ください。
+                = link_to "#", class: "sell-content__btn--detail-link" do
+                  偽ブランドの販売
+                は犯罪であり処罰される可能性があります。
+              %p
+                また、出品をもちまして
+                = link_to "#", class: "sell-content__btn--detail-link" do
+                  加盟店規約
+                に同意したことになります。
+
+            = f.submit '変更する', class: "sell-content__btn--submit"
+            = link_to product_path(@product.id), class: "sell-content__btn--back" do
+              キャンセル
+
+  = render "product-footer"
+

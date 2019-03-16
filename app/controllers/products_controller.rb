@@ -38,6 +38,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy if product.seller_id == current_user.id
+    redirect_to root_path, notice: '商品を削除しました'
+  end
+
   def category
     if params[:parent]
       @child_categories = Category.where('ancestry = ?', "#{params[:parent]}")

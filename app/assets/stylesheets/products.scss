@@ -38,6 +38,7 @@
       }
       .photo-sub {
         display: flex;
+        background-color: #FAFAFA;
         .active {
           opacity: 1;
         }
@@ -128,6 +129,11 @@
     line-height     : 60px;
     height          : 60px;
   }
+  .disabled {
+    background: #888;
+    cursor: not-allowed;
+  }
+
   &__box-descriotion {
     margin-top : 24px;
     padding-top: 32px;

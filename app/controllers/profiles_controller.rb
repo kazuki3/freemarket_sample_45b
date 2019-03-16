@@ -1,9 +1,13 @@
 class ProfilesController < ApplicationController
+<<<<<<< HEAD
   before_action :profile_params, only: [:create, :edit, :update]
 
   def index
 
   end
+=======
+  before_action :authenticate_user!, only: [:new, :create]
+>>>>>>> kazuki3/master
 
   def new
     @profiles = Profile.new
@@ -12,9 +16,10 @@ class ProfilesController < ApplicationController
   def create
     @profiles = Profile.new(profile_params)
       if @profiles.save
-        redirect_to new_payment_path
+        redirect_to new_payment_path, notice: '連絡先情報を登録しました'
       else
-        redirect_to new_profile_path
+        flash.now[:alert] = '未入力項目があります'
+        render :new
     end
   end
 

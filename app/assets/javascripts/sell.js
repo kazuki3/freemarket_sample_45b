@@ -15,7 +15,6 @@ $(document).on('turbolinks:load', function(){
     listsearch.append(html);
   }
 
-
   $('#file-upload').on('change', function(e){
     //ファイルオブジェクトを取得する
     var file = e.target.files[0];
@@ -112,14 +111,12 @@ $(document).on('turbolinks:load', function(){
     )
   }
 
-
 // 親カテゴリーをクリック
   $('#parent-category').change(function(e) {
     e.preventDefault();
     var parent = $(this).val();
     $("#child-wrap").remove()
     $("#grandchild-wrap").remove()
-    console.log(parent);
     $.ajax({ //ajax通信で以下のことを行います
       url: '/products/category', //urlを指定
       type: 'GET', //メソッドを指定
@@ -136,15 +133,10 @@ $(document).on('turbolinks:load', function(){
     })
   });
 
-
-
-
-
 // 子カテゴリーをクリック
   $(document).on('change', '#child-category', function() {
     var child = $(this).val();
     $("#grandchild-wrap").remove()
-    console.log(child);
     $.ajax({ //ajax通信で以下のことを行います
       url: '/products/category', //urlを指定
       type: 'GET', //メソッドを指定
@@ -161,13 +153,11 @@ $(document).on('turbolinks:load', function(){
     })
   });
 
-
 // 配送料をクリック
   $('#postage').change(function(e){
     e.preventDefault();
     var postage = $('#postage option:selected').text();
     $("#shipping_form").remove()
-    console.log(postage);
     $.ajax({ //ajax通信で以下のことを行います
       url: '/products/postage', //urlを指定
       type: 'GET', //メソッドを指定

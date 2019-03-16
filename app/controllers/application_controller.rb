@@ -26,11 +26,12 @@ private
 
 
   def after_sign_in_path_for(resource)
+    flash[:notice] = "ログインしました"
     root_path
   end
 
   def after_sign_out_path_for(resource)
-    index_path
+    new_user_session_path
   end
 
 end

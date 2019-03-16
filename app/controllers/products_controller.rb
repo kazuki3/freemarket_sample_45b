@@ -5,6 +5,19 @@ class ProductsController < ApplicationController
 
 
   def show
+    @product = Product.find(params[:id])
+    @user = User.find(@product.seller_id)
+
+    @category = @product.category
+    if @category.depth == 2
+      @parent_category = @category.root.name
+      @child_category = @category.parent.name
+      @grandchild_category = @category.name
+    elsif @category.depth == 1
+      @parent_category = @category.root.name
+      @child_category = @category.name
+      @grandchild_category = "none"
+    end
   end
 
 
@@ -13,7 +26,7 @@ class ProductsController < ApplicationController
     @prefecture = Prefecture.all
     @category_root = Category.find(1).siblings
     @product = Product.new
-    1.times { @product.images.build }
+    4.times { @product.images.build }
   end
 
   def create
@@ -51,7 +64,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :detail, :category_id, :condition, :postage_id, :shipping_method_id, :prefecture_id, :date, :price, images_attributes: {image: []}).merge(seller_id: current_user.id);
+    params.require(:product).permit(:name, :detail, :category_id, :condition, :postage_id, :shipping_method_id, :prefecture_id, :date, :price, images_attributes: [:image_path]).merge(seller_id: current_user.id);
   end
 
 end

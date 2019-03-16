@@ -1,36 +1,28 @@
 = render 'layouts/global-header'
 %section.item-box
-  %h1.item-box__box-name 商品名を表示します
-  %p.item-box__box-word 『ブレスレッド シャネル 春夏』は、51回の取引実績を持つ小林タロウさんから出品されました。シャネル（ブレスレット/レディース）の商品で、東京都から2~3日で発送されます。。
+  %h1.item-box__box-name
+    = @product.name
+  %p.item-box__box-word 『#{@product.name}』は、51回の取引実績を持つ#{@user.nickname}さんから出品されました。（ぬいぐるみ/おもちゃ・ホビー・グッズ）の商品で、#{@product.prefecture.name}から2~3日で発送されます。。
   .item-box__box-main.clearfix
     .item-photo
       %div
-        .photo-main
-          .photo-main__item
-            %img.photo-main__item--img{src: "https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v", alt: "a"}
-          .photo-main__item
-            %img.photo-main__item--img{src: "https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v", alt: "a"}
-          .photo-main__item
-            %img.photo-main__item--img{src: "https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v", alt: "a"}
-          .photo-main__item
-            %img.photo-main__item--img{src: "https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v", alt: "a"}
+        %ul.photo-main.slider
+          - if @product.images
+            - @product.images.each do |image|
+              %li.photo-main__item
+                = image_tag("#{image.image_path_url}", class: "photo-main__item--img")
         .photo-sub
-          .photo-sub__item
-            = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v', class: "photo-sub__item--img active"
-          .photo-sub__item
-            = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v', class: "photo-sub__item--img"
-          .photo-sub__item
-            = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v', class: "photo-sub__item--img"
-          .photo-sub__item
-            = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m20757475153_1.jpg?1551680167v', class: "photo-sub__item--img"
-
+          - if @product.images
+            - @product.images.each do |image|
+              .photo-sub__item
+                = image_tag "#{image.image_path_url}", class: "photo-sub__item--img"
 
     %table.item-detail
       %tbody
         %tr
           %th.item-detail__th 出品者
           %td.item-detail__td
-            = link_to "小林タロウ", "#", class: ""
+            = link_to @user.nickname, "#", class: ""
             %div
               .item-detail__td--rate
                 %i.fas.fa-grin
@@ -46,15 +38,16 @@
           %td.item-detail__td
             = link_to "#", class: "" do
               %div
-                %text レディース
+                %text #{@parent_category}
             = link_to "#", class: "" do
               %div
                 %i.fas.fa-angle-right.arrow-icon-right
-                %text アクセサリー
-            = link_to "#", class: "" do
-              %div
-                %i.fas.fa-angle-right.arrow-icon-right
-                %text ブレスレット
+                %text #{@child_category}
+            - unless @grandchild_category == "none"
+              = link_to "#", class: "" do
+                %div
+                  %i.fas.fa-angle-right.arrow-icon-right
+                  %text #{@grandchild_category}
         %tr
           %th.item-detail__th ブランド
           %td.item-detail__td
@@ -62,38 +55,43 @@
               %text シャネル
         %tr
           %th.item-detail__th 商品の状態
-          %td.item-detail__td 未使用に近い
+          %td.item-detail__td
+            = @product.condition_i18n
         %tr
           %th.item-detail__th 配送料の負担
-          %td.item-detail__td 送料込み(出品者負担)
+          %td.item-detail__td
+            = @product.postage.name
         %tr
           %th.item-detail__th 配送の方法
-          %td.item-detail__td ゆうゆうメルカリ便
+          %td.item-detail__td
+            = @product.shipping_method.name
         %tr
           %th.item-detail__th 配送元地域
           %td.item-detail__td
             = link_to "#", class: "" do
-              %text 東京都
+              %text
+                = @product.prefecture.name
         %tr
           %th.item-detail__th 発送日の目安
-          %td.item-detail__td 2~3日で発送
+          %td.item-detail__td
+            = @product.date_i18n
   .item-box__box-price
-    %span.item-box__box-price--price ¥ 6,000
+    %span.item-box__box-price--price
+      ¥ #{@product.price}
     %span.item-box__box-price--tax (税込)
-    %span.item-box__box-price--shipping-fee 送料込み
-  = link_to '購入画面に進む', "#", class: "item-buy-btn"
+    %span.item-box__box-price--shipping-fee
+      = fee_decide(@product)
+  - if @product.status == 0
+    = link_to '購入画面に進む', "#", class: "item-buy-btn"
+  - else
+    = link_to '売り切れました', "#", class: "item-buy-btn disabled"
+  - if @user.id == current_user.id
+    = link_to '商品の編集', "#", class: "item-buy-btn disabled"
+    = link_to 'この商品を削除する', "#", class: "item-buy-btn disabled"
   .item-box__box-descriotion
     %p.item-box__box-descriotion--inner
-      これから春 夏 用に(o^^o)
+      = @product.detail
 
-      長さ17.5センチ
-      繋ぎ部分の金具に含むと19センチ
-
-      幅は2センチ
-
-      これ１つだけで かなり 存在感あり素敵で可愛いです。
-
-      保証書やケースは無いですが大切に包んで発送します。
     %p.item-box__box-descriotion--p
   .item-box__btn-container.clearfix
     .item-box__btn-container-left

@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
     @prefecture = Prefecture.all
     @category_root = Category.find(1).siblings
     @product = Product.new
-    4.times { @product.images.build }
+    1.times { @product.images.build }
   end
 
   def create

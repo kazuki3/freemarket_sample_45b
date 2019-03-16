@@ -59,6 +59,7 @@
                   = f.collection_select :category_id, @grandchild_categories, :id, :name, {prompt: "---"}, {class: 'select-default', id: 'grandchild-category'}
                   %i.fas.fa-angle-down.select-icon
 
+        / MEMO: ブランド、サイズテーブル未作成のため、フォームのみ作成
               / .form-group
               /   = f.label :size_id, {class: "sell-content__label"} do
               /     サイズ

@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   def new
     @postage = Postage.all
     @prefecture = Prefecture.all
-    @category_root = Category.find(1).siblings
+    @category_root = Category.all
     @product = Product.new
     4.times { @product.images.build }
   end
@@ -36,6 +36,12 @@ class ProductsController < ApplicationController
     else
       redirect_to new_product_path, flash: {miss: "必須項目をすべて選択してください"}
     end
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy if product.seller_id == current_user.id
+    redirect_to root_path, notice: '商品を削除しました'
   end
 
   def category

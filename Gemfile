@@ -76,3 +76,4 @@ gem 'enum_help'
 gem "jquery-rails"
 gem 'carrierwave'
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'fog-aws'

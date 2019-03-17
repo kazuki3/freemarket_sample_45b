@@ -58,7 +58,10 @@
               .form-group-birthdate
                 .birthdate_date_box
                   = f.date_select :birthdate, start_year: 1930, end_year: (Time.now.year), :use_month_numbers => true, include_blank:true, placeholder: "--", class:"input-default"
-                %p.date-select-font年月日
+                .date-select-font
+                  %p 年
+                  %p 月
+                  %p 日
 
             .form-group
               %span.registration_font 郵便番号

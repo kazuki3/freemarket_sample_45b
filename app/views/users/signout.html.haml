@@ -1,16 +1,19 @@
 .register__container
   .register__container__header
     = image_tag "logo.svg", class:"campany-logo", alt:"メルカリロゴ"
-
-  %main.register-main
+  .breadcrumbs-header-contener
+    .breadcrumbs-header
+      - breadcrumb :signout
+      = breadcrumbs separator: " &rsaquo; "
+.contaier
+  = render 'side'
+  %main.register-signout
     %section.register-main__container
-      %h2.register-main__header__login ログアウト画面
-
       .register-inner
         .register-inner__content
           .actions
             .sign-out-btn
-              = link_to "サインアウト", destroy_user_session_path, method: :delete
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+.footer
+  = render 'global-footer'
 
-  .register__container__footer
-    = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"

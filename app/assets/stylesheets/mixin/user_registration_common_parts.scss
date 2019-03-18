@@ -44,13 +44,19 @@ $white: #FFFFFF;
 
 @mixin progress-bar{
   .clearfix{
-    width:100%;
+    display: flex;
     .activ-box{
-      margin:3vw 3vw 1vw 3vw;
+      width: auto;
+      display: flex;
+      align-items: center;
+      margin:2vw 2vw 1vw 2vw;
       .active{
         font-size: 0.9vw;
+        margin:auto auto 20px auto;
         font-weight: 600;
         color: $light_gray;
+        cursor: pointer;
+        width:100%;
       }
     }
   }
@@ -63,7 +69,12 @@ $white: #FFFFFF;
 @mixin active-red{
   font-size: 0.9vw;
   margin:auto auto 20px auto;
+  font-weight: 600;
+  color: #ea352d;
+  cursor: pointer;
+  margin:auto auto 20px auto;
   color: $light_red;
+  cursor: pointer;
 }
 
 // ----------------------------------------
@@ -81,7 +92,7 @@ $white: #FFFFFF;
     position:absolute;
     border-bottom:solid 2px $light_red;
     content:'';
-    width:65px;
+    width:60px;
     height:6px;
     margin-left:12px;
   }
@@ -89,7 +100,7 @@ $white: #FFFFFF;
     position:absolute;
     border-bottom:solid 2px $light_red;
     content:'';
-    width:65px;
+    width:60px;
     height:6px;
     right:100%;
   }
@@ -108,10 +119,11 @@ $white: #FFFFFF;
   position:relative;
   &:after{
     position:absolute;
-    border-bottom:solid 2px $light_gray;
+    border-bottom:solid 2px $light_red;
     content:'';
     width:65px;
     height:6px;
+    margin-left:12px;
   }
 }
 // ------------------------------------------
@@ -168,6 +180,7 @@ $white: #FFFFFF;
 
 @mixin register-main{
   width: 50vw;
+  min-width: 370px;
   height: auto;
   background-color: $white;
   margin:auto;
@@ -219,7 +232,7 @@ $white: #FFFFFF;
 // 会員情報入力欄 セット ーーーーーーーーーーー
 
 @mixin form-group{
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
   .registration_font{
     font-weight: 600;
     font-size: 1vw;

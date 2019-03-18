@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_form_data, only: [:new, :edit]
+  before_action :Set_api_for_payjp, only: :buy
 
   def index
     @ladies = Category.find_by(name: "レディース")
@@ -90,7 +91,6 @@ class ProductsController < ApplicationController
 
   def buy
     # 顧客カードデータ取得
-    Set_api_for_payjp
     customer = Payment.find_by(user_id: current_user.id)
     customer_id = Payjp::Customer.retrieve(customer.customer_id)
     @customer = customer_id.cards.data[0]

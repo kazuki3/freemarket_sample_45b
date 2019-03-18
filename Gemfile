@@ -48,6 +48,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'faker'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -63,8 +64,11 @@ group :production do
   gem 'unicorn'
 end
 
+<<<<<<< HEAD
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+=======
+>>>>>>> kazuki3/master
 gem 'pry-rails'
 gem 'haml-rails'
 gem 'devise'
@@ -77,3 +81,5 @@ gem 'ancestry'
 gem 'enum_help'
 gem "jquery-rails"
 gem 'carrierwave'
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'gretel'

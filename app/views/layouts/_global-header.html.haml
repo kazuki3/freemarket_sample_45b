@@ -15,9 +15,11 @@
                 %a.product-search-list__list-item--item-link{:href => "#"} カテゴリーから探す
               %li.product-search-list__list-item
                 %a.product-search-list__list-item--item-link{:href => "#"} ブランドから探す
-        .user-sign
-          %ul.user-sign-list
-            %li.user-sign-list__list-item-red
-              %a.user-sign-list__list-item-red--item-link{:href => "#"} ログイン
-            %li.user-sign-list__list-item-blue
-              %a.user-sign-list__list-item-blue--item-link{:href => "#"} 新規会員登録
+        - unless user_signed_in?
+          .user-sign
+            %ul.user-sign-list
+              %li.user-sign-list__list-item-red
+                %a.user-sign-list__list-item-red--item-link{:href => user_session_path} ログイン
+              %li.user-sign-list__list-item-blue
+                %a.user-sign-list__list-item-blue--item-link{:href => registration_select_path} 新規会員登録
+    = render 'layouts/breadcrumbs-header'

@@ -180,6 +180,7 @@ $white: #FFFFFF;
 
 @mixin register-main{
   width: 50vw;
+  min-width: 370px;
   height: auto;
   background-color: $white;
   margin:auto;

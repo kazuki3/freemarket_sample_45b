@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_form_data, only: [:new, :edit]
 
   def index
     @products = Product.all
@@ -7,13 +8,23 @@ class ProductsController < ApplicationController
 
 
   def show
+    @product = Product.find(params[:id])
+    @user = User.find(@product.seller_id)
+
+    @category = @product.category
+    if @category.depth == 2
+      @parent_category = @category.root.name
+      @child_category = @category.parent.name
+      @grandchild_category = @category.name
+    elsif @category.depth == 1
+      @parent_category = @category.root.name
+      @child_category = @category.name
+      @grandchild_category = "none"
+    end
   end
 
 
   def new
-    @postage = Postage.all
-    @prefecture = Prefecture.all
-    @category_root = Category.find(1).siblings
     @product = Product.new
     1.times { @product.images.build }
   end
@@ -25,6 +36,27 @@ class ProductsController < ApplicationController
     else
       redirect_to new_product_path, flash: {miss: "必須項目をすべて選択してください"}
     end
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy if product.seller_id == current_user.id
+    redirect_to root_path, notice: '商品を削除しました'
+  end
+
+  def edit
+    @product = Product.find_by(id: params[:id])
+    @seller = ShippingMethod.seller
+    @buyer = ShippingMethod.buyer
+    @category = @product.category
+    @child_categories = Category.where('ancestry = ?', "#{@category.root_id}")
+    @grandchild_categories = Category.where('ancestry LIKE ?', "%/#{@category.parent_id}")
+  end
+
+  def update
+    product = Product.find(params[:id])
+    product.update(update_product_params) if product.seller_id == current_user.id
+    redirect_to product_path(params[:id])
   end
 
   def category
@@ -53,7 +85,17 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :detail, :category_id, :condition, :postage_id, :shipping_method_id, :prefecture_id, :date, :price, images_attributes: {image: []}).merge(seller_id: current_user.id);
+    params.require(:product).permit(:name, :detail, :category_id, :condition, :postage_id, :shipping_method_id, :prefecture_id, :date, :price, images_attributes: [:image_path]).merge(seller_id: current_user.id);
+  end
+
+  def update_product_params
+    params.require(:product).permit(:name, :detail, :category_id, :condition, :postage_id, :shipping_method_id, :prefecture_id, :date, :price, images_attributes: [:image_path, :_destroy, :id]).merge(seller_id: current_user.id);
+  end
+
+  def set_form_data
+    @postage = Postage.all
+    @prefecture = Prefecture.all
+    @category_root = Category.find(1).siblings
   end
 
 end

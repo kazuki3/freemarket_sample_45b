@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
-
 private
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
@@ -23,6 +22,9 @@ private
     Rails.env.production?
   end
 
+  def Set_api_for_payjp
+      Payjp.api_key = 'sk_test_b77de856ed32a389b8f1d3c9'
+  end
 
   def after_sign_in_path_for(resource)
     root_path

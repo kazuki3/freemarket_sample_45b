@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = 'sk_test_b77de856ed32a389b8f1d3c9'
+    Set_api_for_payjp
     customer = Payjp::Customer.create(card: params[:payjpToken])
     @payment = Payment.new(user_id: current_user.id, customer_id: customer.id, card_token: params[:payjpToken])
     if @payment.save

@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   belongs_to :prefecture
   belongs_to :postage
   belongs_to :shipping_method
+  has_one  :trade
   has_many :images, inverse_of: :product, dependent: :destroy
   accepts_nested_attributes_for :images
 

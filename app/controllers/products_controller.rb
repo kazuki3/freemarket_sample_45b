@@ -49,6 +49,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def buy
+    # 顧客カードデータ取得
+    Payjp.api_key = 'sk_test_b77de856ed32a389b8f1d3c9'
+    customer = Payment.find_by(user_id: current_user.id)
+    customer_id = Payjp::Customer.retrieve(customer.customer_id)
+    @customer = customer_id.cards.data[0]
+    @product = Product.find(params[:id])
+  end
+
   private
   def product_params
     params.require(:product).permit(:name, :detail, :category_id, :condition, :postage_id, :shipping_method_id, :prefecture_id, :date, :price, images_attributes: {image: []}).merge(seller_id: current_user.id);

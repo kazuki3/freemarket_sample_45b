@@ -1,13 +1,8 @@
-# frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
 
-  # GET /resource/sign_in
-  # def new
-  #   super
-  # end
 
+<<<<<<< HEAD
   # POST /resource/sign_in
   # def create
   #   super
@@ -59,4 +54,14 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+=======
+  def new
+  super
+    if current_user
+    flash[:notice] = "すでにログイン済みです。"
+    redirect_to root_path
+    end
+  end
+
+>>>>>>> kazuki3/master
 end

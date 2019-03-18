@@ -9,7 +9,6 @@
         &__item{
           position:relative;
           display:block;
-          min-height:48px;
           padding:16px;
           background-color:#fff;
           color:#333;
@@ -18,6 +17,7 @@
           .fas.fa-angle-right{
             position: absolute;
             float:right;
+            bottom:25%;
             right:13px;
             color:#DDDDDD;
             font-size:25px;
@@ -68,13 +68,13 @@
         }
         .fa-angle-right{
           position:absolute;
-          top:30%;
           right:16px;
           display: block;
           width: 13px;
           height:13px;
           color:#DDDDDD;
           font-size:25px;
+          bottom:50%;
         }
       }
     }

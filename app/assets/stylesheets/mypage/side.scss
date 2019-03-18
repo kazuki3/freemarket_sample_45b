@@ -7,17 +7,18 @@
     .mypage-nav-list{
       padding-top:15%;
         &__item{
-          position: relative;
+          position:relative;
           display:block;
-          padding:6%;
+          min-height:48px;
+          padding:16px;
+          background-color:#fff;
           color:#333;
-          background-color:white;
           margin-top:1px;
           font-size:14px;
           .fas.fa-angle-right{
             position: absolute;
             float:right;
-            top:25%;
+            top:40%;
             right:13px;
             color:#DDDDDD;
             font-size:25px;
@@ -32,7 +33,6 @@
         margin-top:1px;
         background-color:#DDDDDD;
         font-weight:600;
-        font-size:14px;
         .fa-angle-right-1{
           position: absolute;
           float:right;

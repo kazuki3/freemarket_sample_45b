@@ -2,8 +2,15 @@ class ProductsController < ApplicationController
   before_action :set_form_data, only: [:new, :edit]
 
   def index
+    @ladies = Category.find(1)
+    @ladies_products = search_product(@ladies)
+    @mens = Category.find(2)
+    @mens_products = search_product(@mens)
+    @baby = Category.find(3)
+    @baby_products = search_product(@baby)
+    @beauty = Category.find(7)
+    @beauty_products = search_product(@beauty)
   end
-
 
   def show
     @product = Product.find(params[:id])

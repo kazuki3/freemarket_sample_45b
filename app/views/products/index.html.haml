@@ -11,9 +11,9 @@
     / Slide 3
     .sp-slide
       = image_tag 'slider3.png', class: "sp-image"
-.body-container
-  %section
-  %main.main-body
+.pickup-container
+  %h2 ピックアップカテゴリー
+  %main.item-box__container
     %div
       %section.body-items-box
         %h2.body-items-box__box-head 全商品一覧
@@ -30,6 +30,32 @@
                     ¥
                     = product.price
                   %p.item-box-body__num--tax (税込)
+        %h3
+          = link_to 'レディース新着アイテム', "#"
+        = render 'item-box'
+        = render 'item-box'
+        = render 'item-box'
+        = render 'item-box'
+        .view-all
+          = link_to 'すべての商品を見る', '#'
+      %section.body-items-box
+        %h3
+          = link_to 'メンズ新着アイテム', "#"
+        = render 'item-box'
+        = render 'item-box'
+        = render 'item-box'
+        = render 'item-box'
+        .view-all
+          = link_to 'すべての商品を見る', '#'
+      %section.body-items-box
+        %h3
+          = link_to 'ベビー・キッズ新着アイテム', "#"
+        = render 'item-box'
+        = render 'item-box'
+        = render 'item-box'
+        = render 'item-box'
+        .view-all
+          = link_to 'すべての商品を見る', '#'
   = image_tag 'banner.png', class: "global-banner"
 
 = render 'layouts/global-footer'

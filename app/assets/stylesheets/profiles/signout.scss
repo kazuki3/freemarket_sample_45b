@@ -1,13 +1,29 @@
-.sign-out-btn{
-  margin-top:5vh;
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  display: block;
-  width: 100%;
-  line-height: 48px;
-  font-size: 0.9vw;
-  cursor: pointer;
-  text-align: center;
-  color:#FFFFFF;
-  margin-bottom:10vh;
+.register-signout{
+  margin-left:40%;
+  margin-top:4%;
+  padding-bottom:1%;
+  padding-top:1%;
+  background-color:white;
+  margin-right:10%;
+  .register-main__container{
+    .register-inner{
+      .register-inner__content{
+        .actions{
+          .sign-out-btn{
+            margin-top:5vh;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 0.9vw;
+            text-align: center;
+            color:#FFFFFF;
+            margin-bottom:10vh;
+
+          }
+        }
+      }
+    }
+  }
 }

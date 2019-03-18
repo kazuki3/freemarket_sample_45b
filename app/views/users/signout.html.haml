@@ -5,16 +5,14 @@
     .breadcrumbs-header
       - breadcrumb :signout
       = breadcrumbs separator: " &rsaquo; "
+  = render 'side'
 
-  %main.register-main
+  %main.register-signout
     %section.register-main__container
-      %h2.register-main__header__login ログアウト画面
-
       .register-inner
         .register-inner__content
           .actions
             .sign-out-btn
-              = link_to "サインアウト", destroy_user_session_path, method: :delete
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
 
-  .register__container__footer
-    = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"
+

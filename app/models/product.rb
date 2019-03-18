@@ -1,15 +1,6 @@
 class Product < ApplicationRecord
-<<<<<<< HEAD
-  enum condition: {}
-  enum shipping_method: {}
-  enum postage: {}
-  enum region: {}
-  enum date: {}
-  belongs_to :user
-=======
 
   belongs_to :user, foreign_key: :seller_id
->>>>>>> kazuki3/master
   belongs_to :category
   belongs_to :prefecture
   belongs_to :postage

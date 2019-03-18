@@ -1,14 +1,10 @@
 class ProfilesController < ApplicationController
-<<<<<<< HEAD
   before_action :profile_params, only: [:create, :edit, :update]
 
   def index
 
   end
-=======
   before_action :authenticate_user!, only: [:new, :create]
->>>>>>> kazuki3/master
-
   def new
     @profiles = Profile.new
   end

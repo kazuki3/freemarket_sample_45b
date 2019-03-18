@@ -1,14 +1,5 @@
 require 'rails_helper'
 
-<<<<<<< HEAD
-describe ProductsController do
-  describe 'GET #index' do
-    it "render the :index template" do
-      get :index
-      expect(response).to render_template :index
-    end
-  end
-=======
 describe ProductsController, type: :controller do
   let(:user) {create(:user)}
   let(:product) {create(:product, seller_id: user.id)}
@@ -61,6 +52,4 @@ describe ProductsController, type: :controller do
       end
     end
   end
-
->>>>>>> kazuki3/master
 end

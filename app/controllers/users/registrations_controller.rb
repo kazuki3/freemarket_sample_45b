@@ -8,7 +8,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
 
-<<<<<<< HEAD
   # DELETE /resource
   # def destroy
   #   super
@@ -59,11 +58,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   # end
-=======
   def after_sign_up_path_for(resource)
     new_profile_path
   end
->>>>>>> kazuki3/master
 
 
 end

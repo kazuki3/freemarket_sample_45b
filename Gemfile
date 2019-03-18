@@ -46,10 +46,8 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-<<<<<<< HEAD
-=======
   gem 'faker'
->>>>>>> kazuki3/master
+
   gem 'rails-controller-testing'
 end
 

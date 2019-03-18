@@ -16,10 +16,6 @@ private
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :self_introduction])
   end
 
-  def search_product(category)
-    return Product.all.where(category_id: category.subtree_ids).limit(4).order("created_at DESC")
-  end
-
   protect_from_forgery with: :exception
 
 

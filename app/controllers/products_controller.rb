@@ -103,4 +103,8 @@ class ProductsController < ApplicationController
     @category_root = Category.find(1).siblings
   end
 
+  def search_product(category)
+    return Product.where(category_id: category.subtree_ids).limit(4).order("created_at DESC")
+  end
+
 end

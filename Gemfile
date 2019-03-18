@@ -63,12 +63,8 @@ end
 group :production do
   gem 'unicorn'
 end
-
-<<<<<<< HEAD
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-=======
->>>>>>> kazuki3/master
 gem 'pry-rails'
 gem 'haml-rails'
 gem 'devise'

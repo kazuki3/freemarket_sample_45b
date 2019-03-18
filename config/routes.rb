@@ -9,7 +9,6 @@ devise_for :users, :controllers => {
   root 'products#index'
     resources :products do
     collection do
-      get 'buy'
       get 'category'
       get 'postage'
     end
@@ -18,10 +17,11 @@ devise_for :users, :controllers => {
   resources :users
   resources :profiles
   resources :payments
+  resources :trades, only: :update
   get   'user/signout', to: 'users#signout'
   get   'index', to: 'users#index'
   get   'index2', to: 'users#registration_select'
-
+  get   'products/:id/buy', to: 'products#buy'
 
   # devise_scope :user do
   #   post '/users', to: 'users/registrations#create'

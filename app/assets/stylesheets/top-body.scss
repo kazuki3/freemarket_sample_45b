@@ -9,9 +9,11 @@
     text-align: center;
   }
   .global-banner {
-    width: 1440px;
     height: 260px;
-    background-size: cover;
+    background-image: url("banner.png");
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
   }
 	.item-box__container {
 		width: 940px;

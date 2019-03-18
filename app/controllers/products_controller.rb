@@ -2,9 +2,6 @@ class ProductsController < ApplicationController
   before_action :set_form_data, only: [:new, :edit]
 
   def index
-<<<<<<< HEAD
-    @products = Product.all
-=======
     @ladies = Category.find_by(name: "レディース")
     @ladies_products = search_product(@ladies)
     @mens = Category.find_by(name: "メンズ")
@@ -13,7 +10,6 @@ class ProductsController < ApplicationController
     @baby_products = search_product(@baby)
     @beauty = Category.find_by(name: "コスメ・香水・美容")
     @beauty_products = search_product(@beauty)
->>>>>>> kazuki3/master
   end
 
   def show
@@ -95,8 +91,6 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :detail, :category_id, :condition, :postage_id, :shipping_method_id, :prefecture_id, :date, :price, images_attributes: [:image_path]).merge(seller_id: current_user.id);
   end
-<<<<<<< HEAD
-=======
 
   def update_product_params
     params.require(:product).permit(:name, :detail, :category_id, :condition, :postage_id, :shipping_method_id, :prefecture_id, :date, :price, images_attributes: [:image_path, :_destroy, :id]).merge(seller_id: current_user.id);
@@ -111,7 +105,5 @@ class ProductsController < ApplicationController
   def search_product(category)
     return Product.where(category_id: category.subtree_ids).limit(4).order("created_at DESC")
   end
-
->>>>>>> kazuki3/master
 end
 

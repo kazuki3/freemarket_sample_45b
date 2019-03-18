@@ -16,7 +16,6 @@ private
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :self_introduction])
   end
 
-
   protect_from_forgery with: :exception
 
 

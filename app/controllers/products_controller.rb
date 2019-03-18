@@ -2,8 +2,15 @@ class ProductsController < ApplicationController
   before_action :set_form_data, only: [:new, :edit]
 
   def index
+    @ladies = Category.find_by(name: "レディース")
+    @ladies_products = search_product(@ladies)
+    @mens = Category.find_by(name: "メンズ")
+    @mens_products = search_product(@mens)
+    @baby = Category.find_by(name: "ベビー・キッズ")
+    @baby_products = search_product(@baby)
+    @beauty = Category.find_by(name: "コスメ・香水・美容")
+    @beauty_products = search_product(@beauty)
   end
-
 
   def show
     @product = Product.find(params[:id])
@@ -94,6 +101,10 @@ class ProductsController < ApplicationController
     @postage = Postage.all
     @prefecture = Prefecture.all
     @category_root = Category.find(1).siblings
+  end
+
+  def search_product(category)
+    return Product.where(category_id: category.subtree_ids).limit(4).order("created_at DESC")
   end
 
 end

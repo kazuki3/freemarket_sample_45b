@@ -17,31 +17,40 @@
     %div
       %section.body-items-box
         %h3
-          = link_to 'レディース新着アイテム', "#"
-        = render 'item-box'
-        = render 'item-box'
-        = render 'item-box'
-        = render 'item-box'
+          = link_to "#{@ladies.name}新着アイテム", "#"
+        = render partial: 'product', collection: @ladies_products
         .view-all
           = link_to 'すべての商品を見る', '#'
       %section.body-items-box
         %h3
-          = link_to 'メンズ新着アイテム', "#"
-        = render 'item-box'
-        = render 'item-box'
-        = render 'item-box'
-        = render 'item-box'
-        .view-all
-          = link_to 'すべての商品を見る', '#'
+          = link_to "#{@mens.name}新着アイテム", "#"
+        - if @mens_products.present?
+          = render partial: 'product', collection: @mens_products
+          .view-all
+            = link_to 'すべての商品を見る', '#'
+        - else
+          .no-item
+            %p まだ出品されていません
       %section.body-items-box
         %h3
-          = link_to 'ベビー・キッズ新着アイテム', "#"
-        = render 'item-box'
-        = render 'item-box'
-        = render 'item-box'
-        = render 'item-box'
-        .view-all
-          = link_to 'すべての商品を見る', '#'
+          = link_to "#{@baby.name}新着アイテム", "#"
+        - if @baby_products.present?
+          = render partial: 'product', collection: @baby_products
+          .view-all
+            = link_to 'すべての商品を見る', '#'
+        - else
+          .no-item
+            %p まだ出品されていません
+      %section.body-items-box
+        %h3
+          = link_to "#{@beauty.name}新着アイテム", "#"
+        - if @beauty_products.present?
+          = render partial: 'product', collection: @beauty_products
+          .view-all
+            = link_to 'すべての商品を見る', '#'
+        - else
+          .no-item.last-item
+            %p まだ出品されていません
 
   = image_tag 'banner.png', class: "global-banner"
 

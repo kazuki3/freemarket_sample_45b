@@ -123,6 +123,9 @@ ActiveRecord::Schema.define(version: 20190316093114) do
     t.datetime "updated_at", null: false
     t.string "nickname"
     t.text "self_introduction"
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

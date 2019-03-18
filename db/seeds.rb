@@ -1,7 +1,13 @@
 #Userモデル
-User.create(nickname: "メルコリ太郎", email: "a@test.com", password: "111111", password_confirmation: "111111", self_introduction: "こんにちは")
+User.create([
+  {nickname: "メルコリ太郎", email: "a@test.com", password: "111111", password_confirmation: "111111", self_introduction: "こんにちは"},
+  {nickname: "メルコ", email: "b@test.com", password: "222222", password_confirmation: "222222", self_introduction: "私よ"},
+])
 
-Profile.create(first_name: "メルコリ", last_name: "太郎", first_name_kana: "メルコリ", last_name_kana: "タロウ", birthdate: "20190308", zip_code: 0000000, prefecture: "東京都", city: "新宿区", address1: "1丁目1-1", phone_number: "09012345678", user_id: 1)
+Profile.create([
+  {first_name: "メルコリ", last_name: "太郎", first_name_kana: "メルコリ", last_name_kana: "タロウ", birthdate: "20190308", zip_code: 1058711, prefecture: "東京都", city: "新宿区", address1: "1丁目1-1", phone_number: "09012345678", user_id: 1},
+  {first_name: "藤井", last_name: "メルコ", first_name_kana: "フジイ", last_name_kana: "メルコ", birthdate: "20171209", zip_code: 1710021, prefecture: "東京都", city: "豊島区", address1: "西池袋", phone_number: "09012345678", user_id: 2}
+])
 
 #postage
 Postage.create([

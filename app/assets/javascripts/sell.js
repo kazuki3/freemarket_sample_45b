@@ -15,7 +15,6 @@ $(document).on('turbolinks:load', function(){
     listsearch.append(html);
   }
 
-
   $('#file-upload').on('change', function(e){
     //ファイルオブジェクトを取得する
     var file = e.target.files[0];
@@ -41,20 +40,17 @@ $(document).on('turbolinks:load', function(){
 
   });
 
-
-
-
-
 // カテゴリーの表示切り替え
     // 子カテゴリーのselectを追加するHTML
     var category_search = $("#category");
 
     function appendchildselect() {
       var html =
-          `<div class="select-wrap">
+          `<div class="select-wrap" id="child-wrap">
             <select class="select-default" id="child-category" name="product[category_id]">
                 <option value>---</option>
             </select>
+            <i class="fas fa-angle-down select-icon"></i>
           </div>`
       category_search.append(html)
     }
@@ -62,10 +58,11 @@ $(document).on('turbolinks:load', function(){
     // 孫カテゴリーのselectを追加するHTML
     function appendgrandchildselect() {
       var html =
-          `<div class="select-wrap">
+          `<div class="select-wrap" id="grandchild-wrap">
             <select class="select-default" id="grandchild-category" name="product[category_id]">
                 <option value>---</option>
             </select>
+            <i class="fas fa-angle-down select-icon"></i>
           </div>`
       category_search.append(html)
     }
@@ -114,14 +111,12 @@ $(document).on('turbolinks:load', function(){
     )
   }
 
-
 // 親カテゴリーをクリック
   $('#parent-category').change(function(e) {
     e.preventDefault();
     var parent = $(this).val();
-    $("#child-category").remove()
-    $("#grandchild-category").remove()
-    console.log(parent);
+    $("#child-wrap").remove()
+    $("#grandchild-wrap").remove()
     $.ajax({ //ajax通信で以下のことを行います
       url: '/products/category', //urlを指定
       type: 'GET', //メソッドを指定
@@ -141,8 +136,7 @@ $(document).on('turbolinks:load', function(){
 // 子カテゴリーをクリック
   $(document).on('change', '#child-category', function() {
     var child = $(this).val();
-    $("#grandchild-category").remove()
-    console.log(child);
+    $("#grandchild-wrap").remove()
     $.ajax({ //ajax通信で以下のことを行います
       url: '/products/category', //urlを指定
       type: 'GET', //メソッドを指定
@@ -159,13 +153,11 @@ $(document).on('turbolinks:load', function(){
     })
   });
 
-
 // 配送料をクリック
   $('#postage').change(function(e){
     e.preventDefault();
-    var postage = $(this).val();
+    var postage = $('#postage option:selected').text();
     $("#shipping_form").remove()
-    console.log(postage);
     $.ajax({ //ajax通信で以下のことを行います
       url: '/products/postage', //urlを指定
       type: 'GET', //メソッドを指定

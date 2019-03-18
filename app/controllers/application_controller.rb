@@ -16,7 +16,6 @@ private
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :self_introduction])
   end
 
-
   protect_from_forgery with: :exception
 
 
@@ -30,7 +29,7 @@ private
   end
 
   def after_sign_out_path_for(resource)
-    index_path
+    new_user_session_path
   end
 
 end

@@ -2,13 +2,13 @@ class ProductsController < ApplicationController
   before_action :set_form_data, only: [:new, :edit]
 
   def index
-    @ladies = Category.find(1)
+    @ladies = Category.find_by(name: "レディース")
     @ladies_products = search_product(@ladies)
-    @mens = Category.find(2)
+    @mens = Category.find_by(name: "メンズ")
     @mens_products = search_product(@mens)
-    @baby = Category.find(3)
+    @baby = Category.find_by(name: "ベビー・キッズ")
     @baby_products = search_product(@baby)
-    @beauty = Category.find(7)
+    @beauty = Category.find_by(name: "コスメ・香水・美容")
     @beauty_products = search_product(@beauty)
   end
 

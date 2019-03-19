@@ -24,8 +24,6 @@ $white: #FFFFFF;
   }
 }
 
-// ーーーーーーーーーーーーーーーーーーーーーーーー
-
 // 会員登録ページ フッター ーーー
 
 @mixin register__container__footer{
@@ -180,6 +178,7 @@ $white: #FFFFFF;
 
 @mixin register-main{
   width: 50vw;
+  min-width: 370px;
   height: auto;
   background-color: $white;
   margin:auto;
@@ -329,10 +328,28 @@ $white: #FFFFFF;
 
 // ーーーーーーーーーーーーーーーーーーーー
 
+// 変更ボタン  ーーーーーーーーーーー
+
+@mixin edit-btn{
+  margin-top: 3%;
+  background: $light_red;
+  border: 1px solid $light_red;
+  color: $white;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 0.9vw;
+  cursor: pointer;
+  text-align: center;
+  }
+
+// ーーーーーーーーーーーーーーーーーーーー
+
+
 // ログアウトボタン  ーーーーーーーーーーー
 
 @mixin sign_out-btn{
-  margin-top:5vh;
+  margin-top: 3%;
   background: $light_red;
   border: 1px solid $light_red;
   color: $white;

@@ -8,11 +8,11 @@ devise_for :users, :controllers => {
 
   root 'products#index'
     resources :products do
-    collection do
-    get 'buy'
-    get 'category'
-    get 'postage'
-    end
+      collection do
+        get ':id/buy', to: 'products#buy'
+        get 'category'
+        get 'postage'
+      end
   end
 
   resources :users

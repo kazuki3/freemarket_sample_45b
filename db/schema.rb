@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20190312062817) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "image", null: false
+    t.string "image_path", null: false
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

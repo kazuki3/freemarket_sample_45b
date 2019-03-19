@@ -50,19 +50,19 @@
             = @customer.exp_year
           %figure
             - if @customer.brand == "JCB"
-              = image_tag 'jcb.svg', alt: "#{@customer.brand}", width: 26, height: 20
+              = image_tag 'jcb.svg', alt: "#{@customer.brand}", class: "card_img"
             - elsif @customer.brand == "MasterCard"
-              = image_tag 'master-card.svg', alt: "#{@customer.brand}", width: 26, height: 20
+              = image_tag 'master-card.svg', alt: "#{@customer.brand}", class: "card_img"
             - elsif @customer.brand == "Discover"
-              = image_tag 'discover.svg', alt: "#{@customer.brand}", width: 26, height: 20
+              = image_tag 'discover.svg', alt: "#{@customer.brand}", class: "card_img"
             - elsif @customer.brand == "Visa"
-              = image_tag 'visa.svg', alt: "#{@customer.brand}", width: 26, height: 20
+              = image_tag 'visa.svg', alt: "#{@customer.brand}", class: "card_img"
             - elsif @customer.brand == "American Express"
-              = image_tag 'american_express.svg', alt: "#{@customer.brand}", width: 26, height: 20
+              = image_tag 'american_express.svg', alt: "#{@customer.brand}", class: "card_img"
             - elsif @customer.brand == "Diners Club"
-              = image_tag 'dinersclub.svg', alt: "#{@customer.brand}", width: 26, height: 20
+              = image_tag 'dinersclub.svg', alt: "#{@customer.brand}", class: "card_img"
             - else
-              = image_tag 'visa.svg', alt: "#{@customer.brand}", width: 26, height: 20
+              = image_tag 'visa.svg', alt: "#{@customer.brand}", class: "card_img"
           = link_to "#", class: "buy-user-info-fix" do
             %span 変更する
             %i.fas.fa-angle-right.arrow-right

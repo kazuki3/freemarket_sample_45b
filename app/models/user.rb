@@ -9,7 +9,7 @@ class User < ApplicationRecord
           omniauth_providers: %i[facebook google_oauth2]
 
 
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true
 
   has_one :profile
   has_many :products

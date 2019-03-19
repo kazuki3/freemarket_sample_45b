@@ -51,12 +51,6 @@ describe User, class: User do
     end
 
 #重複により登録不可
-    it "is invalid with a duplicate nickname address" do
-      user = create(:user)
-      another_user = build(:user)
-      another_user.valid?
-      expect(another_user.errors[:nickname]).to include("はすでに存在します")
-    end
 
     it "is invalid with a duplicate email address" do
       user = create(:user)
@@ -66,5 +60,5 @@ describe User, class: User do
     end
 
   end
-  
+
 end

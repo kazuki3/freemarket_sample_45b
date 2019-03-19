@@ -18,8 +18,8 @@ devise_for :users, :controllers => {
       end
   end
 
-  post   '/like/:product_id' => 'likes#like',   as: 'like'
-  delete '/like/:product_id' => 'likes#unlike', as: 'unlike'
+  post   '/like/:product_id' => 'likes#create',   as: 'like'
+  delete '/like/:product_id' => 'likes#destroy', as: 'unlike'
 
   resources :users
   resources :profiles

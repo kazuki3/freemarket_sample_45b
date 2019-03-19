@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :products
   has_one :users
   has_many :sns_credentials
+  has_many :trades
 
   def self.create_oauth(auth)
   user = User.create(

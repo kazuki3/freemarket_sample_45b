@@ -9,11 +9,13 @@ devise_for :users, :controllers => {
   root 'products#index'
 
   resources :products do
-    collection do
-      get 'buy'
-      get 'category'
-      get 'postage'
-    end
+      collection do
+        get 'category'
+        get 'postage'
+      end
+      member do
+        get 'buy'
+      end
   end
 
   post   '/like/:product_id' => 'likes#like',   as: 'like'
@@ -22,6 +24,7 @@ devise_for :users, :controllers => {
   resources :users
   resources :profiles
   resources :payments
+  resources :trades, only: :update
   get   'user/signout', to: 'users#signout'
   get   'select', to: 'users#registration_select', as: 'registration_select'
 

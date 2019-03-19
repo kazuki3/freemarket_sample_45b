@@ -9,7 +9,7 @@ class User < ApplicationRecord
           omniauth_providers: %i[facebook google_oauth2]
 
 
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true
 
   has_one :profile
   has_many :products
@@ -17,7 +17,8 @@ class User < ApplicationRecord
   has_many :sns_credentials
   has_many :likes
   has_many :products, through: :likes
-
+  has_many :trades
+  
   def already_liked?(product)
     self.likes.exists?(product_id: product.id)
   end

@@ -11,7 +11,8 @@
             = image_tag "https://placehold.jp/150x150.png"
           %p.buy-item-name.bold
             テスト商品
-          %form.buy-form
+          = form_for @product, url: {controller: "trades", action: "update"} do |f|
+            = f.hidden_field :price, value: @product.price
             %p.buy-price-ja.bold
               ¥ 680
               %span.item-shipping-fee.f14.bold
@@ -23,8 +24,7 @@
               %li.buy-price-row.buy-you-pay.bold
               %li.buy-price-cell 支払い金額
               %li.buy-price-cell ¥ 680
-            %button.btn-buy.bold{:type => "submit"} 購入する
-
+            = f.submit "購入する", class: "btn-buy bold"
 
       %section.buy-content.buy-user-info
         .buy-content-inner
@@ -43,11 +43,26 @@
         .buy-content-inner
           %h3 支払方法
           %p.buy-user-info-text
-            ************1234
+            = "************" + @customer.last4
             %br
-            08 / 29
+            = @customer.exp_month
+            = "/"
+            = @customer.exp_year
           %figure
-            = image_tag 'jcb.svg', alt: "jcb", width: 26, height: 20
+            - if @customer.brand == "JCB"
+              = image_tag 'jcb.svg', alt: "#{@customer.brand}", class: "card_img"
+            - elsif @customer.brand == "MasterCard"
+              = image_tag 'master-card.svg', alt: "#{@customer.brand}", class: "card_img"
+            - elsif @customer.brand == "Discover"
+              = image_tag 'discover.svg', alt: "#{@customer.brand}", class: "card_img"
+            - elsif @customer.brand == "Visa"
+              = image_tag 'visa.svg', alt: "#{@customer.brand}", class: "card_img"
+            - elsif @customer.brand == "American Express"
+              = image_tag 'american_express.svg', alt: "#{@customer.brand}", class: "card_img"
+            - elsif @customer.brand == "Diners Club"
+              = image_tag 'dinersclub.svg', alt: "#{@customer.brand}", class: "card_img"
+            - else
+              = image_tag 'visa.svg', alt: "#{@customer.brand}", class: "card_img"
           = link_to "#", class: "buy-user-info-fix" do
             %span 変更する
             %i.fas.fa-angle-right.arrow-right

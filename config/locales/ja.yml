@@ -205,6 +205,11 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+
+  recaptcha:
+    errors:
+      verification_failed: 'reCAPTCHA認証に失敗しました。'
+
   enums:
     product:
       condition:
@@ -215,6 +220,6 @@ ja:
         dirt: 傷や汚れあり
         bad: 全体的に状態が悪い
       date:
-        oneday_twoday: 1~2日で配送
-        twoday_threeday: 2~3日で配送
-        fourday_sevenday: 4~7日で配送
+        oneday_twoday: 1~2日で発送
+        twoday_threeday: 2~3日で発送
+        fourday_sevenday: 4~7日で発送

@@ -1,21 +1,15 @@
-.register__container
-  .register__container__header
-    = image_tag "logo.svg", class:"campany-logo", alt:"メルカリロゴ"
-
-  %main.register-main_login
-    %section.register-main__container
-      %h2.register-main__profile-header
-        プロフィール
-      / = form_with(model: @users @profile) do |form|
-      .register-main__profile-band
-        .register-main__profile-band__inner-box
-          = image_tag "", class:"my-icon", alt:"アイコン"
-          -# = form.text_field {@user :nickname}, class:"input-default"
-        .register-inner__content
-          .register-inner__content-textarea
-            -# = form.text_area {@profile :self_introduction}, class:""
-          .sign-out-btn
-            = link_to "変更する", user_registration_path, method: :patch
-
-  .register__container__footer
-    = image_tag "logo-gray.svg", class:"campany-logo-gray", alt:"メルカリロゴgray"
+.register-edit-container
+  %h2.edit-header プロフィール
+  = form_with(model: @user, url: user_registration_path, local: true) do |f|
+    .edit-header-image
+      .edit-header-image_inner
+        .edit-header-image_inner_avatar
+        .edit-header-image_inner_nickname
+          = f.text_field :nickname, class:"nickname-input", value: @user.nickname
+    .self-introduction-container
+      .self-introduction-container_inner
+        - if @user.self_introduction.nil?
+          = f.text_area :self_introduction, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class:"self-introduction-container_inner_text"
+        - else
+          = f.text_area :self_introduction, class:"self-introduction-container_inner_text", value: @user.self_introduction
+          = f.submit :変更する, class:"edit-btn"

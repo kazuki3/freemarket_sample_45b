@@ -9,10 +9,13 @@ class User < ApplicationRecord
           omniauth_providers: %i[facebook google_oauth2]
 
 
+  validates :nickname, presence: true, uniqueness: true
+
   has_one :profile
   has_many :products
   has_one :users
   has_many :sns_credentials
+  has_many :trades
 
   def self.create_oauth(auth)
   user = User.create(

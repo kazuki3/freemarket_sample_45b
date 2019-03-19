@@ -1,6 +1,10 @@
 .register__container
   .register__container__header
     = image_tag "logo.svg", class:"campany-logo", alt:"メルカリロゴ"
+  .breadcrumbs-header-contener
+    .breadcrumbs-header
+      - breadcrumb :signout
+      = breadcrumbs separator: " &rsaquo; "
 
   %main.register-main
     %section.register-main__container

@@ -1,0 +1,16 @@
+.show-box
+  = link_to "#", class: "body-items-box__item-box--link" do
+    .show-box_image
+      .show-box_image--inner
+        = image_tag product.image_path.url, class: "item-box-photo__img"
+    .show-box_text
+      .show-box_text--inner
+        %h3.show-box_text--inner_info
+          #{product.name}
+        .show-box_text--inner_price-box
+          .show-box_text--inner_price-box_price
+            ¥ #{product.price.to_s(:delimited)}
+          .show-box_text--inner_price-box_like
+            .show-box_text--inner_price-box_like_hart いいね
+            .show-box_text--inner_price-box_like_count １
+        .show-box_tbox_text--inner_price_tax-info (税込)

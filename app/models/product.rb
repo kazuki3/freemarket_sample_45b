@@ -35,6 +35,16 @@ class Product < ApplicationRecord
     fourday_sevenday: 3
   }
 
+  # def self.search(name)
+  # binding.pry
+  #   @products = Product.where('name LIKE(?)', "%#{params[:name]}%").order("created_at DESC").limit(48)
+  #   if params[:name].present? == false || @products.length == 0
+  #     @products = []
+  #     @products = Product.all.order("created_at DESC").limit(48)
+  #   end
+  # end
+
+
 # FIXME: リファクタリング時に操作確認。現在、呼び出してもエラーになる
   # def category_decision
   #   if self.depth == 2

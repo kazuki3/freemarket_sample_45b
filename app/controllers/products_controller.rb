@@ -97,6 +97,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def search
+    @products = Product.where('name LIKE ?', "%#{params[:keyword]}%").limit(49)
+  end
+
   private
   def product_params
     params.require(:product).permit(:name, :detail, :category_id, :condition, :postage_id, :shipping_method_id, :prefecture_id, :date, :price, images_attributes: [:image_path]).merge(seller_id: current_user.id);
@@ -115,5 +119,4 @@ class ProductsController < ApplicationController
   def search_product(category)
     return Product.where(category_id: category.subtree_ids).limit(4).order("created_at DESC")
   end
-
 end

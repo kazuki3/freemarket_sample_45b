@@ -1,0 +1,110 @@
+.serch-page{
+  width: 100vw;
+  height:100%;
+  display: flex;
+}
+
+// サイドバーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+.search-side-bar{
+  width: 30%;
+  background-color: orange;
+  margin-left: 10vw;
+  padding: 5%;
+  &_inner{
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  }
+}
+
+// 右側全体 ------------------------------------------------
+
+.search-right-section{
+  background-color: red;
+  width: 70%;
+  height: 100%;
+  margin-right: 10vw;
+  padding: 5%;
+  &-inner{
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+  }
+  &_inner-box{
+  background-color: red;
+  width: 100%;
+  height: 270px;
+  }
+}
+
+.search-right-section_inner-box{
+  display: flex;
+  margin-bottom:10px;
+}
+
+
+
+
+
+// 検索結果件数 ーーーーーーーーーーーーーー
+.search-result-count{
+  margin-bottom: 5px;
+}
+
+// 商品情報BOX -------------------------
+
+.show-box{
+  background-color: blue;
+  width: 160px;
+  height: 270px;
+  margin-right: 20px;
+  &_image{
+    background-color: black;
+    height: 60%;
+    width: 100%;
+    &--inner{
+      // 画像を入れるBOX
+    }
+  }
+  &_text{
+    background-color: white;
+    width: 100%;
+    height: 40%;
+    padding: 10% 5% 3% 5%;
+    &--inner{
+      width: 100%;
+      height: 60%;
+      background-color: gray;
+      &_info{
+        height:100%;
+        width: 100%;
+      }
+      &_price-box{
+          background-color: yellow;
+          display: flex;
+          height:30%;
+          width: 100%;
+        &_price{
+          height: 80%;
+          width: 100%;
+          }
+        &_like{
+          display: flex;
+          height:10%;
+          width: 100%;
+          &_hart{
+          }
+          &_count{
+          }
+        }
+      }
+    }
+    &_tax-info{
+      height: 20%;
+      width: 100%;
+    }
+  }
+}
+
+// --------------------------------

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:signout]
 
 
-  def signout
+  def logout
   end
 
   def show

@@ -15,26 +15,30 @@
 
   %section.mypage-tab-container-notification-todo.clearfix
     %ul.mypage-tabs.clearfix
-      %li
+      %li.mypage-tabs__item
         %h3
           = link_to 'お知らせ', '#'
-      %li.active
+      %li.mypage-tabs__item.active
         %h3
           = link_to 'やることリスト', '#'
     .tab-content
-      %ul#mypage-tab-todo.mypage-item-list
-        %li.mypage-item-not-found
+      %ul.mypage-item-list
+        %li.mypage-item-list--not-found
           現在、やることリストはありません
+
+
+
+
   %section.mypage-tab-container
-    %h2.mypage-tab-head 購入した商品
+    %h2.mypage-tab-container__head 購入した商品
     %ul.mypage-tabs.clearfix
-      %li
+      %li.mypage-tabs__item
         %h3
           = link_to '取引中', '#'
-      %li.active
+      %li.mypage-tabs__item.active
         %h3
           = link_to '過去の取引', '#'
     .tab-content
-      %ul#mypage-tab-transaction-now.mypage-item-list
-        %li.mypage-item-not-found
+      %ul.mypage-item-list
+        %li.mypage-item-list--not-found
           現在取引中の商品がありません

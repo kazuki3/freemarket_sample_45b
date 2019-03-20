@@ -4,7 +4,6 @@
   color: #333;
 }
 
-
 .mypage-user-icon {
   height: 200px;
   position: relative;
@@ -47,7 +46,6 @@
     font-weight: 600;
   }
 }
-
 .mypage-user-icon a{
   display: block;
   position: absolute;
@@ -66,21 +64,19 @@
 .mypage-tabs {
   border: 0;
   background: #eee;
+  &__item {
+    float: left;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    background: #eee;
+  }
+  &__item.active {
+    background-color: #fff;
+    border-top: 2px solid #ea352d;
+  }
 }
-.mypage-tabs li {
-  float: left;
-  width: 50%;
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  background: #eee;
-}
-
-.mypage-tabs li.active {
-  background-color: #fff;
-  border-top: 2px solid #ea352d;
-}
-
 .mypage-tabs a {
   position: relative;
   display: block;
@@ -90,31 +86,29 @@
   font-weight: 700;
 }
 
-#mypage-tab-todo {
+.mypage-item-list {
   display: block;
-}
-
-.mypage-item-not-found {
-  padding: 160px 0 60px;
-  background: url(logo-gray-icon.svg);
-  background-repeat: no-repeat;
-  background-position: center 40px;
-  background-size: 78px 85px;
-  text-align: center;
-  font-size: 16px;
-  color: #ccc;
-  font-weight: 600;
+  &--not-found {
+    padding: 160px 0 60px;
+    background: url(logo-gray-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 78px 85px;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+    font-weight: 600;
+  }
 }
 
 .mypage-tab-container {
   margin: 40px 0 0 0;
   background: #fff;
-}
-
-.mypage-tab-head {
+  &__head {
   padding: 0 16px;
   background: #fafafa;
   font-size: 16px;
   line-height: 72px;
   font-weight: 700;
+  }
 }

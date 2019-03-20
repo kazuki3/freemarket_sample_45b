@@ -81,7 +81,7 @@
             = link_to "http://www.google.co.jp/", class: "global-footer-list__list-link--country" do
               = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?128691313', class: "country-logo"
               %text.country-name 日本
-  = link_to "http://www.google.co.jp/", class: "global-footer__mercari-logo" do
+  = link_to root_path, class: "global-footer__mercari-logo" do
     = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?128691313', alt: "mercari", width: "124", height: "33"
   %p.global-footer__copyright © 2019 Mercari
 - if user_signed_in?

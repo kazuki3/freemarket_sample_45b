@@ -1,0 +1,14 @@
+%div.like-link{id: "like-link-#{product.id}"}
+  - if current_user.already_liked?(product)
+    =link_to unlike_path(product.id), method: :delete, remote: true, class: "item-box__btn-container-left--liked item-button__liked", id: "heart-#{product.id} l" do
+      %i.fas.fa-heart
+      %span いいね!
+      %span #{product.likes.count.to_s}
+  - else
+    =link_to like_path(product.id), method: :post, remote: true, class: "item-box__btn-container-left--like item-button", id: "heart-#{product.id}" do
+      %i.far.fa-heart
+      %span いいね!
+      %span #{product.likes.count.to_s}
+
+
+

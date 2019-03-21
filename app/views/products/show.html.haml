@@ -107,14 +107,6 @@
 .item-detail-message
   .message-container
     .message-content
-      %ul.message-items
-        %li.clearfix.message-item
-          = link_to '#', class: 'message-item__user' do
-            %figure.message-item__user--figure
-              %div
-                = image_tag
-          .message-body
-            .message-body-text
       = form_for [@product,@comment] do |f|
         %p.message-content__attention 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.text_area :text, class: 'message-content__text'

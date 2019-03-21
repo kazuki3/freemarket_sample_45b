@@ -4,4 +4,10 @@
       - breadcrumb "products_category_#{@product.category.depth}".to_sym
     - elsif params[:controller] == 'products' && params[:action] == 'search'
       - breadcrumb 'search'.to_sym
+    - elsif params[:controller] == 'users' && params[:action] == 'show'
+      - breadcrumb 'users_show'.to_sym
+    - elsif params[:controller] == 'users/registrations' && params[:action] == 'edit'
+      - breadcrumb 'users_edit'.to_sym
+    - elsif params[:controller] == 'users' && params[:action] == 'logout'
+      - breadcrumb 'logout'.to_sym
     = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "

@@ -95,6 +95,7 @@ class ProductsController < ApplicationController
     customer_id = Payjp::Customer.retrieve(customer.customer_id)
     @customer = customer_id.cards.data[0]
     @product = Product.find(params[:id])
+    @profile = @product.user.profile
   end
 
   def search

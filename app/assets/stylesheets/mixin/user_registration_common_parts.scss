@@ -40,48 +40,108 @@ $white: #FFFFFF;
 @mixin progress-bar{
   .clearfix{
     display: flex;
+    width: 500px;
     .activ-box{
-      width: auto;
-      display: flex;
-      align-items: center;
-      margin:2vw 2vw 1vw 2vw;
+      margin: 5% 7% 5% 7%;
       .active{
-        font-size: 0.9vw;
-        margin:auto auto 20px auto;
+        font-size: 12px;
         font-weight: 600;
         color: #ea352d;
-        cursor: pointer;
+        width: 65px;
+        text-align: center;
       }
     }
   }
 }
 
-// 進捗状況の丸印の部分  ーーーーーーーーーーーーー
+// 進捗バー 右赤色 ----------------------------
 
-@mixin progress-status{
+@mixin progress-right-red{
+  width: 15px;
+  height: 15px;
+  margin: 20px auto;
+  background: #ea352d;
+  border-radius: 50%;
+  &:after{
+    display: flex;
+    border-bottom:solid 2px #ea352d;
+    content:'';
+    width:73px;
+    padding: 3px;
+  }
+}
+
+// 進捗バー両端グレー ーーーーーーーーーーーーーー
+
+@mixin progress-wside-gray{
+  width: 15px;
+  height: 15px;
+  margin: 20px auto;
+  background: #ea352d;
+  border-radius: 50%;
+  &:after{
+    position:absolute;
+    border-bottom:solid 2px #ccc;
+    content:'';
+    width: 63px;
+    height: 6px;
+    margin-left: 8px;
+  }
+  &:before{
+    position:absolute;
+    border-bottom:solid 2px #ccc;
+    content:'';
+    width: 58px;
+    height: 6px;
+    margin-left: -66px;
+  }
+}
+
+// 進捗バー両端赤色ーーーーーーーーーーーーーーー
+
+@mixin progress-wside-red{
+  width: 15px;
+  height: 15px;
+  margin: 20px auto;
+  background: #ea352d;
+  border-radius: 50%;
+  &:after{
+    position:absolute;
+    border-bottom:solid 2px #ea352d;
+    content:'';
+    width: 65px;
+    height: 6px;
+    margin-left: 7px;
+  }
+  &:before{
+    position:absolute;
+    border-bottom:solid 2px #ea352d;
+    content:'';
+    width: 58px;
+    height: 6px;
+    margin-left: -65px;
+  }
+}
+
+// 進捗バー左グレーーーーーーーーーーーーーーーーー
+
+@mixin progress-left-gray{
   width: 15px;
   height: 15px;
   margin: 20px auto;
   background: #ccc;
   border-radius: 50%;
+  &:before{
+    position:absolute;
+    border-bottom:solid 2px #ccc;
+    content:'';
+    width: 58px;
+    height: 6px;
+    margin-left: -65px;
+  }
 }
 
-
-// 進捗情報の文字を赤色に入れる処理-------------
-
-@mixin active-red{
-  font-size: 0.9vw;
-  margin:auto auto 20px auto;
-  font-weight: 600;
-  color: #ea352d;
-  cursor: pointer;
-  margin:auto auto 20px auto;
-  font-weight: 600;
-  color: $light_red;
-  cursor: pointer;
-}
-
-// 会員情報登録のセンター部分の枠 ーーーーーーーー
+// 会員情報登録センター部分の枠 ーーーーーーーー
 
 @mixin register-main{
   width: 700px;

@@ -1,25 +1,24 @@
 .register__container
   .register__container__header
     = image_tag "logo.svg", class:"campany-logo", alt:"メルカリロゴ"
-    %nav.progress-status-first
+    %nav.progress-bar
       %ol.clearfix
         .activ-box
-          %li.active-red
+          %li.active
             会員情報
-            .progress-status
+            .progress-right-red
         .activ-box
           %li.active
             連絡先情報
-            .progress-status
+            .progress-wside-gray
         .activ-box
           %li.active
             支払い方法
-            .progress-status
+            .progress-wside-gray
         .activ-box
           %li.active
             完了
-            .progress-status
-
+            .progress-left-gray
   %main.register-main
     %section.register-main__container
       %h2.register-main__container--header 会員情報入力

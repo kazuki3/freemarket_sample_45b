@@ -12,6 +12,7 @@ devise_for :users, :controllers => {
       collection do
         get 'category'
         get 'postage'
+        get 'search'
       end
       member do
         get 'buy'

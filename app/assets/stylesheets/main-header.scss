@@ -1,6 +1,7 @@
 .global-header {
 	display: block;
 	background-color: #fff;
+	color: #333;
 
 	&__inner {
 		width  : 1020px;
@@ -131,6 +132,54 @@
 							}
 						}
 					}
+				}
+			}
+			.user-menu {
+				float: right;
+				&__list {
+					&--figure {
+				    display: inline-block;
+				    position: relative;
+				    width: 32px;
+				    height: 32px;
+				    margin: 0 auto;
+				    vertical-align: middle;
+					}
+					&--figure div {
+						overflow: hidden;
+    				border-radius: 50%;
+					}
+					&--figure img {
+						width: 32px;
+						vertical-align: top;
+					}
+					&--mypage {
+				    display: inline-block;
+				    margin: 0 0 0 8px;
+				    font-size: 14px;
+				    vertical-align: middle;
+					}
+				}
+				&__list a {
+					display: block;
+				}
+				&__list a:hover {
+					color: #0099e8;
+				}
+				&__list li {
+					position: relative;
+			    display: inline-block;
+			    padding: 0 0 0 16px;
+			    vertical-align: middle;
+			    font-size: 14px;
+			    font-weight: 400;
+			    line-height: 32px;
+				}
+				&__list li:first-child {
+			    padding: 0;
+				}
+				&__list span {
+			    font-weight: 400;
 				}
 			}
 		}

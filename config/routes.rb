@@ -7,13 +7,18 @@ devise_for :users, :controllers => {
 }
 
   root 'products#index'
-    resources :products do
-    collection do
-    get ':id/buy', to: 'products#buy'
-    get 'category'
-    get 'postage'
-    end
+  resources :products do
+      collection do
+        get 'category'
+        get 'postage'
+      end
+      member do
+        get 'buy'
+      end
   end
+
+  post   '/like/:product_id' => 'likes#create',   as: 'like'
+  delete '/like/:product_id' => 'likes#destroy', as: 'unlike'
 
   resources :users
   resources :profiles

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: :new
   before_action :set_form_data, only: [:new, :edit]
   before_action :Set_api_for_payjp, only: :buy
 

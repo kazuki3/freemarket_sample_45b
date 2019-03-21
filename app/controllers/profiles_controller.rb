@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :profile_check, only: :new
 
   def new
     @profiles = Profile.new
@@ -13,6 +14,10 @@ class ProfilesController < ApplicationController
         flash.now[:alert] = '未入力項目があります'
         render :new
     end
+  end
+
+  def profile_check
+    redirect_to root_path unless Profile.where(user_id: current_user.id).blank?
   end
 
   private

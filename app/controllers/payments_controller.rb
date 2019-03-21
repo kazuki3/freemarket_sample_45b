@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
   before_action :Set_api_for_payjp, only: :create
+  before_action :payment_check, only: :new
 
   def new
     @payment = Payment.new
@@ -14,6 +15,10 @@ class PaymentsController < ApplicationController
     else
       redirect_to new_payment_path
     end
+  end
+
+  def payment_check
+    redirect_to root_path unless Payment.where(user_id: current_user.id).blank?
   end
 
 end

@@ -23,11 +23,9 @@ module ProductsHelper
   end
 
   def set_address(profile)
-    if profile.address2 == nil
-      profile.prefecture + " " + profile.city + profile.address1
-    else
-      profile.prefecture + " " + profile.city + profile.address1 + profile.address2
-    end
+    user_address = profile.prefecture + " " + profile.city + profile.address1
+    user_address = user_address + profile.address2 if profile.address2.present?
+    return user_address
   end
 
   def set_name(profile)

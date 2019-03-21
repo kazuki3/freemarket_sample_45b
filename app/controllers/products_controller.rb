@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: [:new, :edit, :buy]
   before_action :set_form_data, only: [:new, :edit]
+  before_action :check_seller?, only: :edit
+  before_action :check_card, only: :buy
   before_action :Set_api_for_payjp, only: :buy
 
   def index
@@ -119,6 +121,15 @@ class ProductsController < ApplicationController
 
   def search_product(category)
     return Product.where(category_id: category.subtree_ids).limit(4).order("created_at DESC")
+  end
+
+  def check_seller?
+    product = Product.find(params[:id])
+    redirect_to product_path unless product.seller_id == current_user.id
+  end
+
+  def check_card
+    redirect_to root_path unless Payment.where(user_id: current_user.id).blank?
   end
 
 end

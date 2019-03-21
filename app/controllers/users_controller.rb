@@ -1,17 +1,17 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:signout]
+  before_action :set_user, only: [:show, :update]
 
 
   def logout
   end
 
   def show
-    @user = User.find(params[:id])
+
   end
 
   def update
-    user = User.find(params[:id])
-    user.update(update_user_params) if user.id == current_user.id
+    @user.update(update_user_params) if @user.id == current_user.id
     redirect_to edit_user_registration_path
   end
 
@@ -25,6 +25,10 @@ class UsersController < ApplicationController
   private
   def update_user_params
     params.require(:user).permit(:nickname, :self_introduction)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
 end

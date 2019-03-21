@@ -85,7 +85,7 @@
     = link_to '購入画面に進む', buy_product_path(@product.id), class: "item-buy-btn"
   - else
     = link_to '売り切れました', "#", class: "item-buy-btn disabled"
-  - if @user.id == current_user.id
+  - if user_signed_in? && @user.id == current_user.id
     = link_to '商品の編集', edit_product_path(@product.id), class: "item-buy-btn"
     = link_to 'この商品を削除する', product_path(@product.id), method: :delete, class: "item-buy-btn disabled"
   .item-box__box-descriotion

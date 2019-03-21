@@ -9,6 +9,7 @@ devise_for :users, :controllers => {
   root 'products#index'
 
   resources :products do
+    resources :comments, only: [:create, :destroy]
       collection do
         get 'category'
         get 'postage'

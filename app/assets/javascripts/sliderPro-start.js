@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $( '#my-slider' ).sliderPro({
   	width: 1440,
   	height: 390,

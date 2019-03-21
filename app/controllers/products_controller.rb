@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @user = User.find(@product.seller_id)
-
+    @comment = Comment.new
     @category = @product.category
     if @category.depth == 2
       @parent_category = @category.root.name

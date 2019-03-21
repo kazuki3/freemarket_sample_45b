@@ -21,11 +21,14 @@ devise_for :users, :controllers => {
   post   '/like/:product_id' => 'likes#create',   as: 'like'
   delete '/like/:product_id' => 'likes#destroy', as: 'unlike'
 
-  resources :users
+  resources :users do
+    collection do
+      get 'logout'
+    end
+  end
   resources :profiles
   resources :payments
   resources :trades, only: :update
-  get   'user/signout', to: 'users#signout'
   get   'select', to: 'users#registration_select', as: 'registration_select'
 
 end

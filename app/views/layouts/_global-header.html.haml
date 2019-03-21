@@ -26,7 +26,7 @@
           .user-menu
             %ul.user-menu__list
               %li
-                = link_to '#' do
+                = link_to user_path(current_user.id) do
                   %figure.user-menu__list--figure
                     %div
                       = image_tag 'member_photo_noimage_thumb.png'

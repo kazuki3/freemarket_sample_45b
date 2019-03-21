@@ -7,8 +7,14 @@ crumb :signout do
   link 'ログアウト', user_signout_path
 end
 
+# 検索ページーーーーーーーーーーーーーーーーーーーーーーーー
+crumb :search do
+@keyword = params[:keyword]
+link @keyword, search_products_path
+end
+# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-# 商品詳細画面　ーーーーーーーーーーーーーーーーーーーーーーーー
+# 商品詳細画面ーーーーーーーーーーーーーーーーーーーーーーーー
 crumb :products_category_0 do
 @product = Product.find(params[:id])
 link @product.category.root.name, product_path

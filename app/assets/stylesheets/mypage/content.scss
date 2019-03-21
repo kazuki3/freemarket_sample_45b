@@ -1,263 +1,114 @@
-.content{
-  float:right;
-  width:700px;
-  padding-top:40px;
-  margin-right:140px;
+.l-content {
+  width: 700px;
+  float: right;
+  color: #333;
+}
 
-  .profile{
-    height:200px;
-    padding:20px;
-    text-align:center;
-    background:url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?6820409);
-    width:700px;
-    margin-right:40px;
-    &__image{
-      width:60px;
-      height:60px;
-      margin:0 auto;
-      border-radius:50%;
-      background:url(https://i.gyazo.com/eedd0c95bb845f427164aa2c262c0d05.png);
-      padding-top:40px;
-      margin-top:20px;
-      &--name{
-        font-weight:600;
-        font-size:14px;
-        padding-top:40px;
-        .profile__name{
-          color:black;
-        }
-      }
-    }
-    &__number{
-      margin:8px 0 0;
-      font-size: 0;
-      &--figure{
-        font-size:14px;
-        float:left;
-        padding-left:270px;
-        padding-top:40px;
-        .evaluation{
-          margin:0 0 8px;
-          font-size: 16px;
-          font-weight:600;
-          padding-top:20px;
-          padding-left:5px;
-        }
-      }
-      &--product{
-        font-size:14px;
-        float:right;
-        padding-right:270px;
-        padding-top:40px;
-        .exhibit{
-          margin:0 0 8px;
-          font-size: 16px;
-          font-weight:600;
-          padding-left:5px;
-        }
-      }
-    }
+.mypage-user-icon {
+  height: 200px;
+  position: relative;
+  padding: 20px;
+  background: url(user-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  &__figure {
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 50%;
   }
-  .record{
-    margin: 0;
-    background:#fff;
-    &__top{
-      border:0;
-      background:#eee;
-      font-size:16px;
-      height:74px;
-      width:700px;
-      .notice{
-        background:white;
-        width:50%;
-        text-align:center;
-        font-weight:600;
-        font-size:16px;
-        float:left;
-        height:74px;
-        width:350px;
-        padding:30px;
-        border-top:2px solid #ea352d;
-        color:black;
-        .mypage-nav-number{
-        }
-      }
-      .do{
-        background:#EEEEEE;
-        width:50%;
-        text-align:center;
-        float:right;
-        height:74px;
-        width:350px;
-        padding:30px;
-        background:#DCDCDC;
-        font-weight:600;
-        font-size:16px;
-        color:black;
-      }
-    }
+  &__figure img{
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
   }
-  .bottom{
-    margin:0;
-    padding:0;
-    border-width:0;
-    margin-bottom:40px;
-    .mypage-item-list{
-      position:relative;
-      .mypage-item-link{
-        color:#333;
-        display:block;
-        height:80px;
-        width:700px;
-        border-bottom:solid 1px #EEEEEE;
-        position:relative;
-        .picture{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width:48px;
-          height:48px;
-          position:absolute;
-          margin:18px;
-        }
-        .mypage-item{
-          margin: 20px 80px 20px 80px;
-          position:absolute;
-          &__text{
-            font-size:14px;
-            .icon-time{
-              .icon{
-                color: #000;
-                position: absolute;
-                margin-left: 2px;
-                margin-top: 20px;
-                width: 15px;
-                height: 15px;
-                position: relative;
-                border: solid 1px currentColor;
-                border-radius: 8px;
-                color:#999999;
-                float:left;
-              }
-              .icon::before{
-                content: '';
-                position: absolute;
-                top: 7px;
-                left: 7px;
-                width: 5px;
-                height: 1px;
-                background-color: currentColor;
-                -webkit-transform-origin: 0% 0%;
-                transform-origin: 0% 0%;
-              }
-              .icon::after{
-                content: '';
-                position: absolute;
-                top: 2px;
-                left: 7px;
-                width: 1px;
-                height: 6px;
-                background-color: currentColor;
-                -webkit-transform-origin: 0% 0%;
-                transform-origin: 0% 0%;
-              }
-                .time{
-                  color:#999999;
-                  margin-left:30px;
-                  padding-top:20px;
-                }
-            }
-          }
-        }
-        .fas.fa-angle-right{
-          position:absolute;
-          top:50%;
-          right:16px;
-          float:right;
-          top:40%;
-          width: 15px;
-          height:15px;
-          font-size:25px;
-        }
-      }
-      .mypage-go{
-        color:#333;
-        display:block;
-        height:88px;
-        width:700px;
-        border-bottom:solid 1px #EEEEEE;
-        background:white;
-        position:relative;
-        .mypage-go__list{
-          display: block;
-          height:56px;
-          margin:auto;
-          background:#eee;
-          color:#333;
-          line-height:56px;
-          text-align:center;
-          width:660px;
-          position:absolute;
-          top:0;
-          right:0;
-          left:0;
-          bottom:0;
-        }
-      }
-    }
+  &__name {
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 600;
   }
-  .mypage-tab-container{
-    margin:50px 0 0;
-    background-color:#fff;
-    .mypage-tab-head{
-      padding:0;
-      background-color:#fafafa;
-      font-size:16px;
-      line-height:72px;
-      font-weight:600;
-      .transaction{
-        border:0;
-        background-color:#eee;
-        font-size:0;
-        font-weight:600;
-      }
-        .current-transaction{
-          background:white;
-          font-weight:600;
-          font-size:16px;
-          float:left;
-          width:350px;
-          text-align: center;
-          border-top:2px solid #ea352d;
-          color:black;
-        }
-        .past-transaction{
-          background:#DCDCDC;
-          font-weight:600;
-          font-size:16px;
-          float:right;
-          width:350px;
-          text-align:center;
-          color:black;
-        }
-    }
+  &__number {
+    margin: 8px 0 0;
   }
-  .tab-content{
-    margin:0;
-    padding:0;
-    height:400px;
-    .mypage-item-list{
-      display:block;
-      .mypage-item-not-found{
-        padding:300px 0 60px;
-        text-align:center;
-        font-size: 16px;
-        color:#ccc;
-        background:url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?6820409);
-        background-repeat:no-repeat;
-        background-position:center 200px;
-        background-size: 78px 85px;
-      }
-    }
+  &__number div {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  &__number div:nth-child(2) {
+    margin: 0 0 0 16px;
+  }
+  &__number div span {
+    margin: 0 0 0 8px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+.mypage-user-icon a{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translate(0, -50%);
+  color: #333;
+}
+
+.mypage-tab-container-notification-todo {
+  margin: 0;
+  background: #fff;
+}
+
+.mypage-tabs {
+  border: 0;
+  background: #eee;
+  &__item {
+    float: left;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    background: #eee;
+  }
+  &__item.active {
+    background-color: #fff;
+    border-top: 2px solid #ea352d;
+  }
+}
+.mypage-tabs a {
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: 700;
+}
+
+.mypage-item-list {
+  display: block;
+  &--not-found {
+    padding: 160px 0 60px;
+    background: url(logo-gray-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 78px 85px;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+    font-weight: 600;
+  }
+}
+
+.mypage-tab-container {
+  margin: 40px 0 0 0;
+  background: #fff;
+  &__head {
+  padding: 0 16px;
+  background: #fafafa;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: 700;
   }
 }

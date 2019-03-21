@@ -15,7 +15,13 @@ class User < ApplicationRecord
   has_many :products
   has_one :users
   has_many :sns_credentials
+  has_many :likes
+  has_many :products, through: :likes
   has_many :trades
+  
+  def already_liked?(product)
+    self.likes.exists?(product_id: product.id)
+  end
 
   def self.create_oauth(auth)
   user = User.create(

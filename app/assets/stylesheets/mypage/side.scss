@@ -1,88 +1,47 @@
-.side{
-  float:left;
-  width: 280px;
-  position:absolute;
-  margin-left:150px;
-  .mypage-nav{
-    padding:0;
-    margin:0;
-    .mypage-nav-list{
-      padding-top:40px;
-        &__item{
-          position: relative;
-          display:block;
-          height:46px;
-          padding:16px;
-          color:#333;
-          background-color:white;
-          margin-top:1px;
-          font-size:14px;
-          .fas.fa-angle-right{
-            position: absolute;
-            float:right;
-            top:30%;
-            right:13px;
-            size:5x;
-            color:#DDDDDD;
-            font-size:25px;
-          }
-        }
-      .mypage-nav-list__item-gray{
-        position: relative;
-        display:block;
-        height:48px;
-        padding:16px;
-        color:#333;
-        margin-top:1px;
-        background-color:#DDDDDD;
-        font-weight:600;
-        font-size:14px;
-        .fa-angle-right-1{
-          position: absolute;
-          float:right;
-          top:40%;
-          right:16px;
-          display: block;
-          width: 10px;
-          height:10px;
-          border-top:solid 3px #333333;
-          border-right:solid 3px #333333;
-          -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-        }
-      }
-    }
+.l-side {
+  width:280px;
+  margin: 0 40px 0 0;
+  float: left;
+  color: #333;
+}
+
+.mypage-nav-head {
+  margin: 40px 0 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.mypage-nav__list {
+  margin: 8px 0 0;
+  list-style: none;
+  &--item {
+    position: relative;
+    display: block;
+    min-height: 48px;
+    padding: 16px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    border: solid 1px #eee;
   }
-  .mypage-nav-head{
-    margin:40px 0 0;
-    font-size: 16px;
-    .mypage-nav-list{
-      margin:8px 0 0;
-      &__item{
-        position:relative;
-        display:block;
-        min-height:48px;
-        padding:16px;
-        background-color:#fff;
-        color:#333;
-        margin-top:1px;
-        font-size:14px;
-        &--head{
-          font-weight:600;
-          font-size:16px;
-          -bottom:2px;
-        }
-        .fa-angle-right{
-          position:absolute;
-          top:30%;
-          right:16px;
-          display: block;
-          width: 13px;
-          height:13px;
-          color:#DDDDDD;
-          font-size:25px;
-        }
-      }
-    }
+  &--item:first-child{
+    border: solid 1px #eee;
+    border-bottom: 0;
   }
+  &--item .fa-angle-right {
+    position: absolute;
+    right: 16px;
+    color: #ccc;
+    font-size: 20px;
+  }
+}
+
+.mypage-nav__list:first-child {
+  margin: 0;
+}
+
+
+.mypage-nav__list .active {
+  font-weight: 600;
+  background-color: #eee;
 }

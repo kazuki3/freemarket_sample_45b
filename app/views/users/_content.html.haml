@@ -1,0 +1,45 @@
+.l-content
+  %section.mypage-user-icon
+    = link_to '#' do
+      %figure.mypage-user-icon__figure
+        = image_tag 'member_photo_noimage_thumb.png'
+      %h2.mypage-user-icon__name #{@user.nickname}
+      .mypage-user-icon__number
+        %div
+          評価
+          %span.bold 1
+        %div
+          出品数
+          %span.bold
+            #{Product.where(seller_id: current_user.id).count}
+
+
+  %section.mypage-tab-container-notification-todo.clearfix
+    %ul.mypage-tabs.clearfix
+      %li.mypage-tabs__item
+        %h3
+          = link_to 'お知らせ', '#'
+      %li.mypage-tabs__item.active
+        %h3
+          = link_to 'やることリスト', '#'
+    .tab-content
+      %ul.mypage-item-list
+        %li.mypage-item-list--not-found
+          現在、やることリストはありません
+
+
+
+
+  %section.mypage-tab-container
+    %h2.mypage-tab-container__head 購入した商品
+    %ul.mypage-tabs.clearfix
+      %li.mypage-tabs__item
+        %h3
+          = link_to '取引中', '#'
+      %li.mypage-tabs__item.active
+        %h3
+          = link_to '過去の取引', '#'
+    .tab-content
+      %ul.mypage-item-list
+        %li.mypage-item-list--not-found
+          現在取引中の商品がありません

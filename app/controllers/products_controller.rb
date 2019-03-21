@@ -98,7 +98,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @product = Product.where('name LIKE ?', "%#{params[:keyword]}%").limit(49)
+    @product = Product.where('name LIKE ?', "%#{params[:keyword]}%").limit(49).reverse_order
   end
 
   private

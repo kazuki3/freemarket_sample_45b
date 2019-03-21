@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :buy]
   before_action :set_form_data, only: [:new, :edit]
   before_action :check_seller?, only: :edit
-  before_action :check_card, only: :buy
+  before_action :check_user, only: :buy
   before_action :Set_api_for_payjp, only: :buy
 
   def index
@@ -128,8 +128,12 @@ class ProductsController < ApplicationController
     redirect_to product_path unless product.seller_id == current_user.id
   end
 
-  def check_card
-    redirect_to root_path unless Payment.where(user_id: current_user.id).blank?
+  def check_user
+    if Profile.where(user_id: current_user.id).blank?
+      redirect_to new_profile_path
+    elsif Payment.where(user_id: current_user.id).blank?
+      redirect_to new_payment_path
+    end
   end
 
 end

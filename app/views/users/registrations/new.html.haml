@@ -1,15 +1,11 @@
 .register__container
   .register__container__header
     = image_tag "logo.svg", class:"campany-logo", alt:"メルカリロゴ"
-    %nav.progress-bar
+    %nav.progress-status-first
       %ol.clearfix
         .activ-box
           %li.active-red
             会員情報
-            .progress-status-first
-        .activ-box
-          %li.active
-            電話番号認証
             .progress-status
         .activ-box
           %li.active
@@ -22,7 +18,7 @@
         .activ-box
           %li.active
             完了
-            .progress-status-last
+            .progress-status
 
   %main.register-main
     %section.register-main__container

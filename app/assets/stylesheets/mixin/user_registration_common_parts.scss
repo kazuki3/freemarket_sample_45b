@@ -2,14 +2,13 @@ $light_red: #ea352d;
 $light_gray: #ccc;
 $white_gray: #f5f5f5;
 $white: #FFFFFF;
+
 // メルカリロゴ（赤）ーーーーーーーーーーーーーーー
 
 @mixin campany-logo{
-  width: 13vw;
+  width: 180px;
   cursor: pointer;
 }
-
-// ーーーーーーーーーーーーーーーーーーーーーーー
 
 // 会員登録ページ ヘッダー ーーーーーーーーーーー
 
@@ -18,7 +17,7 @@ $white: #FFFFFF;
   width: 100%;
   background-color: $white_gray;
   &__header{
-    height: 15%;
+    height: 128px;
     display: flex;
     justify-content: center;
   }
@@ -36,8 +35,6 @@ $white: #FFFFFF;
   }
 }
 
-// ーーーーーーーーーーーーーーーーーーーーーーーーー
-
 // 会員情報登録の進捗バー部分  ーーーーーーーーーーー
 
 @mixin progress-bar{
@@ -52,14 +49,23 @@ $white: #FFFFFF;
         font-size: 0.9vw;
         margin:auto auto 20px auto;
         font-weight: 600;
-        color: $light_gray;
+        color: #ea352d;
         cursor: pointer;
       }
     }
   }
 }
 
-// ーーーーーーーーーーーーーーーーーーーーーーーー
+// 進捗状況の丸印の部分  ーーーーーーーーーーーーー
+
+@mixin progress-status{
+  width: 15px;
+  height: 15px;
+  margin: 20px auto;
+  background: #ccc;
+  border-radius: 50%;
+}
+
 
 // 進捗情報の文字を赤色に入れる処理-------------
 
@@ -75,109 +81,10 @@ $white: #FFFFFF;
   cursor: pointer;
 }
 
-// ----------------------------------------
-
-// 進捗情報の丸印の部分を赤色にする処理
-
-@mixin progress-status-red{
-  width: 12px;
-  height: 12px;
-  margin: 8px auto 0;
-  background: $light_red;
-  border-radius: 50%;
-  position:relative;
-  &:before{
-    position:absolute;
-    border-bottom:solid 2px $light_red;
-    content:'';
-    width:65px;
-    height:6px;
-    margin-left:12px;
-  }
-  &:after{
-    position:absolute;
-    border-bottom:solid 2px $light_red;
-    content:'';
-    width:65px;
-    height:6px;
-    right:100%;
-  }
-}
-
-
-// -----------------------------------------
-// 進捗状況の丸印の部分(1番目)---------------
-
-@mixin progress-status-first{
-  width: 12px;
-  height: 12px;
-  margin: 8px auto 0;
-  background: $light_red;
-  border-radius: 50%;
-  position:relative;
-  &:after{
-    position:absolute;
-    border-bottom:solid 2px $light_red;
-    content:'';
-    width:65px;
-    height:6px;
-    margin-left:12px;
-  }
-}
-// ------------------------------------------
-
-// 進捗状況の丸印の部分(2.3.4番目)  ーーーーーーーーーーーーー
-
-@mixin progress-status{
-  width: 12px;
-  height: 12px;
-  margin: 8px auto 0;
-  background: $light_gray;
-  border-radius: 50%;
-  position:relative;
-  &:before{
-    position:absolute;
-    border-bottom:solid 2px $light_gray;
-    content:'';
-    width:65px;
-    height:6px;
-    margin-left:12px;
-  }
-  &:after{
-    position:absolute;
-    border-bottom:solid 2px $light_gray;
-    content:'';
-    width:65px;
-    height:6px;
-    right:100%;
-  }
-}
-// ーーーーーーーーーーーーーーーーーーーーーーーー
-
-// 進捗状況の丸印の部分(5番目)---------------
-
-@mixin progress-status-last{
-  width: 12px;
-  height: 12px;
-  margin: 8px auto 0;
-  background: $light_gray;
-  border-radius: 50%;
-  position:relative;
-  &:before{
-    position:absolute;
-    border-bottom:solid 2px $light_gray;
-    content:'';
-    width:65px;
-    height:6px;
-    right:100%;
-  }
-}
-// ------------------------------------------
-
 // 会員情報登録のセンター部分の枠 ーーーーーーーー
 
 @mixin register-main{
-  width: 50vw;
+  width: 700px;
   min-width: 370px;
   height: auto;
   background-color: $white;
@@ -192,8 +99,8 @@ $white: #FFFFFF;
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    font-size: 1.5vw;
-    height:10%;
+    font-size: 22px;
+    height:100px;
     text-align: center;
     border-bottom: 1px solid $white_gray;
     padding:50px 0px;
@@ -209,8 +116,6 @@ $white: #FFFFFF;
   }
 }
 
-// ーーーーーーーーーーーーーーーーーーーーーー
-
  // 会員情報入力欄 ーーーーーーーーーーーーーー
 
 @mixin input-default{
@@ -224,8 +129,6 @@ $white: #FFFFFF;
   font-size: 1vw;
   cursor: pointer;
 }
-
-// ーーーーーーーーーーーーーーーーーーーーーー
 
 // 会員情報入力欄 セット ーーーーーーーーーーー
 
@@ -256,8 +159,6 @@ $white: #FFFFFF;
   }
 }
 
-// ーーーーーーーーーーーーーーーーーーー
-
 // 必須のアイコン ーーーーーーーーーーー
 
 @mixin require-icon{
@@ -268,8 +169,6 @@ $white: #FFFFFF;
   color: $white;
   font-size: 0.9vw;
 }
-
-// ーーーーーーーーーーーーーーーーーーー
 
 // 任意のアイコン ーーーーーーーーーーー
 
@@ -282,16 +181,12 @@ $white: #FFFFFF;
   font-size: 0.9vw;
 }
 
-// ーーーーーーーーーーーーーーーーーーー
-
 // 会員情報入力欄 文字 ーーーーーーーーー
 
 @mixin registration_font{
   font-weight: 600;
   font-size: 1vw;
 }
-
-// ーーーーーーーーーーーーーーーーーーー
 
 // 次へ進むボタン  ーーーーーーーーーーー
 
@@ -307,8 +202,6 @@ $white: #FFFFFF;
   cursor: pointer;
   text-align: center;
   }
-
-// ーーーーーーーーーーーーーーーーーーーー
 
 // 新規登録ボタン  ーーーーーーーーーーー
 
@@ -326,8 +219,6 @@ $white: #FFFFFF;
   text-align: center;
   }
 
-// ーーーーーーーーーーーーーーーーーーーー
-
 // 変更ボタン  ーーーーーーーーーーー
 
 @mixin edit-btn{
@@ -343,29 +234,11 @@ $white: #FFFFFF;
   text-align: center;
   }
 
-// ーーーーーーーーーーーーーーーーーーーー
-
 
 // ログアウトボタン  ーーーーーーーーーーー
 
 @mixin sign_out-btn{
   margin-top: 3%;
-  background: $light_red;
-  border: 1px solid $light_red;
-  color: $white;
-  display: block;
-  width: 100%;
-  line-height: 48px;
-  font-size: 0.9vw;
-  cursor: pointer;
-  text-align: center;
-  }
-
-// ーーーーーーーーーーーーーーーーーーーー
-
-
-@mixin log-out-btn--mini{
-  margin-top:5vh;
   background: $light_red;
   border: 1px solid $light_red;
   color: $white;
@@ -392,8 +265,6 @@ $white: #FFFFFF;
   text-align: center;
   }
 
-// ーーーーーーーーーーーーーーーーーーーーーーー
-
 // Facebookで登録ボタン  ーーーーーーーーーーー
 
 @mixin facebook-btn{
@@ -410,8 +281,6 @@ $white: #FFFFFF;
   text-align: center;
   }
 
-// ーーーーーーーーーーーーーーーーーーーーーーー
-
 // googleで登録ボタン  ーーーーーーーーーーー
 
 @mixin google-btn{
@@ -427,8 +296,6 @@ $white: #FFFFFF;
   cursor: pointer;
   text-align: center;
   }
-
-// ーーーーーーーーーーーーーーーーーーーーー
 
 // クレジットカード決済ボタン  ーーーーーーーーーーー
 

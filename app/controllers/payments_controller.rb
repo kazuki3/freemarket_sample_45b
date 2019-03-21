@@ -17,6 +17,7 @@ class PaymentsController < ApplicationController
     end
   end
 
+  private
   def payment_check
     redirect_to root_path unless Payment.where(user_id: current_user.id).blank?
   end

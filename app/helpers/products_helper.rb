@@ -18,4 +18,20 @@ module ProductsHelper
     end
   end
 
+  def zip_code(profile)
+    profile.zip_code.to_s.split(/(?<=^.{3})/).join('-')
+  end
+
+  def set_address(profile)
+    if profile.address2 == nil
+      profile.prefecture + " " + profile.city + profile.address1
+    else
+      profile.prefecture + " " + profile.city + profile.address1 + profile.address2
+    end
+  end
+
+  def set_name(profile)
+      profile.first_name + " " + profile.last_name
+  end
+
 end

@@ -38,7 +38,10 @@
 			h3 a:hover {
 				text-decoration: underline;
 			}
-			.body-items-box__item-box:nth-child(5n+1) {
+      &__item-box {
+        position: relative;
+      }
+			&__item-box:nth-child(5n+1) {
 				margin-right: 0;
 			}
 			@include item-box__top;

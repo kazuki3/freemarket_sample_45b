@@ -16,7 +16,7 @@ $(document).ready(function(){
   }
 
   $(document).on('click', '#delete-btn', function(){
-    $('#inputFileType').val('');
+    $('#inputFileType').reset();
     $('.sell-upload__item').remove();
     $('.sell-upload__dropbox').removeClass('have-item-1');
     $('.sell-upload__dropbox').addClass('have-item-0');

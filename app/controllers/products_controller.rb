@@ -60,6 +60,7 @@ class ProductsController < ApplicationController
     @category = @product.category
     @child_categories = Category.where('ancestry = ?', "#{@category.root_id}")
     @grandchild_categories = Category.where('ancestry LIKE ?', "%/#{@category.parent_id}")
+    @fee = (@product.price * 0.1).floor
   end
 
   def update

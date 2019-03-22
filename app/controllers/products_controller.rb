@@ -42,8 +42,10 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     if @product.save
       redirect_to root_path
+      flash[:success] = "出品が完了しました"
     else
-      redirect_to new_product_path, flash: {miss: "必須項目をすべて選択してください"}
+      redirect_to new_product_path
+      flash[:danger] = "必須項目をすべて選択してください"
     end
   end
 
@@ -67,6 +69,7 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     product.update(update_product_params) if product.seller_id == current_user.id
     redirect_to product_path(params[:id])
+    flash[:success] = "商品情報の編集が完了しました"
   end
 
   def category

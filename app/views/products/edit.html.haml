@@ -19,9 +19,9 @@
                     %figure.sell-upload__figure
                       = image_tag @product.images[0].image_path, alt: "アイコン", id: "item-img"
                     .sell-upload-btn
-                      = link_to "#", class: "sell-upload__edit" do
+                      = link_to "", class: "sell-upload__edit" do
                         編集
-                      = link_to "#", class: "sell-upload__delete" do
+                      = link_to "", class: "sell-upload__delete", id: "delete-btn" do
                         削除
               = f.fields_for :images , html: {class: 'dropzone', id: 'item-dropzone'}do |i|
                 %label.sell-upload__dropbox.have-item-1

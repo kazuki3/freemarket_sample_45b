@@ -26,6 +26,7 @@ class Product < ApplicationRecord
   validates :price, numericality: { only_integer: true }
   validates :price, numericality: { greater_than_or_equal_to: 300 }  # 数字が5以上であるか
   validates :price, numericality: { less_than_or_equal_to: 9999999 }
+  validates :images, presence: true
 
   enum condition: {
     unused: 1,
